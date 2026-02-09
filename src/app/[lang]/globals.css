@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    position: relative;
+    /* Agar kontent chiziqning ustiga minib qolmasligini xohlasangiz, 
+       chapdan padding berishingiz mumkin: */
+    /* padding-left: 200px; */
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 4.9%; /* Chapdan masofa */
+    width: 1.5px; /* Chiziq qalinligi */
+    height: 100vh; /* Butun ekran bo'yi */
+    background-color: #c59d5f; /* Jigarrang/Tilla rang */
+    opacity: 0.5; /* Juda yorqin bo'lib kontentga xalaqit bermasligi uchun */
+    z-index: 50; /* Kontentdan ustun turishi uchun (lekin modal/navbardan past) */
+    pointer-events: none; /* Chiziq ostidagi tugmalarni bosishga xalaqit bermasligi uchun */
+  }
+}
+
+@media (max-width: 768px) {
+  body::before {
+    display: none;
+  }
+}
+
+/* ledger-regular - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Ledger";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../fonts/ledger-v17-cyrillic_latin-regular.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+.partners-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+}

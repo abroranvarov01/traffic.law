@@ -1,0 +1,17 @@
+services:
+  trafic-legal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: trafic-legal-app
+    restart: always
+    ports:
+      - "127.0.0.1:4000:3000" # <--- Shuni o'zgartiring
+    environment:
+      - NODE_ENV=production
+    networks:
+      - euphoria_network
+
+networks:
+  euphoria_network:
+    external: true

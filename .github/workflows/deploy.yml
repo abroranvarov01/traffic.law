@@ -1,0 +1,40 @@
+name: Production Deploy (Trafic-Legal)
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    # GitHub Runner-dagi mavjud taglar bilan bir xil qildik
+    runs-on: [self-hosted, traffic-dedicated]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          # Kodni 'trafic-legal-app' papkasiga yuklaymiz
+          path: trafic-legal-app
+
+      - name: Deploy Next to Runner
+        run: |
+          # 1. Runnerning ishchi papkasiga (workspace) kiramiz
+          # GitHub Actions odatda GITHUB_WORKSPACE o'zgaruvchisidan foydalanadi
+          cd ${{ github.workspace }}/trafic-legal-app
+
+          # 2. Docker-ni ko'taramiz
+          # 'deployer' foydalanuvchisi docker guruhida bo'lishi shart
+          docker compose up -d --build --force-recreate
+
+          # 3. Tozalash (foydalanilmagan eski obrazlarni o'chirish)
+          docker image prune -f
+
+      - name: Show Location and Status
+        run: |
+          cd ${{ github.workspace }}/trafic-legal-app
+          pwd
+          docker ps | grep trafic-legal-app

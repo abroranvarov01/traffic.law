@@ -1,0 +1,72 @@
+// src/components/Consultation/SnackbarStyle.scss
+
+.snackbar-wrapper {
+  position: fixed;
+  bottom: 20px; /* Pastdan masofa */
+  right: 20px; /* O'ngdan masofa */
+  z-index: 1000; /* Boshqa elementlardan ustun turishi uchun */
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  font-family: "Inter", sans-serif;
+  max-width: 350px;
+  width: 100%;
+
+  &.success {
+    background-color: #e6ffed; /* Yaxshi rang */
+    color: #00701a; /* Yaxshi yozuv rangi */
+    border-left: 5px solid #00c853;
+  }
+
+  &.error {
+    background-color: #ffeded; /* Xato rangi */
+    color: #b71c1c; /* Xato yozuv rangi */
+    border-left: 5px solid #d32f2f;
+  }
+}
+
+.snackbar-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.snackbar-message {
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.snackbar-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// src/components/Consultation/SnackbarStyle.scss oxiriga qo'shing
+
+@media (max-width: 576px) {
+  .snackbar-wrapper {
+    right: 10px;
+    left: 10px;
+    bottom: 10px;
+    max-width: none;
+  }
+}
