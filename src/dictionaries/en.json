@@ -14,7 +14,7 @@
     "reviews": "Reviews",
     "news": "News",
     "contact": "Contacts",
-    "cta": "talk to a lawyer"
+    "cta": "Contacts"
   },
   "hero": {
     "title1": "LEGAL",
@@ -26,23 +26,43 @@
   "about": {
     "subtitle": "ABOUT US",
     "main_title": "A LEGAL COMPANY HELPING BUSINESSES IN UZBEKISTAN OPERATE LEGALLY, EFFICIENTLY, AND WITHOUT UNNECESSARY COSTS.",
+    "company_name": "Traffic Law Legal Company",
+    "desc_1": "The main goals of our team are to achieve positive results, provide a high level of legal service, and prioritize the client's interests. We strive not just to meet, but to exceed our clients' expectations.",
+    "desc_2": "Traffic Law successfully operates in the legal consulting and services market, providing comprehensive legal support to both local and international companies. Each year, the number of our clients and the range of our capabilities grow steadily.",
+    "desc_3": "We provide legal support for business in all areas of activity, from the registration of legal entities to judicial representation, corporate disputes, and the protection of rights in administrative bodies. Our expertise covers civil, corporate, administrative, and family law.",
+    "quote": "The company pays great attention to constantly improving the professional level of each lawyer by participating in specialized seminars, conferences, and advanced training courses. Representatives of our company actively participate in the legal community of Uzbekistan, speaking at legal forums, legislative seminars, and business conferences.",
     "stats_completed": "Completed Works",
     "stats_contracts": "Signed Contracts",
     "stats_cases": "Registered Cases",
-    "stats_clients": "Trusted Clients",
-    "works_subtitle": "OUR WORKS",
-    "works_title": "WORKS WE COMPLETED WITH FULL SUCCESS"
+    "stats_clients": "Trusted Clients"
   },
   "works": {
-    "item1_title": "Protecting client interests in a property dispute",
-    "item1_desc": "A large construction company faced a claim of over 2 billion UZS. Our team fully justified the fulfillment of contract obligations.",
-    "item2_title": "Appealing the decision of the tax committee",
-    "item2_desc": "Judicial cancellation of illegally assessed tax debt and restoration of the entrepreneur's rights.",
-    "item3_title": "Legal support for company registration",
-    "item3_desc": "The process of establishing an enterprise with foreign investment and obtaining all necessary permits.",
-    "view_all_btn": "VIEW ALL WORKS",
-    "subtitle": "OUR PORTFOLIO",
-    "title": "PROJECTS WE HAVE COMPLETED WITH TRIUMPHANT SUCCESS"
+    "subtitle": "OUR CASES",
+    "title": "PROJECTS COMPLETED WITH TOTAL SUCCESS",
+    "view_all_btn": "VIEW ALL CASES",
+    "labels": {
+      "task": "Task:",
+      "actions": "Our Actions:",
+      "result": "Result:"
+    },
+    "item1": {
+      "title": "Client Defense in Property Dispute",
+      "task": "A large construction company faced a claim for over 2 billion UZS and a 35% penalty for allegedly unfulfilled obligations.",
+      "actions": "Legal analysis of documentation was conducted, evidence was gathered, and a defense strategy was implemented in Tashkent Economic Court.",
+      "result": "The claim was fully dismissed. The client avoided losses of 2.7 billion UZS and maintained their business reputation."
+    },
+    "item2": {
+      "title": "Appealing a Tax Committee Decision",
+      "task": "A trading company was charged 450 million UZS in taxes and penalties for allegedly improper use of tax benefits.",
+      "actions": "Procedural violations were identified, legal justification based on Tax Code was prepared, and the client was represented in appeals.",
+      "result": "The decision was fully overturned. The tax benefit status was maintained, saving the client 450 million UZS."
+    },
+    "item3": {
+      "title": "Legal Support for Company Registration",
+      "task": "A foreign IT company faced difficulties understanding local legislation when opening a representative office.",
+      "actions": "A full package of JV LLC documents was prepared, registration in the Ministry of Justice was completed, and E-signatures were obtained.",
+      "result": "The company was registered within 10 business days, starting legal operations with full tax benefits."
+    }
   },
   "partners": [
     { "id": 1, "name": "TASS", "width": 100, "image": "/news/tass.png" },
@@ -73,23 +93,35 @@
   ],
   "whyChooseUs": {
     "subtitle": "WHY CHOOSE US",
-    "title": "WE COMBINE PROFESSIONALISM, EXPERIENCE AND INDIVIDUAL APPROACH",
+    "title": "WE COMBINE PROFESSIONALISM, EXPERIENCE, AND AN INDIVIDUAL APPROACH",
     "features": [
       {
-        "title": "EXPERIENCE IN CLIENT RIGHTS PROTECTION",
-        "desc": "Every month our company successfully resolves many legal disputes of varying complexity."
+        "title": "Experience in Protecting Client Rights",
+        "desc": "Every month, our company successfully resolves dozens of legal disputes of various complexities. Our practical experience allows us to remain a reliable partner for businesses and individuals in the Republic of Uzbekistan."
       },
       {
-        "title": "ESTABLISHED RELATIONS WITH STATE BODIES",
-        "desc": "We effectively interact with administrative and state structures at all levels."
+        "title": "Established Relations with State Bodies",
+        "desc": "We effectively interact with judicial, administrative, and state structures at all levels, guided solely by law and ethics. Our lawyers have successful experience in:",
+        "list": [
+          "Economic Courts of Uzbekistan",
+          "Civil Courts of all districts",
+          "Administrative Courts",
+          "Governmental bodies"
+        ]
       },
       {
-        "title": "GREAT PRACTICE IN BUSINESS SUPPORT",
-        "desc": "Our lawyers support hundreds of registrations and legal transactions every month."
+        "title": "Business Support Practice",
+        "desc": "Our lawyers support hundreds of registrations, reorganizations, and legal transactions every month. This scale allows us to minimize risks and ensure maximum legal protection. Specialization:",
+        "list": [
+          "Corporate Law & M&A transactions",
+          "Legal disputes of any complexity",
+          "Contract Law & Compliance",
+          "Protection of shareholder rights"
+        ]
       },
       {
-        "title": "STRICT CONFIDENTIALITY",
-        "desc": "We guarantee absolute compliance with the confidentiality of all information."
+        "title": "Strict Confidentiality",
+        "desc": "We guarantee absolute confidentiality of all information provided by our clients. All data is protected by non-disclosure agreements, and our reputation is built on trust and professionalism."
       }
     ]
   },
@@ -136,10 +168,10 @@
     "title": "PROFESSIONALS YOU CAN TRUST",
     "view_all": "VIEW ALL SPECIALISTS",
     "members": [
-      { "name": "JASUR ABDULLAYEV", "role": "SENIOR LEGAL CONSULTANT" },
-      { "name": "DILSHOD KARIMOV", "role": "HEAD OF LEGAL DEPARTMENT" },
+      { "name": "BATIR ILSHATOVICH", "role": "SENIOR LEGAL CONSULTANT" },
+      { "name": "AVAZKHONV AKBARKHON", "role": "HEAD OF IT DEPARTMENT" },
       { "name": "IRINA VOLKOVA", "role": "CORPORATE LAWYER" },
-      { "name": "OLGA PETROVA", "role": "LEGAL CONSULTANT" }
+      { "name": "SAIDOV ALISHER", "role": "LEGAL CONSULTANT" }
     ]
   },
   "app": {
@@ -148,29 +180,34 @@
     "desc": "Manage legal aspects of your business quickly and effectively. The Traffic Law app is your mobile office for secure document management and prompt communication with experts."
   },
   "news": {
-    "subtitle": "LATEST NEWS",
+    "subtitle": "ANALYTICS",
     "title": "ANALYTICS AND LEGAL NEWS",
-    "view_all": "VIEW ALL NEWS",
+    "view_all": "VIEW ALL LEGAL NEWS",
     "items": [
       {
-        "title": "Changes in the Tax Code 2026: What should businesses prepare for?",
-        "desc": "From January 1, 2026, important changes to the Tax Code of the Republic will come into force...",
-        "date": "Today 12:00",
-        "views": "100"
+        "date": "March 10, 2026",
+        "views": "1,240",
+        "title": "Tax Code Changes 2026: What Should Businesses Prepare For?",
+        "desc": "Starting Jan 1, 2026, new changes affect VAT for importers, income tax for IT companies, and mandatory electronic document flow."
       },
       {
-        "title": "New Rules for Personal Data Protection — A Short Guide for Business",
-        "desc": "Last year, foreign founders registered 8932 new legal entities in the country...",
-        "date": "Yesterday 09:00",
-        "views": "100"
+        "date": "March 5, 2026",
+        "views": "892",
+        "title": "New Personal Data Protection Rules — A Business Guide",
+        "desc": "Data protection liberalization: mandatory consent for processing, appointment of data officers, and fines up to 100 million UZS for leaks."
       },
       {
-        "title": "Maximum maternity and childbirth benefits increased in 2026",
-        "desc": "The amount of benefit depends on the duration of leave and will exceed 1.3 million for multiple pregnancies.",
-        "date": "Yesterday 07:00",
-        "views": "100"
+        "date": "Feb 28, 2026",
+        "views": "1,560",
+        "title": "Maternity and Birth Benefits Increased in 2026",
+        "desc": "Government allowances for pregnancy and birth have increased. Learn how to correctly manage HR documentation under the new labor rules."
       }
-    ]
+    ],
+    "disclaimer": {
+      "title": "LEGAL DISCLAIMER",
+      "note": "All information on the website is for informational purposes only and does not constitute legal advice.",
+      "warning": "Traffic Law is not responsible for decisions made based on website information without prior consultation with a lawyer."
+    }
   },
   "contact": {
     "subtitle": "BOOK AN APPOINTMENT",
@@ -217,22 +254,46 @@
     "copyright": "© All rights reserved."
   },
   "legal_expert_section": {
-    "upper_title": "SPECIALIZED AREAS",
-    "main_title": "COMPLEX LEGAL",
-    "gold_title": "EXPERTISE & ANALYSIS",
-    "view_button": "VIEW ALL DIRECTIONS",
+    "upper_title": "PRACTICE AREAS",
+    "main_title": "OUR LEGAL COMPANY PROVIDES",
+    "gold_title": "COMPREHENSIVE LEGAL SERVICES",
+    "view_button": "GET A CONSULTATION",
     "list_items": [
-      { "id": 1, "title": "3D Modeling and Reconstruction of Accident Scenes" },
-      { "id": 2, "title": "Independent Market Value Assessment of Vehicles" },
+      {
+        "id": 1,
+        "title": "CIVIL LAW",
+        "desc": "Protection of rights in civil disputes: property disputes, inheritance cases, real estate transactions, debt collection, and damages."
+      },
+      {
+        "id": 2,
+        "title": "CORPORATE & BUSINESS LAW",
+        "desc": "Company registration and liquidation, M&A deals, contract law, development of internal regulations, and shareholder rights protection."
+      },
       {
         "id": 3,
-        "title": "Technical Analysis of Traffic Camera (Radar) Errors"
+        "title": "LEGAL CONSULTATIONS",
+        "desc": "Legal audit of business, corporate legal outsourcing, comprehensive transaction support, and legal expertise of documents."
       },
-      { "id": 4, "title": "Defense and Restoration of Driving Privileges" },
-      { "id": 5, "title": "Litigation Regarding Insurance Claim Delays" },
-      { "id": 6, "title": "International Legal Disputes in Logistics (CMR)" },
-      { "id": 7, "title": "Consumer Claims Against Car Dealers and Services" },
-      { "id": 8, "title": "Challenging Forensic Automotive Expert Conclusions" }
+      {
+        "id": 4,
+        "title": "HR SERVICES",
+        "desc": "Maintenance of HR records, employment contracts, development of job descriptions, and work permits for foreign employees."
+      },
+      {
+        "id": 5,
+        "title": "TAX DISPUTES",
+        "desc": "Appealing tax authority decisions, representation during tax audits, contesting penalties, and tax planning consultations."
+      },
+      {
+        "id": 6,
+        "title": "LITIGATION & REPRESENTATION",
+        "desc": "Professional representation in all courts: economic, civil, and administrative. Preparation of claims and appeals."
+      },
+      {
+        "id": 7,
+        "title": "FAMILY LAW",
+        "desc": "Divorce proceedings, division of marital property, alimony collection, and drafting of prenuptial agreements."
+      }
     ]
   },
   "case_studies": {

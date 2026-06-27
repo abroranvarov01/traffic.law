@@ -8,13 +8,13 @@
     "reviews": "Fikrlar",
     "news": "Yangiliklar",
     "contact": "Aloqa",
-    "cta": "yurist bilan gaplashish"
+    "cta": "Aloqa"
   },
   "seo": {
-    "site_name": "Traffic Legal",
-    "title": "Traffic Legal — Professional advokatlik xizmatlari va huquqiy yordam",
-    "description": "Traffic Legal - Yo'l harakati xavfsizligi, sug'urta nizolari va fuqarolik ishlari bo'yicha Toshkentdagi professional advokatlar jamoasi. Biz bilan huquqlaringiz himoyalangan.",
-    "keywords": "advokat Toshkent, yuridik xizmatlar, huquqiy yordam, Traffic Legal, advokatlik byurosi, sud ishlarini yuritish, sug'urta advokati, yo'l transport hodisasi yordam"
+    "site_name": "Traffic Law",
+    "title": "Advokatlik va yuridik xizmatlar | Traffic Law",
+    "description": "Traffic Law jismoniy va yuridik shaxslarga fuqarolik, korporativ, sug‘urta, soliq va yo‘l-transport masalalari bo‘yicha professional huquqiy yordam ko‘rsatadi.",
+    "keywords": "advokat, yuridik xizmatlar, huquqiy yordam, yuridik konsultatsiya, sudda vakillik, fuqarolik huquqi, korporativ huquq, sug‘urta nizolari, soliq nizolari, yo‘l-transport hodisasi bo‘yicha yuridik yordam"
   },
   "hero": {
     "title1": "YURIDIK",
@@ -26,26 +26,51 @@
   "about": {
     "subtitle": "BIZ HAQIMIZDA",
     "main_title": "O'ZBEKISTONDA BIZNESNI QONUNIY, SAMARALI VA ORTIQCHA XARAJATLARSIZ YURITISHGA YORDAM BERUVCHI YURIDIK KOMPANIYA.",
+    "company_name": "Traffic Law yuridik kompaniyasi",
+    "desc_1": "Jamoamizning asosiy maqsadlari — ijobiy natijaga erishish, yuridik xizmat ko'rsatishning yuqori darajasi va ishonch bildiruvchi manfaatlarining ustuvorligidir. Biz mijozlarimizning kutganlarini nafaqat oqlashga, balki ulardan ko'prog'iga erishishga intilamiz.",
+    "desc_2": "Traffic Law yuridik kompaniyasi huquqiy konsalting va yuridik xizmatlar bozorida muvaffaqiyatli faoliyat yuritib, mahalliy va xalqaro kompaniyalarga kompleks huquqiy yordam ko'rsatib kelmoqda. Har yili mijozlarimiz soni va imkoniyatlarimiz ko'lami barqaror o'sib bormoqda.",
+    "desc_3": "Biz biznesni barcha faoliyat yo'nalishlari bo'yicha, yuridik shaxslarni ro'yxatdan o'tkazishdan boshlab, sud vakilligi, korporativ nizolar va ma'muriy organlarda huquqlarni himoya qilishgacha bo'lgan yuridik hamrohlikni amalga oshiramiz. Bizning ekspertizamiz fuqarolik, korporativ, ma'muriy va oila huquqini qamrab oladi.",
+    "quote": "Kompaniyada ixtisoslashtirilgan seminarlar, konferensiyalar va malaka oshirish kurslarida ishtirok etish orqali har bir yuristning professional darajasini doimiy ravishda oshirishga katta e'tibor beriladi. Kompaniyamiz vakillari O'zbekistonning huquqiy hamjamiyati hayotida faol ishtirok etib, huquqiy forumlar va biznes-konferensiyalarda ma'ruzalar bilan chiqish qiladilar.",
     "stats_completed": "Yakunlangan ishlar",
     "stats_contracts": "Imzolangan shartnomalar",
     "stats_cases": "Ro'yxatdan o'tgan ishlar",
-    "stats_clients": "Ishonchli mijozlar",
-    "works_subtitle": "BIZNING ISHLARIMIZ",
-    "works_title": "BIZ TO'LIQ MUVAFFAQIYAT BILAN BAJARGAN ISHLAR"
+    "stats_clients": "Ishonchli mijozlar"
   },
   "works": {
-    "item1_title": "Mulkdorlik nizosida mijoz manfaatlarini himoya qilish",
-    "item1_desc": "Yirik qurilish kompaniyasi 2 milliard so'mdan ortiq da'vo bilan to'qnash keldi. Bizning jamoa shartnoma majburiyatlarini to'liq asoslab berdi.",
-    "item2_title": "Soliq qo'mitasi qarori ustidan shikoyat qilish",
-    "item2_desc": "Noqonuniy hisoblangan soliq qarzdorligini sud tartibida bekor qilish va tadbirkor huquqlarini tiklash.",
-    "item3_title": "Kompaniyani ro'yxatdan o'tkazishda yuridik hamrohlik",
-    "item3_desc": "Xorijiy investitsiya ishtirokidagi korxonani tashkil etish va barcha ruxsatnomalarni olish jarayoni.",
-    "view_all_btn": "BARCHA ISHLARNI KO'RISH",
-    "subtitle": "BIZNING ISHLARIMIZ",
-    "title": "TO'LIQ MUVAFFAQIYAT BILAN YAKUNLANGAN LOYIHALARIMIZ"
+    "subtitle": "BIZNING KEYSLAR",
+    "title": "TO'LIQ MUVAFFAQIYAT BILAN YAKUNLANGAN LOYIHALARIMIZ",
+    "view_all_btn": "BARCHA KEYSLARNI KO'RISH",
+    "labels": {
+      "task": "Vazifa:",
+      "actions": "Bizning harakatlar:",
+      "result": "Natija:"
+    },
+    "item1": {
+      "title": "Mulkdorlik nizosida mijoz manfaatlarini himoya qilish",
+      "task": "Yirik qurilish kompaniyasi 2 mlrd so'mdan ortiq mablag' va 35% jarima undirish haqidagi asossiz da'voga duch keldi.",
+      "actions": "Hujjatlar tahlil qilinib, majburiyatlar bajarilgani isbotlandi va Toshkent shahar Iqtisodiy sudida himoya strategiyasi amalga oshirildi.",
+      "result": "Da'vo to'liq rad etildi. Mijoz 2,7 mlrd so'mlik asossiz xarajatdan qutuldi va o'z nufuzini saqlab qoldi."
+    },
+    "item2": {
+      "title": "Soliq qo'mitasi qarori ustidan shikoyat qilish",
+      "task": "Savdo kompaniyasiga imtiyozlarni noto'g'ri qo'llash vaji bilan 450 mln so'mlik qo'shimcha soliq va jarima hisoblandi.",
+      "actions": "Soliq kodeksi normalari asosida huquqiy asoslar tayyorlandi va apellyatsiya instansiyasida mijoz manfaatlari himoya qilindi.",
+      "result": "Qaror to'liq bekor qilindi. Imtiyozli rejim saqlab qolindi va 450 mln so'm mablag' tejab qolindi."
+    },
+    "item3": {
+      "title": "Kompaniyani ro'yxatdan o'tkazishda yuridik hamrohlik",
+      "task": "Xorijiy IT-kompaniya O'zbekistonda vakolatxona ochishda mahalliy qonunchilik va tartiblar bo'yicha qiyinchiliklarga duch keldi.",
+      "actions": "QK MCHJ shaklidagi ta'sis hujjatlari tayyorlandi, Adliya vazirligida ro'yxatdan o'tish va bank hisob raqamlari ochish jarayoni yakunlandi.",
+      "result": "Kompaniya 10 ish kunida ro'yxatdan o'tdi va soliq imtiyozlariga ega bo'lib, qonuniy faoliyatini boshladi."
+    }
   },
   "partners": [
-    { "id": 1, "name": "TASS", "width": 100, "image": "/news/tass.png" },
+    {
+      "id": 1,
+      "name": "TASS",
+      "width": 100,
+      "image": "/news/tass.png"
+    },
     {
       "id": 2,
       "name": "DISCOVER",
@@ -76,20 +101,32 @@
     "title": "BIZ PROFESSIONALIZM, TAJRIBA VA INDIVIDUAL YONDASHUVNI BIRLASHTIRAMIZ",
     "features": [
       {
-        "title": "MIJOZLAR HUQUQLARINI HIMOYA QILISH TAJRIBASI",
-        "desc": "Har oy kompaniyamiz turli darajadagi yuridik nizolarni muvaffaqiyatli hal qiladi."
+        "title": "Mijozlar huquqlarini himoya qilish tajribasi",
+        "desc": "Har oy kompaniyamiz mulkiy manfaatlarni himoya qilishdan tortib barcha instansiya sudlarida vakillikkacha bo'lgan turli murakkablikdagi o'nlab yuridik nizolarni muvaffaqiyatli hal qiladi. Tajribamiz bizga O'zbekistonda biznes va jismoniy shaxslar uchun ishonchli hamkor bo'lish imkonini beradi."
       },
       {
-        "title": "DAVLAT ORGANLARI BILAN O'RNATILGAN ALOQALAR",
-        "desc": "Biz barcha darajadagi ma'muriy va davlat tuzilmalari bilan qonun doirasida samarali hamkorlik qilamiz."
+        "title": "Davlat organlari bilan o'rnatilgan aloqalar",
+        "desc": "Biz barcha darajadagi sud, ma'muriy va davlat tuzilmalari bilan faqat qonun va kasb odobnomasi doirasida samarali hamkorlik qilamiz. Yuristlarimiz quyidagi organlarda ishlarni yuritishda muvaffaqiyatli tajribaga ega:",
+        "list": [
+          "O'zbekiston Respublikasi Iqtisodiy sudlari",
+          "Barcha tuman fuqarolik sudlari",
+          "Ma'muriy sudlar",
+          "Davlat organlari"
+        ]
       },
       {
-        "title": "BIZNESNI HAMROHLIK QILISHDA KATTA AMALIYOT",
-        "desc": "Yuristlarimiz har oy yuzlab kompaniyalarni ro'yxatdan o'tkazish va bitimlarni kuzatib boradilar."
+        "title": "Biznesni hamrohlik qilishda katta amaliyot",
+        "desc": "Yuristlarimiz har oy yuzlab kompaniyalarni ro'yxatdan o'tkazish, qayta tashkil etish va yuridik bitimlarni kuzatib boradilar. Bu bizga xatarlarni minimallashtirish va maksimal huquqiy himoyani ta'minlash imkonini beradi. Ixtisoslashuv:",
+        "list": [
+          "Korporativ huquq va M&A bitimlari",
+          "Har qanday murakkablikdagi sud nizolari",
+          "Shartnoma huquqi va komplaens",
+          "Aksiyadorlar huquqlarini himoya qilish"
+        ]
       },
       {
-        "title": "QAT'IY KONFIDENSIALLIK",
-        "desc": "Mijozlar tomonidan taqdim etilgan barcha ma'lumotlarning mutlaq maxfiyligini kafolatlaymiz."
+        "title": "Qat'iy konfidensiallik",
+        "desc": "Mijozlar tomonidan taqdim etilgan barcha ma'lumotlarning mutlaq maxfiyligini kafolatlaymiz. Barcha ma'lumotlar oshkor qilmaslik to'g'risidagi shartnoma bilan himoyalangan va bizning obro'imiz ishonchga asoslangan."
       }
     ]
   },
@@ -136,10 +173,22 @@
     "title": "ISHONCHGA LOYIQ PROFESSIONALLAR",
     "view_all": "BARCHA MUTAXASSISLARNI KO'RISH",
     "members": [
-      { "name": "JASUR ABDULLAYEV", "role": "KATTA YURIDIK KONSULTANT" },
-      { "name": "DILSHOD KARIMOV", "role": "YURIDIK BO'LIM RAHBARI" },
-      { "name": "IRINA VOLKOVA", "role": "KORPORATIV YURIST" },
-      { "name": "OLGA PETROVA", "role": "YURIDIK KONSULTANT" }
+  	{
+    "name": "BATIR ILSHATOVICH",
+    "role": "KATTA YURIDIK MASLAHATCHI"
+  	},
+  	{
+    "name": "AVAZKHONV AKBARKHON",
+    "role": "IT BO‘LIMI BOSHLIG‘I"
+  	},
+    {
+        "name": "IRINA VOLKOVA",
+        "role": "KORPORATIV YURIST"
+    },
+    {
+        "name": "SAIDOV ALISHER",
+        "role": "YURIDIK KONSULTANT"
+    }
     ]
   },
   "app": {
@@ -148,29 +197,34 @@
     "desc": "Biznesingizning yuridik jihatlarini tez va samarali boshqaring. Traffic Law ilovasi — bu hujjatlar bilan xavfsiz ishlash va ekspertlar bilan tezkor aloqa uchun sizning mobil ofisingizdir."
   },
   "news": {
-    "subtitle": "SO'NGGI YANGILIKLAR",
+    "subtitle": "ANALITIKA",
     "title": "ANALITIKA VA HUQUQIY YANGILIKLAR",
     "view_all": "BARCHA YANGILIKLARNI KO'RISH",
     "items": [
       {
-        "title": "2026-yilgi soliq kodeksidagi o'zgarishlar: biznes nimaga tayyorlanishi kerak?",
-        "desc": "2026-yil 1-yanvardan boshlab Respublika Soliq kodeksiga muhim o'zgarishlar kuchga kiradi...",
-        "date": "Bugun 12:00",
-        "views": "100"
+        "date": "10-mart, 2026",
+        "views": "1,240",
+        "title": "Soliq kodeksidagi 2026-yilgi o'zgarishlar: biznes nimaga tayyorlanishi kerak?",
+        "desc": "2026-yil 1-yanvardan kuchga kiruvchi o'zgarishlar: importyorlar uchun QQS, IT-kompaniyalar foyda solig'i va majburiy elektron hujjat aylanishi."
       },
       {
-        "title": "Shaxsiy ma'lumotlarni himoya qilishning yangi qoidalari — biznes uchun qisqa qo'llanma",
-        "desc": "O'tgan yili xorijiy ta'sischilar tomonidan 8932 ta yangi yuridik shaxslar ro'yxatdan o'tkazildi...",
-        "date": "Kecha 09:00",
-        "views": "100"
+        "date": "5-mart, 2026",
+        "views": "892",
+        "title": "Shaxsiy ma'lumotlarni himoya qilishning yangi qoidalari — biznes uchun qo'llanma",
+        "desc": "Ma'lumotlar xavfsizligi sohasidagi liberallashuv: ishlov berish uchun rozilik olish, mas'ul xodim tayinlash va 100 mln so'mgacha jarimalar."
       },
       {
-        "title": "2026-yilda homiladorlik va tug'ish nafaqasining maksimal miqdori oshirildi",
-        "desc": "Nafaqa miqdori ta'til davomiyligiga bog'liq bo'lib, ko'p homilali tug'ruqlarda 1,3 mlndan oshadi.",
-        "date": "Kecha 07:00",
-        "views": "100"
+        "date": "28-fevral, 2026",
+        "views": "1,560",
+        "title": "2026-yilda homiladorlik va tug'ish nafaqalari miqdori oshdi",
+        "desc": "Bola tug'ilgandagi bir martalik to'lovlar va oylik nafaqalar miqdori oshirildi. Kadrlar hujjatlarini yangi qoidalar asosida yuritishni o'rganing."
       }
-    ]
+    ],
+    "disclaimer": {
+      "title": "YURIDIK MA'LUMOT",
+      "note": "Saytdagi barcha ma'lumotlar faqat axborot xarakteriga ega va yuridik maslahat hisoblanmaydi.",
+      "warning": "Traffic Law huqushunos bilan maslahatlashmasdan turib, ushbu ma'lumotlar asosida qabul qilingan qarorlar uchun javobgarlikni zimmasiga olmaydi."
+    }
   },
   "contact": {
     "subtitle": "QABULGA YOZILISH",
@@ -198,49 +252,88 @@
       {
         "title": "BO'LIMLAR",
         "links": [
-          { "name": "BIZ HAQIMIZDA", "href": "#about" },
-          { "name": "ISHlarimiz", "href": "#works" },
-          { "name": "NEGA BIZNI TANLASHADI", "href": "#why" },
-          { "name": "MIJOZLAR FIKRI", "href": "#testimonials" },
-          { "name": "FAOLIYAT SOHALARI", "href": "#services" }
+          {
+            "name": "BIZ HAQIMIZDA",
+            "href": "#about"
+          },
+          {
+            "name": "ISHlarimiz",
+            "href": "#works"
+          },
+          {
+            "name": "NEGA BIZNI TANLASHADI",
+            "href": "#why"
+          },
+          {
+            "name": "MIJOZLAR FIKRI",
+            "href": "#testimonials"
+          },
+          {
+            "name": "FAOLIYAT SOHALARI",
+            "href": "#services"
+          }
         ]
       },
       {
         "title": "",
         "links": [
-          { "name": "BIZNING JAMOA", "href": "#team" },
-          { "name": "SO'NGGI YANGILIKLAR", "href": "#news" },
-          { "name": "QABULGA YOZILISH", "href": "#contact" }
+          {
+            "name": "BIZNING JAMOA",
+            "href": "#team"
+          },
+          {
+            "name": "SO'NGGI YANGILIKLAR",
+            "href": "#news"
+          },
+          {
+            "name": "QABULGA YOZILISH",
+            "href": "#contact"
+          }
         ]
       }
     ],
     "copyright": "© Barcha huquqlar himoyalangan."
   },
   "legal_expert_section": {
-    "upper_title": "MAXSUS YO'NALISHLAR",
-    "main_title": "MURAKKAB HUQUQIY",
-    "gold_title": "EKSPERTIZA VA TAHLIL",
-    "view_button": "BARCHA YO'NALISHLAR",
+    "upper_title": "FAOLIYATIMIZ YO'NALISHLARI",
+    "main_title": "YURIDIK KOMPANIYAMIZ KO'RSATADI",
+    "gold_title": "KOMPLEKS HUQUQIY XIZMATLAR",
+    "view_button": "KONSULTATSIYA OLISH",
     "list_items": [
-      { "id": 1, "title": "Yo'l-transport hodisalarini 3D modellashtirish" },
+      {
+        "id": 1,
+        "title": "FUQAROLIK HUQUQI",
+        "desc": "Fuqarolik nizolarida huquq va qonuniy manfaatlarni himoya qilish: mulkiy nizolar, meros ishlari, ko'chmas mulk bitimlari, qarzdorlikni undirish, iste'molchilar huquqlarini himoya qilish va zararni qoplash."
+      },
       {
         "id": 2,
-        "title": "Avtotransport vositalarining bozor qiymatini baholash"
+        "title": "KORPORATIV VA BIZNES HUQUQI",
+        "desc": "Kompaniyalarni ro'yxatdan o'tkazish va tugatish, yuridik shaxslarni qayta tashkil etish, korporativ nizolar, M&A bitimlari, shartnoma huquqi, ichki reglamentlarni ishlab chiqish va aksiyadorlar huquqlarini himoya qilish."
       },
       {
         "id": 3,
-        "title": "Radar va intellektual kameralar xatolarini aniqlash"
+        "title": "YURIDIK KONSULTATSIYALAR VA HAMROHLIK",
+        "desc": "Biznesning huquqiy auditi, kompaniyalarga abonent yuridik xizmat ko'rsatish, joriy huquqiy masalalar bo'yicha maslahatlar, bitimlarni kompleks kuzatib borish, shartnomalar va hujjatlarning huquqiy ekspertizasi, komplaens."
       },
-      { "id": 4, "title": "Haydovchilik huquqini tiklash bo'yicha himoya" },
+      {
+        "id": 4,
+        "title": "KADR XIZMATLARI",
+        "desc": "Kadrlar ishini yuritish, mehnat shartnomalari va qo'shimcha kelishuvlarni rasmiylashtirish, lavozim yo'riqnomalari va shtat jadvalini ishlab chiqish, mehnat qonunchiligi bo'yicha maslahatlar, xorijiy xodimlarni rasmiylashtirish."
+      },
       {
         "id": 5,
-        "title": "Sug'urta to'lovlaridagi kechikishlar bo'yicha da'volar"
+        "title": "SOLIQ NIZOLARI",
+        "desc": "Soliq organlari qarorlari ustidan shikoyat qilish, soliq nizolarida manfaatlarni himoya qilish, soliq tekshiruvlarida vakillik qilish, asossiz hisoblangan soliqlar va jarimalarga e'tiroz bildirish, ortiqcha to'langan soliqlarni qaytarish."
       },
-      { "id": 6, "title": "Transport logistikasidagi xalqaro huquqiy nizolar" },
-      { "id": 7, "title": "Avtoservislar ustidan iste'molchi shikoyatlari" },
       {
-        "id": 8,
-        "title": "Yo'l qoplamasi va belgilari bo'yicha texnik e'tirozlar"
+        "id": 6,
+        "title": "SUDDA VAKILLIK",
+        "desc": "Barcha instansiya sudlarida: iqtisodiy, fuqarolik va ma'muriy sudlarda professional vakillik. Da'vo arizalarini tayyorlash, birinchi va apellyatsiya instansiyalarida ishlarni olib borish, sud qarorlari ustidan shikoyat qilish."
+      },
+      {
+        "id": 7,
+        "title": "OILA HUQUQI",
+        "desc": "Nikohni bekor qilish jarayonlari, er-xotinning birgalikdagi mulkini bo'lish, aliment undirish, farzandlar bilan ko'rishish tartibini belgilash, nikoh shartnomalarini tuzish, otalikni belgilash."
       }
     ]
   },

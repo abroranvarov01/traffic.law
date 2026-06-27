@@ -1,3 +1,5 @@
+import YandexMetrika from "../YandexMetrika";
+import GoogleAnalytics from "../GoogleAnalytics";
 import { Inter, Ledger } from "next/font/google";
 import { getDictionary, i18n } from "../../dictionaries/getDictionary";
 import Script from "next/script";
@@ -122,6 +124,9 @@ export default async function LangLayout({ children, params }) {
         </Script>
       </head>
       <body className={`${inter.className} font-sans antialiased bg-[#070707]`}>
+        <YandexMetrika />
+          <GoogleAnalytics />
+  {children}
         <Navbar dict={dict} lang={lang} />
         <main>{children}</main>
         <Footer dict={dict} lang={lang} />

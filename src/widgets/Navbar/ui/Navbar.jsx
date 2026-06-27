@@ -33,8 +33,6 @@ export const Navbar = ({ dict, lang }) => {
     { name: t.case || "Кейсы", path: `/${lang}/case` },
     { name: t.services || "Услуги", path: `/${lang}/service` },
     { name: t.reviews || "Отзывы", path: `/${lang}/testimonials` },
-    { name: t.news || "Новости", path: `/${lang}/news` },
-    { name: t.contact || "Контакты", path: `/${lang}/contact` },
   ];
 
   const languages = [

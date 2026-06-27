@@ -10,7 +10,7 @@ import { useInView } from "react-intersection-observer";
 export const About = ({ dict, lang }) => {
   const t = dict?.about || {};
   const { ref, inView } = useInView({
-    threshold: 0.3,
+    threshold: 0.1,
     triggerOnce: true,
   });
 
@@ -22,61 +22,60 @@ export const About = ({ dict, lang }) => {
   ];
 
   return (
-    <section className="relative py-4 md:py-24 text-white bg-[#070707] overflow-hidden">
-      {/* 1. Chap tarafdagi dekorativ rasm (Home/Gold) */}
+    <section className="relative py-12 md:py-24 text-white bg-[#070707] overflow-hidden">
+      {/* Dekorativ rasm */}
       <motion.div
-        initial={{ x: -80, opacity: 0, rotate: -10 }}
-        whileInView={{ x: 0, opacity: 1, rotate: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="absolute top-[10%] -left-20 w-32 h-32 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] z-0 pointer-events-none opacity-40 lg:opacity-60"
+        initial={{ x: -80, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 0.4 }}
+        className="absolute top-[5%] -left-20 w-64 h-64 md:w-[450px] md:h-[450px] z-0 pointer-events-none"
       >
-        <Image
-          src="/news/home.png"
-          alt="Decoration Left"
-          fill
-          className="object-contain"
-        />
-      </motion.div>
-
-      {/* 2. O'ng pastdagi dekorativ rasm (Bag/Marble) */}
-      <motion.div
-        initial={{ x: 80, opacity: 0, rotate: 10 }}
-        whileInView={{ x: 0, opacity: 1, rotate: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="absolute bottom-[5%] -right-30 w-40 h-40 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] z-20 pointer-events-none opacity-50 lg:opacity-100"
-      >
-        <Image
-          src="/news/bag.png"
-          alt="Decoration Right"
-          fill
-          className="object-contain"
-        />
+        <Image src="/news/home.png" alt="" fill className="object-contain" />
       </motion.div>
 
       <Container className="relative z-10">
         {/* --- Header Section --- */}
-        <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16 px-4">
+        <div className="text-center max-w-5xl mx-auto mb-16 px-4">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-[#C59D5F] text-[10px] md:text-[12px] font-bold tracking-[0.4em] uppercase block mb-4 md:mb-6"
+            className="text-[#C59D5F] text-[10px] md:text-[12px] font-bold tracking-[0.4em] uppercase block mb-6"
           >
-            • {t.subtitle || "About Us"} •
+            • {t.subtitle} •
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-xl md:text-3xl lg:text-[32px] font-serif uppercase leading-[1.4] tracking-wider italic"
+            className="text-xl md:text-3xl lg:text-[32px] font-serif uppercase leading-[1.5] tracking-wider italic mb-12"
           >
             <span className="text-[#C59D5F]">TRAFFIC LAW</span> – {t.main_title}
           </motion.h2>
+
+          {/* Sarlavha ostidagi asosiy matn blogi */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-10 text-left border-t border-white/10 pt-10"
+          >
+            <div className="space-y-6">
+              <h3 className="text-[#C59D5F] font-serif text-xl md:text-2xl uppercase tracking-wide">
+                {t.company_name}
+              </h3>
+              <p className="text-white font-medium italic text-sm md:text-base border-l-2 border-[#C59D5F] pl-5 leading-relaxed">
+                {t.desc_1}
+              </p>
+            </div>
+            <div className="text-gray-400 text-sm md:text-base leading-relaxed space-y-4">
+              <p>{t.desc_2}</p>
+              <p>{t.desc_3}</p>
+            </div>
+          </motion.div>
         </div>
 
         {/* --- Video Section --- */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          className="relative w-full aspect-video max-w-5xl mx-auto mb-16 md:mb-24 rounded-sm overflow-hidden group shadow-[0_0_60px_rgba(0,0,0,0.6)] border border-white/5"
+          className="relative w-full aspect-video max-w-5xl mx-auto mb-16 rounded-sm overflow-hidden group border border-white/5 shadow-2xl"
         >
           <Image
             src="/news/video.png"
@@ -84,48 +83,59 @@ export const About = ({ dict, lang }) => {
             fill
             className="object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <button className="w-16 h-16 md:w-24 md:h-24 bg-[#C59D5F] rounded-full flex items-center justify-center text-[#14110e] transition-all duration-300 hover:scale-110 shadow-[0_0_30px_rgba(197,157,95,0.3)]">
+            <button className="w-16 h-16 md:w-24 md:h-24 bg-[#C59D5F] rounded-full flex items-center justify-center text-[#14110e] transition-all hover:scale-110 shadow-[0_0_30px_rgba(197,157,95,0.4)]">
               <FaPlay className="ml-1 text-xl md:text-3xl" />
             </button>
           </div>
         </motion.div>
 
-        {/* --- Statistics Section with CountUp --- */}
+        {/* --- Quote Section --- */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="max-w-4xl mx-auto mb-24 px-6 py-10 bg-white/5 border-x border-[#C59D5F]/30 relative text-center"
+        >
+          <span className="text-[#C59D5F] text-6xl font-serif absolute -top-4 left-1/2 -translate-x-1/2 opacity-20">
+            “
+          </span>
+          <p className="italic text-gray-300 text-sm md:text-lg leading-loose relative z-10">
+            {t.quote}
+          </p>
+        </motion.div>
+
+        {/* --- Statistics Section --- */}
         <div className="relative max-w-5xl mx-auto" ref={ref}>
-          <div className="relative overflow-hidden py-12 md:py-20 px-6 md:px-10 border border-white/10 shadow-2xl z-10 bg-[#0a0a0a]">
-            {/* Leather Texture Background */}
-            <div className="absolute inset-0 z-0 opacity-100">
+          <div className="relative overflow-hidden py-12 md:py-20 px-6 border border-white/10 bg-[#0a0a0a]">
+            <div className="absolute inset-0 z-0">
               <Image
                 src="/news/koja.png"
-                alt="Leather"
+                alt=""
                 fill
-                className="object-contain opacity-40 md:opacity-100"
+                className="object-cover opacity-20"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#1a1612]/80 to-[#070707]/90" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#1a1612]/70 to-[#070707]/95" />
             </div>
 
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 relative z-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 relative z-10">
               {stats.map((item, index) => (
                 <div
                   key={index}
                   className="text-center md:border-r last:border-r-0 border-white/10"
                 >
-                  <h3 className="text-2xl md:text-5xl font-serif text-white mb-2 md:mb-4 tracking-tighter">
+                  <h3 className="text-3xl md:text-5xl font-serif text-white mb-2">
                     {inView ? (
                       <CountUp
                         end={item.number}
                         duration={3}
                         suffix={item.suffix}
-                        separator=","
                       />
                     ) : (
                       "0"
                     )}
                   </h3>
-                  <p className="text-[#C59D5F]/70 text-[9px] md:text-[11px] uppercase tracking-[0.2em] font-bold leading-relaxed px-2">
+                  <p className="text-[#C59D5F]/70 text-[9px] md:text-[11px] uppercase tracking-widest font-bold">
                     {item.label}
                   </p>
                 </div>

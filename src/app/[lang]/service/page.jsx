@@ -1,51 +1,49 @@
 import React from "react";
 import Image from "next/image";
 import { Container } from "@/shared/ui/Container/Container";
-import * as motion from "framer-motion/client"; // Client animatsiyalari uchun
+import * as motion from "framer-motion/client";
 import { getDictionary, i18n } from "@/dictionaries/getDictionary";
 
-// Widgetlar importi
+// Widgetlar
 import { Services } from "@/widgets/Services";
-import { ExperienceSlider } from "@/widgets/ExperienceSlider";
 import { Team } from "@/widgets/Team";
 import { LegalExpertSection } from "@/widgets/LegalExpertSection";
+import { WhyChooseUs } from "@/widgets/WhyChooseUs";
+import { OurWorks } from "@/widgets/OurWorks";
 
 export default async function ServicePage({ params }) {
-  // 1. Params va Tilni aniqlash (Server Side)
-  let currentParams = await params;
-  let lang = currentParams.lang;
+  const currentParams = await params;
+  let lang = currentParams.lang || i18n.defaultLocale;
 
-  // Dictionary yuklash mantiqi
-  if (!lang && currentParams.value) {
-    try {
-      const parsedValue = JSON.parse(currentParams.value);
-      lang = parsedValue.lang;
-    } catch (e) {
-      console.error("Language parsing error:", e);
-    }
-  }
-
-  if (!lang) {
-    lang = i18n.defaultLocale;
-  }
-
-  // 2. Dictionary-ni yuklash
   const dict = await getDictionary(lang);
+
+  // Statik sarlavhalar tilla bo'yicha
+  const pageTitle =
+    lang === "ru"
+      ? "Наши Услуги"
+      : lang === "uz"
+        ? "Bizning Xizmatlar"
+        : "Our Services";
+
+  const upperSubtitle =
+    lang === "ru"
+      ? "ПРОФЕССИОНАЛЬНАЯ ПОМОЩЬ"
+      : lang === "uz"
+        ? "PROFESSIONAL YORDAM"
+        : "PROFESSIONAL ASSISTANCE";
 
   return (
     <main className="bg-[#0a0a0a] min-h-screen">
-      {/* --- 1. Header Section --- */}
       <section className="relative h-[450px] w-full flex items-center overflow-hidden border-b border-white/5">
         <div className="absolute inset-0 z-0">
           <Image
             src="/bronze.jpg"
             alt="Services"
             fill
-            className="object-cover object-[70%_center] md:object-contain md:object-right-bottom"
+            className="object-cover object-center md:object-right-bottom opacity-60"
             priority
           />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 md:via-[#0a0a0a]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
         </div>
 
         <Container className="relative z-10">
@@ -55,27 +53,24 @@ export default async function ServicePage({ params }) {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-start"
           >
-            {/* Dekorativ vertikal chiziq */}
-            <div className="absolute left-0 top-[-100px] w-[1px] h-[150px] bg-[#C59D5F]/40 hidden lg:block" />
-
             <div className="flex flex-col">
-              <h1 className="text-white text-3xl md:text-5xl font-serif italic mb-6 tracking-widest uppercase">
-                {dict.services_page_title || "Our Services"}
+              <span className="text-[#C59D5F] text-[10px] md:text-[12px] font-bold tracking-[0.5em] uppercase mb-4">
+                • {upperSubtitle} •
+              </span>
+              <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-serif italic mb-6 tracking-widest uppercase">
+                {pageTitle}
               </h1>
-              {/* Dekorativ gorizontal chiziq */}
               <div className="w-28 h-[1.5px] bg-[#C59D5F]" />
             </div>
           </motion.div>
         </Container>
       </section>
 
-      {/* --- 2. Widgets Section --- */}
-      {/* Barcha widgetlarga dict va lang uzatiladi, bu orqali tarjimalar ishlaydi */}
+      {/* Widgetlar */}
       <LegalExpertSection dict={dict} lang={lang} />
+      <WhyChooseUs dict={dict} />
+      <OurWorks dict={dict} />
       <Services dict={dict} lang={lang} />
-
-      {/* <ExperienceSlider dict={dict} lang={lang} /> */}
-
       <Team dict={dict} lang={lang} />
     </main>
   );

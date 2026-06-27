@@ -53,7 +53,7 @@ export const Team = ({ dict }) => {
 
               {/* Text Information Box */}
               <div className="bg-white/[0.03] backdrop-blur-sm border border-white/5 p-6 flex flex-col items-center text-center transition-all duration-500 group-hover:bg-white/[0.06]">
-                <h4 className="text-white font-serif text-[15px] lg:text-[17px] tracking-wide uppercase mb-2">
+                <h4 className="text-white font-serif text-[15px] lg:text-[17px] tracking-wide uppercase mb-2 whitespace-nowrap">
                   {member.name}
                 </h4>
                 <p className="text-[#C59D5F] text-[9px] lg:text-[10px] font-bold tracking-[0.15em] leading-relaxed uppercase">

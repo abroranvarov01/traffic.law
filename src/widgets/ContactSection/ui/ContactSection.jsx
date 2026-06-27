@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Container } from "@/shared/ui/Container/Container";
 import { FiPhone, FiClock, FiMapPin } from "react-icons/fi";
-import { GoldButton } from "@/shared/ui/GoldButton/GoldButton";
+import { ContactForm } from "@/components/ContactForm/ContactForm";
 
 export const ContactSection = ({ dict }) => {
   const t = dict?.contact || {};
@@ -94,57 +94,7 @@ export const ContactSection = ({ dict }) => {
             whileInView={{ opacity: 1, scale: 1 }}
             className="w-full lg:w-[55%] bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-12 shadow-2xl"
           >
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                    {t.form?.name_label}
-                  </label>
-                  <input
-                    type="text"
-                    placeholder={t.form?.name_placeholder}
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-5 py-4 outline-none focus:border-[#C59D5F]/50 transition-colors text-sm"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                    {t.form?.phone_label}
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="+998 99 989 88 99"
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-5 py-4 outline-none focus:border-[#C59D5F]/50 transition-colors text-sm"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                  {t.form?.message_label}
-                </label>
-                <textarea
-                  rows="4"
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-5 py-4 outline-none focus:border-[#C59D5F]/50 transition-colors resize-none text-sm"
-                />
-              </div>
-
-              <div className="flex items-center gap-3 py-2">
-                <input
-                  type="checkbox"
-                  className="w-4 h-4 rounded border-white/10 bg-white/5 accent-[#C59D5F] cursor-pointer"
-                  id="privacy"
-                />
-                <label
-                  htmlFor="privacy"
-                  className="text-[11px] text-gray-400 cursor-pointer italic"
-                >
-                  {t.form?.privacy}
-                </label>
-              </div>
-
-              {/* Submit Button */}
-              <GoldButton className="w-full">{t.form?.submit}</GoldButton>
-            </form>
+           <ContactForm t={t}/>
           </motion.div>
         </div>
       </Container>

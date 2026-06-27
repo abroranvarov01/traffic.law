@@ -6,12 +6,14 @@ services:
     container_name: trafic-legal-app
     restart: always
     ports:
-      - "127.0.0.1:4000:3000" # <--- Shuni o'zgartiring
+      - "3000:3000"
     environment:
       - NODE_ENV=production
+      - BOT_TOKEN=8728388768:AAHn46dWFA4D5EGtvNlWKa5fBR5Wwb7Q_JE
+      - CHAT_ID=-5195558575
     networks:
       - euphoria_network
 
 networks:
   euphoria_network:
-    external: true
+    driver: bridge

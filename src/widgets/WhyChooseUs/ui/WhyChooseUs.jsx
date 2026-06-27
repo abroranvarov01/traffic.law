@@ -9,79 +9,98 @@ export const WhyChooseUs = ({ dict }) => {
   const features = t.features || [];
 
   return (
-    <section className="relative bg-[#070707] py-4 md:py-24 min-h-screen flex items-center overflow-hidden text-white">
-      {/* 1. Markazdagi Asosiy Rasm (Fonda mahobatli turishi uchun) */}
-      <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#070707] py-16 text-white md:py-28">
+      {/* 1. Background Decor */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
         <motion.div
           initial={{ opacity: 0, scale: 1.1 }}
-          whileInView={{ opacity: 0.4, scale: 1 }} // Mobil uchun opacity pastroq
+          whileInView={{ opacity: 0.35, scale: 1 }}
           transition={{ duration: 1.5 }}
-          className="relative w-full max-w-[400px] md:max-w-[700px] lg:max-w-[900px] h-full"
+          className="relative h-full w-full max-w-[400px] md:max-w-[750px] lg:max-w-[950px]"
         >
           <Image
             src="/news/tarozi.png"
             alt="Justice Background"
             fill
-            className="object-contain object-center lg:scale-125"
+            className="object-contain object-center lg:scale-110"
             priority
           />
-          {/* Gradient qatlamlari: rasm chetlarini yumshatish uchun */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#070707] via-transparent to-[#070707]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070707] via-transparent to-[#070707] hidden lg:block" />
         </motion.div>
       </div>
 
       <Container className="relative z-10 w-full">
-        {/* Header - Ixchamroq responsive o'lchamlar */}
-        <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
+        {/* Header Section */}
+        <div className="mx-auto mb-20 max-w-4xl text-center md:mb-32">
           <motion.span
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-[#C59D5F] text-[9px] md:text-[10px] font-bold tracking-[0.4em] uppercase block mb-4"
+            className="mb-5 block text-[10px] font-bold uppercase tracking-[0.4em] text-[#C59D5F] md:text-[11px]"
           >
             • {t.subtitle} •
           </motion.span>
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-serif uppercase tracking-widest leading-tight italic px-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="px-4 font-serif text-xl italic uppercase leading-tight tracking-widest md:text-3xl lg:text-4xl"
+          >
             {t.title}
-          </h2>
+          </motion.h2>
         </div>
 
-        {/* Cardlar Grid-i - Responsive gap va alignment */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-64 gap-y-10 md:gap-y-24">
-          {features.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ x: index % 2 === 0 ? -30 : 30, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`
-                relative group p-6 md:p-8 rounded-sm transition-all duration-700
-                bg-white/[0.01] backdrop-blur-[4px] border border-white/5
-                hover:border-[#C59D5F]/30 hover:bg-white/[0.04]
-                w-full max-w-[400px] mx-auto
-                ${index % 2 === 1 ? "md:justify-self-end md:text-start" : "md:justify-self-start md:text-left"}
-                text-start /* Mobil uchun markazda */
-              `}
-            >
-              {/* Card sarlavhasi - Kichik qurilmalar uchun moslangan */}
-              <h4 className="text-[#C59D5F] font-serif text-base md:text-lg lg:text-xl mb-3 md:mb-4 leading-snug uppercase tracking-[0.15em]">
-                {item.title}
-              </h4>
-              <p className="text-gray-400 text-[13px] md:text-sm leading-relaxed font-light">
-                {item.desc}
-              </p>
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-2 md:gap-y-24 lg:gap-x-48">
+          {features.map((item, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <motion.div
+                key={index}
+                initial={{ x: isEven ? -40 : 40, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className={`group relative mx-auto w-full max-w-[500px] rounded-sm border border-white/5 bg-white/[0.02] p-6 backdrop-blur-[6px] transition-all duration-700 hover:border-[#C59D5F]/40 hover:bg-white/[0.05] md:p-10 ${
+                  isEven ? "md:justify-self-start" : "md:justify-self-end"
+                } text-left`}
+              >
+                {/* Sarlavha */}
+                <h4 className="mb-5 font-serif text-lg uppercase tracking-[0.1em] text-[#C59D5F] md:text-xl lg:text-[22px]">
+                  {item.title}
+                </h4>
 
-              {/* Hoverda chiqadigan nafis chiziq */}
-              <div
-                className={`absolute bottom-0 h-[1px] bg-[#C59D5F]/40 transition-all duration-500 w-0 group-hover:w-full left-0 ${index % 2 === 1 ? "md:left-auto md:right-0" : ""}`}
-              />
-            </motion.div>
-          ))}
+                {/* Tavsif */}
+                <p className="mb-4 text-[13px] font-light leading-relaxed text-gray-300 md:text-[15px]">
+                  {item.desc}
+                </p>
+
+                {/* Ichki Ro'yxat */}
+                {item.list && (
+                  <ul className="mt-4 space-y-2 border-t border-white/10 pt-4">
+                    {item.list.map((li, i) => (
+                      <li
+                        key={i}
+                        className="flex items-center text-[12px] text-gray-400 md:text-[13px]"
+                      >
+                        <span className="mr-3 h-1.5 w-1.5 rounded-full bg-[#C59D5F] opacity-70" />
+                        {li}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {/* Hover Line */}
+                <div
+                  className={`absolute bottom-0 h-[2px] w-0 bg-[#C59D5F] transition-all duration-500 group-hover:w-full ${
+                    isEven ? "left-0" : "right-0"
+                  }`}
+                />
+              </motion.div>
+            );
+          })}
         </div>
       </Container>
 
-      {/* Background Decor: Pastki nur effekti */}
-      <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[80%] h-40 bg-[#C59D5F]/5 blur-[120px] rounded-full pointer-events-none" />
+      {/* Background Glow */}
+      <div className="pointer-events-none absolute -bottom-20 left-1/2 h-60 w-[90%] -translate-x-1/2 rounded-full bg-[#C59D5F]/5 blur-[150px]" />
     </section>
   );
 };

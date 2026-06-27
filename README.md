@@ -1,4 +1,4 @@
-# ⚖️ Traffic Legal WB — Huquqiy Konsaltinq Platformasi
+rt# ⚖️ Traffic Legal WB — Huquqiy Konsaltinq Platformasi
 
 **Traffic Legal WB** — bu yo'l harakati xavfsizligi va huquqiy masalalar bo'yicha professional yordam ko'rsatuvchi ekspertlar platformasi. Loyiha Next.js 14+ texnologiyasi asosida qurilgan bo'lib, yuqori tezlik va mukammal SEO optimizatsiyasiga ega.
 
