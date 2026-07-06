@@ -1,0 +1,290 @@
+[
+{
+"t":"h1",
+"c":"Maxfiylik siyosati"
+},
+{
+"t":"h3",
+"c":"Umumiy qoidalar"
+},
+{
+"t":"p",
+"c":"Trafik dasturi(bundan buyon matnda \"Trafik\" deb yuritiladi) - bu O'zbekiston Respublikasi qonunchilik bazasiga kirishni ta'minlaydigan sun'iy intellektga asoslangan elektron platforma. Ushbu platforma huquqiy masalalarni samarali hal qilish uchun huquqiy hujjatlar va sud qarorlarini qidirish va tahlil qilish imkonini beradi."
+},
+{
+"t":"p",
+"c":"\"Yo'l harakati qonunchiligi\" MChJ(STIR: 309170527, yuridik manzili: O'zbekiston Respublikasi, Toshkent shahri, Mirzo-Ulug'bek tumani, Ulug'bek massivi, Nur mahallasi, C-1 \"Buyuk Ipak yo'li\" kvartali, 22-uy, 1-kvartira) O'zbekiston Respublikasining \"Shaxsiy ma'lumotlar to'g'risida\"gi Qonunining 20-moddasiga muvofiq Shaxsiy ma'lumotlar bazalarining davlat reestrida ro'yxatdan o'tgan shaxsiy ma'lumotlar bazasining egasi hisoblanadi (bundan buyon matnda \"Kompaniya\" deb yuritiladi)."
+},
+{
+"t":"p",
+"c":"Ushbu Maxfiylik siyosati veb-sayt va Traffic tomonidan taqdim etiladigan barcha xizmatlardan foydalanish paytida foydalanuvchilarning shaxsiy ma'lumotlarini to'plash va qayta ishlashni tartibga soladi. Foydalanuvchi ma'lumotlari O'zbekiston Respublikasining shaxsiy ma'lumotlarni himoya qilish to'g'risidagi qonunlariga, xususan, O'zbekiston Respublikasining \"Shaxsiy ma'lumotlar to'g'risida\"gi qonuni, Vazirlar Mahkamasining \"Shaxsiy ma'lumotlarni qayta ishlash sohasidagi ayrim normativ-huquqiy hujjatlarni tasdiqlash to'g'risida\"gi qarori, O'zbekiston Respublikasining \"Axborotlashtirish to'g'risida\"gi qonuni va boshqa normativ-huquqiy hujjatlar qoidalariga qat'iy muvofiq ravishda qayta ishlanadi."
+},
+{
+"t":"p",
+"c":"Trafik platformasidan foydalanish orqali foydalanuvchi ushbu Maxfiylik siyosati qoidalariga rozilik bildiradi."
+},
+{
+"t":"p",
+"c":"Oʻzbekiston Respublikasining “Axborotlashtirish toʻgʻrisida”gi Qonuniga muvofiq, jismoniy shaxslarning shaxsiy maʼlumotlari toʻgʻrisidagi maʼlumotlar maxfiy maʼlumotlar sifatida tasniflanadi."
+},
+{
+"t":"p",
+"c":"Agar ayrim jihatlar ushbu Siyosat bilan bevosita tartibga solinmagan bo'lsa, tomonlar O'zbekiston Respublikasi qonunchiligi va biznes aylanmasi tamoyillariga amal qilishga majburdirlar."
+},
+{
+"t":"p",
+"c":"Ushbu Maxfiylik siyosati foydalanuvchilarning maxfiylik huquqlarini ham tartibga soladi. Foydalanuvchilarning huquqlari va ularni qanday amalga oshirish haqida batafsil ma'lumot 4-bo'limda (\"Huquqlar va tanlovlar\") keltirilgan."
+},
+{
+"t":"h3",
+"c":"Shartlar"
+},
+{
+"t":"li",
+"c":"Foydalanuvchi— Traffic platformasida ro'yxatdan o'tgan va uning funksiyalaridan foydalanuvchi jismoniy yoki yuridik shaxslar."
+},
+{
+"t":"li",
+"c":"Shaxsiy ma'lumotlar— ma'lum bir shaxsga tegishli yoki uni identifikatsiyalash imkonini beruvchi elektron, qog'oz va (yoki) boshqa moddiy vositalarda qayd etilgan ma'lumotlar."
+},
+{
+"t":"li",
+"c":"Maxfiylikshaxsiy ma'lumotlar - jismoniy yoki yuridik shaxslarning ma'lumotlaridan foydalanish huquqiga ega bo'lgan shaxslar tomonidan shaxsiy ma'lumotlar sub'ektining roziligisiz yoki qonuniy asoslar bo'lmagan taqdirda ushbu ma'lumotlardan foydalanish yoki tarqatishga yo'l qo'yilmasligiga oid talab."
+},
+{
+"t":"li",
+"c":"Shaxsiy ma'lumotlarni shaxssizlashtirish— ma'lum bir sub'ekt tomonidan shaxsiy ma'lumotlarga egalik huquqini aniqlashni imkonsiz qiladigan harakat."
+},
+{
+"t":"li",
+"c":"Shaxsiy ma'lumotlarning maxsus toifalari— shaxsning irqi, millati, siyosiy qarashlari, diniy yoki falsafiy e'tiqodlari, sog'lig'i holati va shaxsiy hayoti to'g'risidagi ma'lumotlar."
+},
+{
+"t":"h2",
+"c":"1. Shaxsiy ma'lumotlarni to'plash"
+},
+{
+"t":"p",
+"c":"Shaxsiy ma'lumotlarning quyidagi toifalari to'planadi:"
+},
+{
+"t":"p",
+"c":"Foydalanuvchi tomonidan to'g'ridan-to'g'ri taqdim etilgan shaxsiy ma'lumotlar"
+},
+{
+"t":"li",
+"c":"Shaxsni tasdiqlovchi va aloqa ma'lumotlari:Trafik akkauntini ro'yxatdan o'tkazishda yoki taqdim etilgan Xizmatlar haqida ma'lumot so'rashda trafik foydalanuvchi ismi, elektron pochta manzili va telefon raqami kabi identifikatorlarni to'playdi. Bilvosita identifikatorlar (masalan, \"Foydalanuvchi 00000\") ham to'planishi yoki yaratilishi mumkin, ular aslida shaxslarni aniqlamaydi."
+},
+{
+"t":"li",
+"c":"Aloqa ma'lumotlari:Foydalanuvchi xizmat bilan, jumladan, qoʻllab-quvvatlash veb-saytidagi chatbot orqali aloqa qilganda, foydalanuvchi tomonidan yuborilgan barcha xabarlarning ismi, aloqa maʼlumotlari va mazmuni toʻplanadi."
+},
+{
+"t":"li",
+"c":"Xizmatlardan foydalanish bo'yicha fikr-mulohazalar:Trafik interfeysi tizim javoblarini \"yuqoriga\" va \"pastga\" piktogrammalaridan foydalanib baholash imkoniyatini beradi. Xizmatni takomillashtirish yoki baholash bo'yicha g'oyalar va takliflarni o'z ichiga olgan fikr-mulohazalar to'planadi va qayta ishlanadi."
+},
+{
+"t":"li",
+"c":"Foydalanish haqida ma'lumot:Foydalanilgan Xizmat turi, jumladan, kirish sanalari va vaqtlari haqida ma'lumot to'planadi."
+},
+{
+"t":"li",
+"c":"Cookie-fayllardan foydalanish:Trafik foydalanuvchining brauzer tajribasini yaxshilash va Trafikka tashrif buyuruvchilarning sayt bilan qanday o'zaro aloqada bo'lishini tushunishga yordam berish uchun cookie-fayllardan foydalanadi. Cookie-fayllar - bu foydalanuvchi qurilmasida saqlanadigan va afzalliklar va foydalanish naqshlarini eslab qoladigan kichik matnli fayllar. Sayt va xizmatlarni yaxshilash uchun Trafik Sayt ish faoliyatini o'lchash va foydalanuvchi xatti-harakatlarini tushunishga yordam beradigan uchinchi tomon tahlil vositasi bo'lgan Google Analytics-dan foydalanadi. Cookie-fayllardan foydalanib, Google Analytics bizga anonim, umumlashtirilgan ma'lumotlarni to'plash imkonini beradi, masalan: 1) foydalanuvchilar tashrif buyuradigan sahifalar va ular ularga sarflagan vaqt; 2) ishlatiladigan qurilma, brauzer va operatsion tizim turi; 3) taxminiy geografik joylashuv (mamlakat yoki shahar darajasi); 4) foydalanuvchilar Saytga qanday kirganligi (masalan, qidiruv tizimlaridan yoki havolalar orqali); 5) foydalanuvchi o'zaro aloqa naqshlari (masalan, bosishlar, aylantirish, navigatsiya yo'llari). Ushbu ma'lumot trendlarni tahlil qilish, sayt ish faoliyatini kuzatish va foydalanuvchi tajribasini yaxshilash uchun ishlatiladi. U shaxslarni aniqlamaydi. Google Analytics-dan foydalanganda trafik quyidagilarni to'plamaydi: 1) Sizning ismingiz, elektron pochta manzilingiz, telefon raqamingiz yoki manzilingiz kabi shaxsiy ma'lumotlar; 2) To'lov yoki moliyaviy ma'lumotlar; 3) Aniq IP-manzillar (ular anonimlashtirilgan); 4) Foydalanuvchini shaxs sifatida aniqlashi mumkin bo'lgan har qanday ma'lumotlar."
+},
+{
+"t":"h2",
+"c":"2. Amaldagi qonunchilikka muvofiq shaxsiy ma'lumotlardan foydalanish"
+},
+{
+"t":"p",
+"c":"Shaxsiy ma'lumotlar quyidagi maqsadlar uchun ishlatiladi:"
+},
+{
+"t":"li",
+"c":"Maxfiylik siyosati va TRAFFIC DASTURIY TA’MINOTIDAN FOYDALANISH SHARTNOMASI bilan tartibga solingan holda, TRAFFIC dasturiy ta’minotining ishlashi bo‘yicha Foydalanuvchi bilan to‘g‘ri aloqani ta’minlash;"
+},
+{
+"t":"li",
+"c":"foydalanuvchi bilan aloqa qilish, shu jumladan Xizmatlar va tadbirlar haqida ma'lumot yuborish;"
+},
+{
+"t":"li",
+"c":"foydalanuvchining Trafik hisobini yaratish va boshqarish;"
+},
+{
+"t":"li",
+"c":"firibgarlik, suiiste'mol qilish va Maxfiylik siyosatini buzish, noqonuniy yoki jinoiy faoliyat, shaxsiy ma'lumotlarga, antropogen tizimlar va tarmoqlarga ruxsatsiz kirish yoki ulardan foydalanish holatlarining oldini olish va tergov qilish, Kompaniya va foydalanuvchilarning huquqlarini himoya qilish hamda qonuniy majburiyatlarni bajarish;"
+},
+{
+"t":"li",
+"c":"Xavfsizlik muammolarini tekshirish va hal qilish."
+},
+{
+"t":"p",
+"c":"Mijozlarning shaxsiy ma'lumotlaridan o'quv modellari uchun yoki O'zbekiston Respublikasining \"Shaxsiy ma'lumotlar to'g'risida\"gi Qonunida nazarda tutilganlardan tashqari boshqa maqsadlarda foydalanish amalga oshirilmaydi."
+},
+{
+"t":"h2",
+"c":"3. Shaxsiy ma'lumotlarni oshkor qilish tartibi"
+},
+{
+"t":"p",
+"c":"Trafik shaxsiy ma'lumotlarni oshkor qilmaydi, O'zbekiston Respublikasi qonunchiligida nazarda tutilgan hollar bundan mustasno."
+},
+{
+"t":"li",
+"c":"Qonunchilik asosida:Shaxsiy ma'lumotlarni davlat nazorat organlariga oshkor qilish qonuniy talablarga muvofiq, shuningdek, xavfsizlikni ta'minlash, uchinchi shaxslarning huquqlarini himoya qilish va Kompaniya huquqlarini yoki xizmat ko'rsatish shartlarini amalga oshirish maqsadida amalga oshirilishi mumkin."
+},
+{
+"t":"li",
+"c":"Shaxsiy ma'lumotlar sub'ektining roziligi bilan:Shaxsiy ma'lumotlarni oshkor qilish shaxsiy ma'lumotlar sub'ektining ushbu ma'lumotni oshkor qilish to'g'risidagi ruxsati yoki ko'rsatmasi bilan, shu jumladan ko'rsatiladigan xizmatlar doirasida amalga oshirilishi mumkin."
+},
+{
+"t":"p",
+"c":"Xizmatlarimizdan foydalanganda maxfiy ma'lumotlarni taqdim etmaslikni tavsiya qilamiz. Agar bunday ma'lumotlar oshkor qilinsa, Traffic maxfiy ma'lumotlarning himoyasini ta'minlash uchun JAVOBGAR EMAS."
+},
+{
+"t":"p",
+"c":"Traffic foydalanuvchi xizmatdan foydalanish paytida uchinchi shaxslarning shaxsiy ma'lumotlarini oshkor qilgani uchun javobgar emas va bunday ma'lumotlarning himoyasini ta'minlash bo'yicha hech qanday majburiyatlarni o'z zimmasiga olmaydi."
+},
+{
+"t":"h2",
+"c":"4. Huquqlar va tanlov"
+},
+{
+"t":"p",
+"c":"Shaxsiy ma'lumotlar sub'ektlari, yashash joyidan, haqiqiy joylashuvidan yoki tegishli hududdagi amaldagi qonunchilikdan qat'i nazar, shaxsiy ma'lumotlariga nisbatan ma'lum huquqlarga ega. Kompaniya shaxsiy ma'lumotlarni himoya qilishga ustuvor ahamiyat berish va O'zbekiston Respublikasining maxfiylik to'g'risidagi qonunlarining barcha amaldagi qoidalariga rioya qilish tamoyiliga amal qiladi. O'zbekiston Respublikasining \"Shaxsiy ma'lumotlar to'g'risida\"gi Qonunining 30-moddasiga muvofiq, shaxsiy ma'lumotlar sub'ektlari quyidagi huquqlarga ega:"
+},
+{
+"t":"li",
+"c":"mulkdor va (yoki) operatorning, shuningdek uchinchi shaxsning shaxsiy ma'lumotlarining mavjudligi va ularning tarkibi to'g'risida ma'lumot olish;"
+},
+{
+"t":"li",
+"c":"mulkdordan va (yoki) operatordan shaxsiy ma'lumotlarni qayta ishlash to'g'risida so'rov bo'yicha ma'lumot olish;"
+},
+{
+"t":"li",
+"c":"shaxsiy ma'lumotlaringizga kirishni ta'minlash shartlari haqida mulkdor va (yoki) operatordan ma'lumot olish;"
+},
+{
+"t":"li",
+"c":"o'zining shaxsiy ma'lumotlariga oid huquqlari va qonuniy manfaatlarini himoya qilish bilan bog'liq masalalar bo'yicha vakolatli davlat organiga yoki sudga murojaat qilish;"
+},
+{
+"t":"li",
+"c":"qonunda nazarda tutilgan hollar bundan mustasno, o'z shaxsiy ma'lumotlarini qayta ishlashga rozilik berish va bunday rozilikni bekor qilish;"
+},
+{
+"t":"li",
+"c":"mulkdorga va/yoki operatorga, shuningdek uchinchi shaxsga o'z shaxsiy ma'lumotlarini ommaga ochiq bo'lgan shaxsiy ma'lumotlar manbalarida tarqatishga rozilik berish;"
+},
+{
+"t":"li",
+"c":"agar shaxsiy ma'lumotlar to'liq bo'lmasa, eskirgan, noaniq bo'lsa, noqonuniy ravishda olingan bo'lsa yoki ularni qayta ishlash maqsadlari uchun zarur bo'lmasa, mulkdor va/yoki operatordan ularning shaxsiy ma'lumotlarini qayta ishlashni vaqtincha to'xtatib turishni talab qilish."
+},
+{
+"t":"p",
+"c":"Ushbu huquqlardan foydalanish uchun shaxsiy ma'lumotlar subyekti yoki uning vakili info@Traffic.ai elektron pochta manziliga so'rov yuborishi mumkin . So'rov olingandan so'ng, foydalanuvchining avtorizatsiyasini tasdiqlash uchun etarli bo'lgan zarur ma'lumotlarni so'rash orqali tasdiqlanishi mumkin. Shuningdek, subyekt rad etilgan so'rovlarga info@Traffic.ai elektron pochta manziliga shikoyat qilish huquqiga ega . Trafik subyektlar tomonidan maxfiylik huquqlaridan foydalanishga qarab kamsitishga yo'l qo'ymaydi."
+},
+{
+"t":"p",
+"c":"Avtomatik ma'lumotlarni to'plash: Xizmatlardan (AI chatbot, hujjatlarni tayyorlovchi, huquqiy tahlilchi) foydalanganda, Trafik dasturi shaxsiy ma'lumotlarning maxsus toifalarini to'plamaydi. Har bir Trafik funksiyasidan foydalanganda kiritilgan ma'lumotlar uchun faqat foydalanuvchi javobgar bo'ladi."
+},
+{
+"t":"p",
+"c":"Trafik mahsulotlari va xizmatlarini sotish va maqsadli marketing: Trafik foydalanuvchilarning shaxsiy ma'lumotlarini \"sotmaydi\"."
+},
+{
+"t":"h2",
+"c":"5. Ma'lumotlarni uzatish"
+},
+{
+"t":"p",
+"c":"Trafik shaxsiy ma'lumotlarni chegaradan tashqariga o'tkazmaydi, O'zbekiston Respublikasining \"Shaxsiy ma'lumotlar to'g'risida\"gi Qonunida nazarda tutilgan hollar bundan mustasno. O'zbekiston Respublikasining \"Shaxsiy ma'lumotlar to'g'risida\"gi Qonuni 15-moddasi 3-qismining 2 va 3-bandlarida quyidagi hollarda shaxsiy ma'lumotlarni yetarli darajada himoya qilishni ta'minlamaydigan xorijiy davlatlar hududiga shaxsiy ma'lumotlarni chegaradan tashqariga o'tkazish nazarda tutilgan:"
+},
+{
+"t":"li",
+"c":"Oʻzbekiston Respublikasining konstitutsiyaviy tuzumini himoya qilish, jamoat tartibini, fuqarolarning huquq va erkinliklarini, aholining sogʻligʻi va axloqini himoya qilish zarurati;"
+},
+{
+"t":"li",
+"c":"Oʻzbekiston Respublikasining xalqaro shartnomalarida nazarda tutilgan hollarda."
+},
+{
+"t":"h2",
+"c":"6. Ma'lumotlarni saqlash va xavfsizlikni boshqarish"
+},
+{
+"t":"p",
+"c":"Trafik foydalanuvchilarning shaxsiy ma'lumotlarini ularning akkauntlari amal qilish muddati davomida saqlaydi. Agar foydalanuvchi akkaunti o'chirilsa, ularning shaxsiy ma'lumotlari amaldagi qonunchilikka muvofiq avtomatik ravishda yo'q qilinadi, o'chiriladi va o'chiriladi."
+},
+{
+"t":"p",
+"c":"Trafik, ushbu Maxfiylik siyosati va TRAFFIC DASTURIY TA’MINOTIDAN FOYDALANISH SHARTNOMASIDA aniq ko‘rsatilgan hollar bundan mustasno, TRAFFIC’dan foydalanish paytida Foydalanuvchi tomonidan kiritilgan ma’lumotlarning (hujjatlar va so‘rovlar) xavfsizligi va himoyasini kafolatlaydi."
+},
+{
+"t":"h3",
+"c":"Anonimlashtirilgan ma'lumotlar"
+},
+{
+"t":"p",
+"c":"Salbiy foydalanuvchi sharhlari to'planmoqda. Agar bunday sharhlar Traffic javoblariga javoban olinsa, anonimlashtirilgan shaxsiy ma'lumotlarga ega so'rovlar xatolarni tahlil qilish, tadqiq qilish va tekshirish uchun qayta ishlanishi mumkin."
+},
+{
+"t":"h3",
+"c":"Shaxsiy ma'lumotlarni qayta ishlashda xavfsizlik choralari"
+},
+{
+"t":"p",
+"c":"Kompaniya shaxsiy ma'lumotlarni yo'qotish, noto'g'ri foydalanish, ruxsatsiz kirish, oshkor qilish, o'zgartirish yoki yo'q qilishdan himoya qilishga qaratilgan tegishli texnik va tashkiliy xavfsizlik choralarini amalga oshiradi. O'zbekiston Respublikasining \"Shaxsiy ma'lumotlar to'g'risida\"gi Qonunining 27¹-moddasiga muvofiq, \"Traffic Legal\" MChJ O'zbekiston Respublikasi fuqarolarining shaxsiy ma'lumotlarini O'zbekiston Respublikasi hududida joylashgan texnik vositalar orqali (Toshkent shahri, Mirzo-Ulug'bek tumani, Ulug'bek kvartali, Nur mahallasi, C-1 kvartali \"Buyuk Ipak yo'li\", 22-bino, 1-kvartira) to'playdi, tizimlashtiradi va saqlaydi va O'zbekiston Respublikasi Vazirlar Mahkamasi huzuridagi Shaxsiylashtirish markazida Shaxsiy ma'lumotlar bazalari davlat reestrida ro'yxatdan o'tkazadi."
+},
+{
+"t":"li",
+"c":"muntazam xavfsizlik tizimi yangilanishlari"
+},
+{
+"t":"li",
+"c":"serverlarga jismoniy kirishni boshqarish"
+},
+{
+"t":"li",
+"c":"shaxsiy ma'lumotlarga kirishni faqat vakolatli xodimlar bilan cheklash"
+},
+{
+"t":"li",
+"c":"xodimlarni shaxsiy ma'lumotlarni qayta ishlash qoidalari bo'yicha muntazam ravishda o'qitish"
+},
+{
+"t":"li",
+"c":"tizimlarning zaifliklarini muntazam ravishda tekshirish"
+},
+{
+"t":"p",
+"c":"Platforma ma'muri nazoratidan tashqarida bo'lgan holatlar, masalan, hukumat harakatlari, terroristik hujumlar, tabiiy ofatlar (zilzilalar, yong'inlar, suv toshqinlari va boshqalar), shuningdek, ish sharoitlari, internet aloqasining uzilishlari yoki ma'lumotlar maxfiyligiga ta'sir qilishi mumkin bo'lgan server tizimidagi nosozliklar yuzaga kelganda, foydalanuvchilarga darhol xabar beriladi va ma'lumotlar xavfsizligini tiklash uchun barcha mumkin bo'lgan choralar ko'riladi."
+},
+{
+"t":"h2",
+"c":"7. Maxfiylik siyosatidagi o'zgarishlar"
+},
+{
+"t":"p",
+"c":"Kompaniya ushbu Maxfiylik siyosatiga o'zgartirishlar kiritish huquqini o'zida saqlab qoladi. Agar ushbu Maxfiylik siyosatiga jiddiy o'zgartirishlar kiritilsa, foydalanuvchilarga o'zgartirish kuchga kirishidan 15 kun oldin veb-saytda bildirishnoma joylashtirish va/yoki foydalanuvchi akkauntiga bog'liq manzilga elektron pochta xabarini yuborish orqali xabar beriladi."
+},
+{
+"t":"h2",
+"c":"8. Aloqa ma'lumotlari"
+},
+{
+"t":"p",
+"c":"Yo'l harakati (MChJ \"TRAFFIC LEGAL\")Manzil: O'zbekiston Respublikasi, Toshkent shahri, Mirzo-Ulug'bek tumani, Ulug'bek massivi, Nur mahallasi, C-1 kvartali \"Buyuk Ipak yo'li\", 22-uy, 1-kvartira INN: 309170527 Elektron pochta: info@Traffic.ai Telefon: +998 Shaxsiy ma'lumotlarni qayta ishlash uchun mas'ul shaxs:"
+},
+{
+"t":"h2",
+"c":"9. Nizolarni hal qilish"
+},
+{
+"t":"p",
+"c":"Shaxsiy ma'lumotlarni qayta ishlash bilan bog'liq nizolar O'zbekiston Respublikasi qonunchiligiga muvofiq hal qilinadi. Shaxsiy ma'lumotlar sub'ekti O'zbekiston Respublikasi Vazirlar Mahkamasi huzuridagi Davlat personallashtirish markaziga yoki sudga shikoyat qilish huquqiga ega."
+}
+]

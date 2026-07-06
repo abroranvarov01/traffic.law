@@ -41,3 +41,14 @@
 .partners-swiper .swiper-wrapper {
   transition-timing-function: linear !important;
 }
+
+/*
+  Vaqtinchalik yechim: [lang]/layout.jsx {children}'ni ikki marta render qiladi
+  (biri to'g'ridan-to'g'ri <body> ostida, ikkinchisi <main> ichida).
+  /privacy sahifasida <body> ostidagi dublikat nusxani yashiramiz —
+  <main> ichidagi to'g'ri nusxa qoladi. Layout global tuzatilganda bu qoidani o'chirish mumkin.
+*/
+body > main.privacy-page {
+  display: none !important;
+}
+

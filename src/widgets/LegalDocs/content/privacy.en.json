@@ -1,0 +1,290 @@
+[
+{
+"t":"h1",
+"c":"Privacy Policy"
+},
+{
+"t":"h3",
+"c":"General Provisions"
+},
+{
+"t":"p",
+"c":"Traffic Software(hereinafter \"Traffic\") is an artificial intelligence-powered electronic platform that provides access to the legislative framework of the Republic of Uzbekistan. This platform enables the search and analysis of legal documents and court decisions to effectively resolve legal issues."
+},
+{
+"t":"p",
+"c":"LLC \"Traffic Legal\"(TIN: 309170527, legal address: Republic of Uzbekistan, Tashkent city, Mirzo-Ulugbek district, Ulugbek massif, Nur mahalla, quarter C-1 \"Buyuk Ipak Yuli\", house 22, apartment 1) is the owner of the personal data base registered in the State Register of Personal Data Bases in accordance with Article 20 of the Law of the Republic of Uzbekistan \"On Personal Data\" (hereinafter referred to as the \"Company\")."
+},
+{
+"t":"p",
+"c":"This Privacy Policy governs the collection and processing of users' personal data while using the website and all services provided by Traffic. User data is processed in strict compliance with the laws of the Republic of Uzbekistan on the protection of personal data, in particular, the provisions of the Law of the Republic of Uzbekistan \"On Personal Data,\" the Resolution of the Cabinet of Ministers \"On Approval of Certain Regulatory Legal Acts in the Field of Personal Data Processing,\" the Law of the Republic of Uzbekistan \"On Informatization,\" and other regulatory legal acts."
+},
+{
+"t":"p",
+"c":"By using the Traffic platform, the user agrees to the provisions of this Privacy Policy."
+},
+{
+"t":"p",
+"c":"In accordance with the Law of the Republic of Uzbekistan \"On Informatization\", information about the personal data of individuals is classified as confidential information."
+},
+{
+"t":"p",
+"c":"In the event that certain aspects are not directly regulated by this Policy, the parties undertake to be guided by the legislation of the Republic of Uzbekistan and the principles of business turnover."
+},
+{
+"t":"p",
+"c":"This Privacy Policy also governs users' privacy rights. Detailed information on users' rights and how to exercise them is set out in Section 4 (\"Rights and Choices\")."
+},
+{
+"t":"h3",
+"c":"Terms"
+},
+{
+"t":"li",
+"c":"User— individuals or legal entities who have registered on the Traffic platform and use its functionality."
+},
+{
+"t":"li",
+"c":"Personal data— information recorded on electronic, paper and (or) other tangible media that relates to a specific individual or allows for his/her identification."
+},
+{
+"t":"li",
+"c":"Confidentialitypersonal data - a requirement that must be observed by persons entitled to use the data of individuals or legal entities, regarding the inadmissibility of using or distributing this data without the consent of the subject of the personal data or in the absence of legal grounds."
+},
+{
+"t":"li",
+"c":"Depersonalization of personal data— an action that makes it impossible to determine the ownership of personal data by a specific subject."
+},
+{
+"t":"li",
+"c":"Special categories of personal data— data on the race, nationality, political views, religious or philosophical beliefs, health status, and intimate life of the person."
+},
+{
+"t":"h2",
+"c":"1. Collection of personal data"
+},
+{
+"t":"p",
+"c":"The following categories of personal data are collected:"
+},
+{
+"t":"h3",
+"c":"Personal data provided by the user directly"
+},
+{
+"t":"li",
+"c":"Identification and contact details:Traffic collects identifiers, including the user's name, email address, and phone number, when registering a Traffic account or requesting information about the Services provided. Indirect identifiers (e.g., \"User 00000\") may also be collected or generated, which do not actually identify individuals."
+},
+{
+"t":"li",
+"c":"Communication information:When a user communicates with the service, including through a chatbot on the support website, the name, contact information, and content of all messages sent by the user are collected."
+},
+{
+"t":"li",
+"c":"Feedback on the use of the Services:The Traffic interface provides the ability to rate system responses using \"thumbs up\" and \"thumbs down\" icons. Feedback is collected and processed, including ideas and suggestions for improving or evaluating the service."
+},
+{
+"t":"li",
+"c":"Usage information:Information is collected about the type of Service used, including dates and times of access."
+},
+{
+"t":"li",
+"c":"Cookie Usage:Traffic uses cookies to improve the User's browsing experience and help Traffic understand how visitors interact with the site. Cookies are small text files stored on the User's device that remember preferences and usage patterns. To improve the Site and services, Traffic uses Google Analytics, a third-party analytics tool that helps measure Site performance and understand user behavior. Using cookies, Google Analytics allows us to collect anonymous, aggregated data, such as: 1) the pages users visit and the time they spend on them; 2) the type of device, browser, and operating system used; 3) approximate geographic location (country or city level); 4) how users reached the Site (e.g., from search engines or via links); 5) user interaction patterns (e.g., clicks, scrolling, navigation paths). This information is used to analyze trends, monitor site performance, and improve the user experience. It does not identify individuals. Traffic, when using Google Analytics, does not collect: 1) Personal information such as your name, email address, phone number or address; 2) Payment or financial data; 3) Precise IP addresses (they are anonymized); 4) Any data that could identify the User as an individual."
+},
+{
+"t":"h2",
+"c":"2. Use of personal data in accordance with applicable law"
+},
+{
+"t":"p",
+"c":"Personal data is used for the following purposes:"
+},
+{
+"t":"li",
+"c":"Ensuring proper communication with the User regarding the operation of the TRAFFIC software, as regulated by the Privacy Policy and the TRAFFIC SOFTWARE USE AGREEMENT;"
+},
+{
+"t":"li",
+"c":"communicating with the user, including sending information about Services and events;"
+},
+{
+"t":"li",
+"c":"creation and administration of a user's Traffic account;"
+},
+{
+"t":"li",
+"c":"preventing and investigating cases of fraud, abuse and violations of the Privacy Policy, illegal or criminal activity, unauthorized access to or use of personal data, anthropogenic systems and networks, protecting the rights of the Company and users, and fulfilling legal obligations;"
+},
+{
+"t":"li",
+"c":"Investigation and resolution of security issues."
+},
+{
+"t":"p",
+"c":"The use of clients' personal data for training models or for other purposes, except for those provided for by the Law of the Republic of Uzbekistan \"On Personal Data\", is not carried out."
+},
+{
+"t":"h2",
+"c":"3. Procedure for disclosure of personal data"
+},
+{
+"t":"p",
+"c":"Traffic does not disclose personal data, except in cases stipulated by the legislation of the Republic of Uzbekistan."
+},
+{
+"t":"li",
+"c":"Based on legislation:Disclosure of personal data to government regulatory authorities may be carried out in accordance with legal requirements, as well as for the purposes of ensuring security, protecting the rights of third parties, and enforcing the rights of the Company or the terms of service."
+},
+{
+"t":"li",
+"c":"With the consent of the personal data subject:Disclosure of personal data may be carried out with the permission or instruction of the subject of personal data to disclose this information, including within the framework of the services provided."
+},
+{
+"t":"p",
+"c":"We recommend that you refrain from providing confidential information when using our services. If such information is disclosed, Traffic is NOT RESPONSIBLE for ensuring the protection of confidential data."
+},
+{
+"t":"p",
+"c":"Traffic is not responsible for the disclosure of personal data of third parties by the user when using the service and does not undertake any obligations to ensure the protection of such data."
+},
+{
+"t":"h2",
+"c":"4. Rights and Choice"
+},
+{
+"t":"p",
+"c":"Personal data subjects have certain rights regarding their personal data, regardless of their place of residence, actual location, or the applicable legislation in the relevant territory. The Company adheres to the principle of prioritizing the protection of personal data and compliance with all applicable provisions of the privacy laws of the Republic of Uzbekistan. In accordance with Article 30 of the Law of the Republic of Uzbekistan \"On Personal Data,\" personal data subjects have the right to:"
+},
+{
+"t":"li",
+"c":"receive information about the presence of personal data of the owner and (or) operator, as well as a third party, and their composition;"
+},
+{
+"t":"li",
+"c":"receive, upon request, information about the processing of personal data from the owner and (or) operator;"
+},
+{
+"t":"li",
+"c":"receive information about the conditions for providing access to your personal data from the owner and (or) operator;"
+},
+{
+"t":"li",
+"c":"to apply to an authorized government agency or court for questions regarding the protection of rights and legitimate interests in relation to their personal data;"
+},
+{
+"t":"li",
+"c":"provide consent to the processing of their personal data and revoke such consent, except in cases provided by law;"
+},
+{
+"t":"li",
+"c":"provide consent to the owner and/or operator, as well as to a third party, to disseminate their personal data in publicly available sources of personal data;"
+},
+{
+"t":"li",
+"c":"demand from the owner and/or operator a temporary suspension of the processing of their personal data if the personal data is incomplete, outdated, inaccurate, illegally obtained or is not necessary for the purposes of processing."
+},
+{
+"t":"p",
+"c":"To exercise these rights, the personal data subject or their representative may send a request by email to info@Traffic.ai . Upon receipt of the request, it may be verified by requesting the necessary information sufficient to confirm the user's authorization. The subject also has the right to appeal rejected requests by email to info@Traffic.ai . Traffic does not discriminate based on the exercise of privacy rights by subjects."
+},
+{
+"t":"p",
+"c":"Automatic data collection: When using services (AI chatbot, document drafter, legal analyzer), Traffic software does not collect special categories of personal data. The user is solely responsible for the information entered when using each Traffic feature."
+},
+{
+"t":"p",
+"c":"Sales and targeted marketing of Traffic products and services: Traffic does not \"sell\" users' personal data."
+},
+{
+"t":"h2",
+"c":"5. Data transfer"
+},
+{
+"t":"p",
+"c":"Traffic does not transfer personal data cross-border, except in cases stipulated by the Law of the Republic of Uzbekistan \"On Personal Data.\" Clauses 2 and 3 of Part 3 of Article 15 of the Law of the Republic of Uzbekistan \"On Personal Data\" provide for the cross-border transfer of personal data to the territory of foreign states that do not ensure adequate protection of personal data in the following cases:"
+},
+{
+"t":"li",
+"c":"the need to protect the constitutional order of the Republic of Uzbekistan, protect public order, the rights and freedoms of citizens, the health and morals of the population;"
+},
+{
+"t":"li",
+"c":"provided for by international treaties of the Republic of Uzbekistan."
+},
+{
+"t":"h2",
+"c":"6. Data storage and security control"
+},
+{
+"t":"p",
+"c":"Traffic stores users' personal data for the life of their accounts. If a user's account is deleted, their personal data is automatically destroyed, deleted, and erased in accordance with applicable law."
+},
+{
+"t":"p",
+"c":"Traffic guarantees the safety and security of the information (documents and requests) entered by the User during the use of TRAFFIC, except in cases expressly provided for in this Privacy Policy and the TRAFFIC SOFTWARE USE AGREEMENT."
+},
+{
+"t":"h3",
+"c":"Anonymized information"
+},
+{
+"t":"p",
+"c":"Negative user reviews are being collected. If such reviews are received in response to Traffic's responses, requests with anonymized personal data may be processed for analysis, research, and investigation of errors."
+},
+{
+"t":"h3",
+"c":"Security measures when processing personal data"
+},
+{
+"t":"p",
+"c":"The company implements appropriate technical and organizational security measures aimed at protecting personal data from loss, misuse, unauthorized access, disclosure, alteration, or destruction. In accordance with Article 27¹ of the Law of the Republic of Uzbekistan \"On Personal Data,\" Traffic Legal LLC collects, systematizes, and stores the personal data of citizens of the Republic of Uzbekistan on technical means physically located within the Republic of Uzbekistan (at the address: Tashkent city, Mirzo-Ulugbek district, Ulugbek block, Nur mahalla, block C-1 \"Buyuk Ipak Yuli\", building 22, apartment 1) and registered in the State Register of Personal Databases at the Personalization Center under the Cabinet of Ministers of the Republic of Uzbekistan."
+},
+{
+"t":"li",
+"c":"regular security system updates"
+},
+{
+"t":"li",
+"c":"control of physical access to servers"
+},
+{
+"t":"li",
+"c":"restricting access to personal data to authorized employees only"
+},
+{
+"t":"li",
+"c":"regular training of staff on the rules for processing personal data"
+},
+{
+"t":"li",
+"c":"regular testing of systems for vulnerabilities"
+},
+{
+"t":"p",
+"c":"In the event of circumstances beyond the control of the Platform Administrator, such as government action, terrorist attacks, natural disasters (earthquakes, fires, floods, etc.), as well as problems related to working conditions, internet connection failures, or server system malfunctions that may affect data privacy, users will be promptly notified, and all possible measures will be taken to restore data security."
+},
+{
+"t":"h2",
+"c":"7. Changes to the Privacy Policy"
+},
+{
+"t":"p",
+"c":"The Company reserves the right to make changes to this Privacy Policy. If material changes to this Privacy Policy are made, users will be notified by posting a notice on the website and/or sending an email to the address associated with the user's account 15 days prior to the change taking effect."
+},
+{
+"t":"h2",
+"c":"8. Contact information"
+},
+{
+"t":"p",
+"c":"Traffic (LLC \"TRAFFIC LEGAL\")Address: Republic of Uzbekistan, Tashkent city, Mirzo-Ulugbek district, Ulugbek massif, Nur mahalla, quarter C-1 \"Buyuk Ipak Yuli\", house 22, apartment 1 INN: 309170527 E-mail: info@Traffic.ai Telephone: +998 Person responsible for the processing of personal data:"
+},
+{
+"t":"h2",
+"c":"9. Dispute resolution"
+},
+{
+"t":"p",
+"c":"Disputes related to the processing of personal data are resolved in accordance with the legislation of the Republic of Uzbekistan. The personal data subject has the right to file a complaint with the State Personalization Center under the Cabinet of Ministers of the Republic of Uzbekistan or with the court."
+}
+]

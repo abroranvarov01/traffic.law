@@ -11,8 +11,15 @@ import {
   FaTelegramPlane,
 } from "react-icons/fa";
 
-export const Footer = ({ dict }) => {
+export const Footer = ({ dict, lang = "uz" }) => {
   const t = dict?.footer || {};
+
+  const privacyLabel =
+    lang === "ru"
+      ? "Правовые документы"
+      : lang === "en"
+        ? "Legal Documents"
+        : "Huquqiy hujjatlar";
 
   return (
     <footer className="relative bg-[#070707] pt-20 pb-10 overflow-hidden text-white border-t border-white/5">
@@ -113,7 +120,13 @@ export const Footer = ({ dict }) => {
         </div>
 
         {/* 3. Copyright */}
-        <div className="mt-8 pt-8 mb-12 border-t border-white/5 text-center">
+        <div className="mt-8 pt-8 mb-12 border-t border-white/5 flex flex-col items-center gap-3">
+          <Link
+            href={`/${lang}/privacy`}
+            className="text-[10px] md:text-[11px] font-medium text-gray-400 hover:text-[#C59D5F] transition-colors uppercase tracking-[0.2em]"
+          >
+            {privacyLabel}
+          </Link>
           <p className="text-[10px] md:text-[11px] text-gray-600 tracking-[0.3em] uppercase">
             {t.copyright}
           </p>
