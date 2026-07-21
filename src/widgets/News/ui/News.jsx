@@ -28,7 +28,7 @@ export const NewsSection = ({ dict }) => {
   return (
     <section className="relative bg-[#070707] py-20 md:py-32 overflow-hidden text-white">
       {/* Background Decor */}
-      <div className="absolute top-1/2 -left-20 w-[500px] h-[500px] bg-[#C59D5F]/5 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 -left-20 w-[400px] h-[400px] bg-[#C59D5F]/5 blur-[80px] rounded-full pointer-events-none" />
 
       <Container>
         {/* --- Header --- */}
@@ -57,13 +57,12 @@ export const NewsSection = ({ dict }) => {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               onClick={() => openModal(item, index)} // Click hodisasi
-              className="group flex flex-col h-full bg-[#111] border border-white/5 rounded-sm hover:border-[#C59D5F]/30 transition-all duration-500 cursor-pointer shadow-xl"
+              className="group flex flex-col h-full bg-[#111] border border-white/5 rounded-sm hover:border-[#C59D5F]/30 transition-colors duration-500 cursor-pointer shadow-xl"
             >
               {/* Image Container */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden shrink-0">
+              <div className="relative aspect-[16/10] w-full overflow-hidden shrink-0 transform-gpu [backface-visibility:hidden] [-webkit-backface-visibility:hidden]">
                 <Image
                   src={`/news/card-${index + 1}.png`}
                   alt={item.title}
@@ -171,23 +170,15 @@ export const NewsSection = ({ dict }) => {
                     {selectedNews.desc}
                   </p>
 
-                  {/* Bu yerga qo'shimcha dinamik matnlarni (agar JSON-da bo'lsa) qo'shish mumkin */}
-                  <p>
-                    {/* Default xabar, agar qo'shimcha matn bo'lmasa */}
-                    Para obtener asesoría legal profesional detallada sobre este
-                    tema, no dude en ponerse en contacto con nuestros
-                    especialistas. Estamos listos para analizar su situación y
-                    ofrecerle las mejores soluciones legales adaptadas a sus
-                    necesidades.
-                  </p>
+                  {/* Localized call-to-action from the dictionary */}
+                  {t.cta && <p>{t.cta}</p>}
                 </div>
 
                 {/* Disclaimer ichida */}
                 <div className="mt-12 pt-10 border-t border-white/5 bg-black/20 p-6 flex flex-col md:flex-row gap-6 items-center rounded-sm">
                   <FiAlertTriangle className="text-4xl text-[#C59D5F] shrink-0" />
                   <p className="text-xs md:text-sm text-gray-500 italic leading-relaxed text-center md:text-left">
-                    {dict.news?.disclaimer?.note ||
-                      "Nota: Esta información es meramente informativa y no constituye asesoría legal profesional."}
+                    {dict.news?.disclaimer?.note}
                   </p>
                 </div>
               </div>

@@ -58,7 +58,7 @@ export const WhyChooseUs = ({ dict }) => {
                 initial={{ x: isEven ? -40 : 40, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className={`group relative mx-auto w-full max-w-[500px] rounded-sm border border-white/5 bg-white/[0.02] p-6 backdrop-blur-[6px] transition-all duration-700 hover:border-[#C59D5F]/40 hover:bg-white/[0.05] md:p-10 ${
+                className={`group relative mx-auto w-full max-w-[500px] rounded-sm border border-white/5 bg-white/[0.03] p-6 transition-colors duration-700 hover:border-[#C59D5F]/40 hover:bg-white/[0.05] md:p-10 ${
                   isEven ? "md:justify-self-start" : "md:justify-self-end"
                 } text-left`}
               >
@@ -100,7 +100,7 @@ export const WhyChooseUs = ({ dict }) => {
       </Container>
 
       {/* Background Glow */}
-      <div className="pointer-events-none absolute -bottom-20 left-1/2 h-60 w-[90%] -translate-x-1/2 rounded-full bg-[#C59D5F]/5 blur-[150px]" />
+      <div className="pointer-events-none absolute -bottom-20 left-1/2 h-60 w-[90%] -translate-x-1/2 rounded-full bg-[#C59D5F]/5 blur-[80px]" />
     </section>
   );
 };

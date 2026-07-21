@@ -65,7 +65,13 @@ const Hero = ({ dict }) => {
 
           {/* Yangi GoldButton integratsiyasi */}
           <div className="pt-4">
-            <GoldButton onClick={() => console.log("Consultation requested")}>
+            <GoldButton
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               {h.ctaButton || "ЗАПРОСИТЬ КОНСУЛЬТАЦИЮ"}
             </GoldButton>
           </div>

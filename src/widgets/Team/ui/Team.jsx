@@ -16,6 +16,7 @@ export const Team = ({ dict }) => {
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             className="text-[#C59D5F] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6"
           >
             • {t.subtitle} •
@@ -32,11 +33,12 @@ export const Team = ({ dict }) => {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="group relative flex flex-col"
             >
               {/* Image Container with Hover Frame */}
-              <div className="relative aspect-[3/4] overflow-hidden rounded-sm mb-4 border border-white/5 transition-all duration-500 group-hover:border-[#0091FF] group-hover:shadow-[0_0_30px_rgba(0,145,255,0.2)]">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-sm mb-4 border border-white/5 transition-colors duration-500 group-hover:border-[#0091FF] group-hover:shadow-[0_0_30px_rgba(0,145,255,0.2)] transform-gpu [backface-visibility:hidden] [-webkit-backface-visibility:hidden]">
                 {/* Background Shadow Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070707] via-transparent to-transparent z-10" />
 
@@ -52,7 +54,7 @@ export const Team = ({ dict }) => {
               </div>
 
               {/* Text Information Box */}
-              <div className="bg-white/[0.03] backdrop-blur-sm border border-white/5 p-6 flex flex-col items-center text-center transition-all duration-500 group-hover:bg-white/[0.06]">
+              <div className="bg-white/[0.04] border border-white/5 p-6 flex flex-col items-center text-center transition-colors duration-500 group-hover:bg-white/[0.06]">
                 <h4 className="text-white font-serif text-[15px] lg:text-[17px] tracking-wide uppercase mb-2 whitespace-nowrap">
                   {member.name}
                 </h4>

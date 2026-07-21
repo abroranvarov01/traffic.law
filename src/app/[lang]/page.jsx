@@ -48,17 +48,31 @@ export default async function Home({ params }) {
     <>
       <Hero dict={dict} lang={lang} />
 
-      <About dict={dict} lang={lang} />
-      <OurWorks dict={dict} lang={lang} />
+      <div id="about" className="scroll-mt-24">
+        <About dict={dict} lang={lang} />
+      </div>
+      <div id="works" className="scroll-mt-24">
+        <OurWorks dict={dict} lang={lang} />
+      </div>
 
       <Partners dict={dict} lang={lang} />
-      <WhyChooseUs dict={dict} lang={lang} />
+      <div id="why" className="scroll-mt-24">
+        <WhyChooseUs dict={dict} lang={lang} />
+      </div>
 
-      <Testimonials dict={dict} lang={lang} />
-      <Services dict={dict} lang={lang} />
-      <Team dict={dict} lang={lang} />
+      <div id="testimonials" className="scroll-mt-24">
+        <Testimonials dict={dict} lang={lang} />
+      </div>
+      <div id="services" className="scroll-mt-24">
+        <Services dict={dict} lang={lang} />
+      </div>
+      <div id="team" className="scroll-mt-24">
+        <Team dict={dict} lang={lang} />
+      </div>
       <AppSection dict={dict} lang={lang} />
-      <NewsSection dict={dict} lang={lang} />
+      <div id="news" className="scroll-mt-24">
+        <NewsSection dict={dict} lang={lang} />
+      </div>
       <ContactSection dict={dict} lang={lang} />
 
       {/* <Benefits /> */}

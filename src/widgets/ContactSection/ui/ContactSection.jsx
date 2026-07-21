@@ -9,7 +9,10 @@ export const ContactSection = ({ dict }) => {
   const t = dict?.contact || {};
 
   return (
-    <section className="relative bg-[#070707] py-12 overflow-hidden text-white border-t border-white/5">
+    <section
+      id="contact"
+      className="relative bg-[#070707] py-12 overflow-hidden text-white border-t border-white/5 scroll-mt-24"
+    >
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C59D5F]/5 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#C59D5F]/5 blur-[150px] rounded-full pointer-events-none" />
