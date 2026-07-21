@@ -11,6 +11,22 @@ import { LegalExpertSection } from "@/widgets/LegalExpertSection";
 import { WhyChooseUs } from "@/widgets/WhyChooseUs";
 import { OurWorks } from "@/widgets/OurWorks";
 
+import { seoData } from "../seoData";
+
+export async function generateMetadata({ params }) {
+  const { lang } = params;
+  const seo = seoData[lang]?.service || seoData.uz.service;
+
+  return {
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    alternates: {
+      canonical: `https://traffic.law/${lang}/service`,
+    },
+  };
+}
+
 export default async function ServicePage({ params }) {
   const currentParams = await params;
   let lang = currentParams.lang || i18n.defaultLocale;

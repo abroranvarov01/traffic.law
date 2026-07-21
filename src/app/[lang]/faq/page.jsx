@@ -4,6 +4,21 @@ import Image from "next/image";
 import { Container } from "@/shared/ui/Container/Container";
 import { motion } from "framer-motion";
 import { FAQ } from "@/widgets/FAQ/ui/FAQ";
+// import { seoData } from "../seoData";
+
+// export async function generateMetadata({ params }) {
+//   const { lang } = params;
+//   const seo = seoData[lang]?.faq || seoData.uz.faq;
+
+//   return {
+//     title: seo.title,
+//     description: seo.description,
+//     keywords: seo.keywords,
+//     alternates: {
+//       canonical: `https://traffic.law/${lang}/faq`,
+//     },
+//   };
+// }
 
 const CasePage = () => {
   return (

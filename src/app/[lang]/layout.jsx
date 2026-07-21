@@ -21,22 +21,10 @@ const ledger = Ledger({
   variable: "--font-ledger",
 });
 
-// 1. DYNAMIC METADATA - SEO ANALITIKA
-export async function generateMetadata({ params }) {
-  const { lang } = await params;
-  const dict = await getDictionary(lang);
-  const baseUrl = "https://trafficlegal.uz";
-
+export async function generateMetadata() {
   return {
-    title: {
-      default: dict.seo.title,
-      template: `%s | ${dict.seo.site_name}`,
-    },
-    description: dict.seo.description,
-    keywords: dict.seo.keywords,
-    metadataBase: new URL(baseUrl),
+    metadataBase: new URL("https://traffic.law"),
 
-    // FAVICON VA ICONS - GENIALNIY QISMI
     icons: {
       icon: [
         { url: "/favicon.png", sizes: "32x32", type: "image/png" },
@@ -48,35 +36,9 @@ export async function generateMetadata({ params }) {
         {
           rel: "mask-icon",
           url: "/favicon.png",
-          color: "#C59D5F", // Sizning oltin ranguingiz
+          color: "#C59D5F",
         },
       ],
-    },
-
-    alternates: {
-      canonical: `${baseUrl}/${lang}`,
-      languages: {
-        "uz-UZ": "/uz",
-        "ru-RU": "/ru",
-        "en-US": "/en",
-      },
-    },
-
-    openGraph: {
-      title: dict.seo.title,
-      description: dict.seo.description,
-      url: `${baseUrl}/${lang}`,
-      siteName: dict.seo.site_name,
-      images: [
-        {
-          url: "/og-image.jpg", // 1200x630 rasm qo'yishni unutmang
-          width: 1200,
-          height: 630,
-          alt: "Traffic Legal - Professional Law Firm",
-        },
-      ],
-      locale: lang === "uz" ? "uz_UZ" : lang === "ru" ? "ru_RU" : "en_US",
-      type: "website",
     },
 
     robots: {
@@ -104,35 +66,35 @@ export default async function LangLayout({ children, params }) {
   return (
     <html lang={lang} className={`${inter.variable} ${ledger.variable}`}>
       <head>
-        {/* Favicon ulanishi qo'shimcha tarzda */}
         <link rel="icon" href="/news/fiveicon.png" />
 
-        {/* Google Analytics (GTAG) */}
         <Script
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          src="https://www.googletagmanager.com/gtag/js?id=G-3ZNQV8ZVTJ"
         />
+
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX', {
+            gtag('config', 'G-3ZNQV8ZVTJ', {
               page_path: window.location.pathname,
             });
           `}
         </Script>
       </head>
+
       <body className={`${inter.className} font-sans antialiased bg-[#070707]`}>
         <YandexMetrika />
-          <GoogleAnalytics />
-  {children}
+        <GoogleAnalytics />
+
         <Navbar dict={dict} lang={lang} />
+
         <main>{children}</main>
+
         <Footer dict={dict} lang={lang} />
       </body>
     </html>
   );
 }
-
-

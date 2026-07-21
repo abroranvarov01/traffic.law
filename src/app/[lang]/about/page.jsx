@@ -4,48 +4,47 @@ import { Container } from "@/shared/ui/Container/Container";
 import * as motion from "framer-motion/client";
 import { getDictionary, i18n } from "@/dictionaries/getDictionary";
 
-// Widgetlar importi
 import { About } from "@/widgets/About";
 import { Team } from "@/widgets/Team";
 import { WhyChooseUs } from "@/widgets/WhyChooseUs";
+import { seoData } from "../seoData";
+
+export async function generateMetadata({ params }) {
+  const { lang } = await params;
+  const currentLang = lang || i18n.defaultLocale;
+  const seo = seoData[currentLang]?.about || seoData.uz.about;
+
+  return {
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    alternates: {
+      canonical: `https://traffic.law/${currentLang}/about`,
+    },
+  };
+}
 
 export default async function AboutPage({ params }) {
-  // 1. Params va Tilni aniqlash
-  const currentParams = await params;
-  let lang = currentParams.lang;
+  const { lang } = await params;
+  const currentLang = lang || i18n.defaultLocale;
+  const dict = await getDictionary(currentLang);
 
-  if (!lang && currentParams.value) {
-    try {
-      const parsedValue = JSON.parse(currentParams.value);
-      lang = parsedValue.lang;
-    } catch (e) {
-      console.error("Language parsing error:", e);
-    }
-  }
-
-  if (!lang) lang = i18n.defaultLocale;
-
-  // 2. Dictionary-ni yuklash
-  const dict = await getDictionary(lang);
-
-  // --- Statik Matnlar (Ternary orqali) ---
   const pageTitle =
-    lang === "ru"
+    currentLang === "ru"
       ? "О Компании"
-      : lang === "uz"
+      : currentLang === "uz"
         ? "Kompaniya Haqida"
         : "About Our Firm";
 
   const upperSubtitle =
-    lang === "ru"
+    currentLang === "ru"
       ? "ВАШ ПРАВОВОЙ ПАРТНЕР"
-      : lang === "uz"
+      : currentLang === "uz"
         ? "SIZNING HUQUQIY HAMROHINGIZ"
         : "YOUR LEGAL PARTNER";
 
   return (
     <main className="bg-[#0a0a0a] min-h-screen">
-      {/* --- 1. Header Section --- */}
       <section className="relative h-[400px] md:h-[450px] w-full flex items-center overflow-hidden border-b border-white/5">
         <div className="absolute inset-0 z-0">
           <Image
@@ -55,7 +54,6 @@ export default async function AboutPage({ params }) {
             className="object-cover object-center md:object-right-bottom opacity-70"
             priority
           />
-          {/* Sifatli gradient */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 md:via-[#0a0a0a]/60 to-transparent" />
         </div>
 
@@ -66,17 +64,17 @@ export default async function AboutPage({ params }) {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-start"
           >
-            {/* Dekorativ vertikal chiziq */}
             <div className="absolute left-0 top-[-80px] w-[1px] h-[120px] bg-[#C59D5F]/30 hidden lg:block" />
 
             <div className="flex flex-col">
               <span className="text-[#C59D5F] text-[10px] md:text-[12px] font-bold tracking-[0.5em] uppercase mb-4">
                 • {upperSubtitle} •
               </span>
+
               <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-serif italic mb-6 tracking-widest uppercase leading-tight">
                 {pageTitle}
               </h1>
-              {/* Dekorativ gorizontal chiziq */}
+
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: "100px" }}
@@ -88,15 +86,9 @@ export default async function AboutPage({ params }) {
         </Container>
       </section>
 
-      {/* --- 2. Widgets Section --- */}
-      {/* Kompaniya tarixi va umumiy ma'lumot */}
-      <About dict={dict} lang={lang} />
-
-      {/* Nega biz? (Qadriyatlarimiz) */}
+      <About dict={dict} lang={currentLang} />
       <WhyChooseUs dict={dict} />
-
-      {/* Bizning Jamoa */}
-      <Team dict={dict} lang={lang} />
+      <Team dict={dict} lang={currentLang} />
     </main>
   );
 }

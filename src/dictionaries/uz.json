@@ -12,9 +12,9 @@
   },
   "seo": {
     "site_name": "Traffic Law",
-    "title": "Advokatlik va yuridik xizmatlar | Traffic Law",
-    "description": "Traffic Law jismoniy va yuridik shaxslarga fuqarolik, korporativ, sug‘urta, soliq va yo‘l-transport masalalari bo‘yicha professional huquqiy yordam ko‘rsatadi.",
-    "keywords": "advokat, yuridik xizmatlar, huquqiy yordam, yuridik konsultatsiya, sudda vakillik, fuqarolik huquqi, korporativ huquq, sug‘urta nizolari, soliq nizolari, yo‘l-transport hodisasi bo‘yicha yuridik yordam"
+    "title": "Advokat Toshkentda | Yuridik xizmatlar va maslahat",
+    "description": "Traffic Law Toshkentda jismoniy va yuridik shaxslar uchun advokatlik xizmatlari, yuridik maslahat, sudda himoya, korporativ huquq, sug‘urta va soliq nizolari bo‘yicha yordam ko‘rsatadi.",
+    "keywords": "advokat Toshkent, yuridik xizmatlar Toshkent, yuridik maslahat, advokatlik xizmatlari, sudda himoya, korporativ huquq, sug‘urta nizolari, soliq nizolari, YTH bo‘yicha advokat, Traffic Law"
   },
   "hero": {
     "title1": "YURIDIK",
@@ -173,22 +173,22 @@
     "title": "ISHONCHGA LOYIQ PROFESSIONALLAR",
     "view_all": "BARCHA MUTAXASSISLARNI KO'RISH",
     "members": [
-  	{
-    "name": "BATIR ILSHATOVICH",
-    "role": "KATTA YURIDIK MASLAHATCHI"
-  	},
-  	{
-    "name": "AVAZKHONV AKBARKHON",
-    "role": "IT BO‘LIMI BOSHLIG‘I"
-  	},
-    {
+      {
+        "name": "BATIR ILSHATOVICH",
+        "role": "KATTA YURIDIK MASLAHATCHI"
+      },
+      {
+        "name": "AVAZKHONV AKBARKHON",
+        "role": "IT BO‘LIMI BOSHLIG‘I"
+      },
+      {
         "name": "IRINA VOLKOVA",
         "role": "KORPORATIV YURIST"
-    },
-    {
+      },
+      {
         "name": "SAIDOV ALISHER",
         "role": "YURIDIK KONSULTANT"
-    }
+      }
     ]
   },
   "app": {

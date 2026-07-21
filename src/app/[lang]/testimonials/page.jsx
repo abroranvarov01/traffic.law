@@ -4,6 +4,21 @@ import { Container } from "@/shared/ui/Container/Container";
 import * as motion from "framer-motion/client";
 import { getDictionary, i18n } from "@/dictionaries/getDictionary";
 import { Testimonials } from "@/widgets/Testimonials";
+import { seoData } from "../seoData";
+
+export async function generateMetadata({ params }) {
+  const { lang } = params;
+  const seo = seoData[lang]?.testimonials || seoData.uz.testimonials;
+
+  return {
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    alternates: {
+      canonical: `https://traffic.law/${lang}/testimonials`,
+    },
+  };
+}
 
 export default async function TestimonialsPage({ params }) {
   // 1. Params va Tilni aniqlash

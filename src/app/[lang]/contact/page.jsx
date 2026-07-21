@@ -8,6 +8,22 @@ import { getDictionary, i18n } from "@/dictionaries/getDictionary";
 import { ContactMap } from "@/widgets/ContactMap";
 import { ContactSection } from "@/widgets/ContactSection";
 
+import { seoData } from "../seoData";
+
+export async function generateMetadata({ params }) {
+  const { lang } = params;
+  const seo = seoData[lang]?.contact || seoData.uz.contact;
+
+  return {
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    alternates: {
+      canonical: `https://traffic.law/${lang}/contact`,
+    },
+  };
+}
+
 export default async function ContactPage({ params }) {
   // 1. Params va Tilni aniqlash
   const currentParams = await params;

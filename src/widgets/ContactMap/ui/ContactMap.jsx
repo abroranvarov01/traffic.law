@@ -7,7 +7,7 @@ export const ContactMap = ({ dict, lang }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const t = dict?.contact_map || {};
 
-  // REAL COORDINATES: 41.332308, 69.284205 (Traffic Legal Service)
+  // REAL COORDINATES: 41.332308, 69.284205 (Traffic Law Service)
   // ll = longitude (69.284205) va latitude (41.332308)
   // z = 17 (Yaqinroq va aniq markazda)
   const mapSource = `https://yandex.com/map-widget/v1/?ll=69.284205%2C41.332308&z=17&mode=search&ol=geo&lang=${
@@ -78,7 +78,7 @@ export const ContactMap = ({ dict, lang }) => {
             </button>
           </div>
 
-          {/* Info Badge - Traffic Legal Service */}
+          {/* Info Badge - Traffic Law Service */}
           {!isExpanded && (
             <motion.div
               initial={{ x: -50, opacity: 0 }}
@@ -92,7 +92,7 @@ export const ContactMap = ({ dict, lang }) => {
                 </span>
               </div>
               <h3 className="text-white font-serif italic text-2xl mb-3 tracking-wide">
-                Traffic Legal
+                Traffic Law
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed font-light tracking-wide">
                 Toshkent shahri, Yunusobod tumani, <br />

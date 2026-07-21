@@ -4,6 +4,21 @@ import * as motion from "framer-motion/client";
 import { Container } from "@/shared/ui/Container/Container";
 import { i18n } from "@/dictionaries/getDictionary";
 import { LegalDocs, getLegalDocs } from "@/widgets/LegalDocs";
+// import { seoData } from "../seoData";
+
+// export async function generateMetadata({ params }) {
+//   const { lang } = params;
+//  const seo = seoData[lang]?.privacy || seoData.uz.privacy;
+
+//   return {
+//     title: seo.title,
+//     description: seo.description,
+//     keywords: seo.keywords,
+//     alternates: {
+//       canonical: `https://traffic.law/${lang}/privacy`,
+//     },
+//   };
+// }
 
 // Sahifa uchun SEO metadata
 export async function generateMetadata({ params }) {
