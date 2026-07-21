@@ -4,10 +4,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Container } from "@/shared/ui/Container/Container";
+import Link from "next/link";
 
 export const OurWorks = ({ dict }) => {
 	const t = dict?.works || {};
 	const labels = t.labels || {};
+	const MotionLink = motion(Link);
 
 	const projects = [
 		{ id: "01", data: t.item1, image: "/news/work-image.png" },
@@ -114,7 +116,8 @@ export const OurWorks = ({ dict }) => {
 
 				{/* Premium Button */}
 				<div className="flex justify-center mt-16 md:mt-24">
-					<motion.button
+					<MotionLink
+						href="/case"
 						whileHover={{ scale: 1.05 }}
 						whileTap={{ scale: 0.95 }}
 						className="relative group overflow-hidden px-12 py-5 rounded-lg transition-all duration-300"
@@ -130,7 +133,7 @@ export const OurWorks = ({ dict }) => {
 							<div className="w-1.5 h-1.5 bg-[#2D1F16] rotate-45" />
 						</div>
 						<div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-					</motion.button>
+					</MotionLink>
 				</div>
 			</Container>
 		</section>
