@@ -9,7 +9,7 @@ const Hero = ({ dict }) => {
   const h = dict?.hero || {};
 
   return (
-    <section className="relative w-full  flex items-center justify-center overflow-hidden bg-[#070707]">
+    <section className="relative w-full min-h-[640px] lg:min-h-[88vh] flex items-center justify-center overflow-hidden bg-[#070707]">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -37,7 +37,10 @@ const Hero = ({ dict }) => {
       </div>
 
       {/* Main Content */}
-      <Container className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 pt-20">
+      {/* Oltin nur - Femida tomonidan tushuvchi yorug'lik */}
+      <div className="absolute right-0 top-0 h-full w-1/2 z-[1] pointer-events-none bg-[radial-gradient(ellipse_at_65%_35%,rgba(197,157,95,0.10),transparent_60%)]" />
+
+      <Container className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 pt-28 pb-20 lg:py-28">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -45,6 +48,12 @@ const Hero = ({ dict }) => {
           transition={{ duration: 0.8 }}
           className="w-full lg:w-3/5 text-white space-y-6 order-2 lg:order-1"
         >
+          {/* Oltin dekorativ chiziq */}
+          <div className="flex items-center gap-2">
+            <span className="h-[1px] w-12 bg-[#C59D5F]" />
+            <span className="h-[1px] w-3 bg-[#C59D5F]/40" />
+          </div>
+
           {/* Sarlavhalar o'lchami kichraytirildi (text-5xl gacha) */}
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.1] uppercase tracking-wide">
             <span className="block text-white/90">
@@ -77,23 +86,31 @@ const Hero = ({ dict }) => {
           </div>
         </motion.div>
 
-        {/* Right Image - Ixchamroq o'lchamda */}
+        {/* Right Image - Femida (adolat tarozisi) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
           className="w-full lg:w-2/5 flex justify-center lg:justify-end order-1 lg:order-2"
         >
-          <div className="relative w-full max-w-[380px] aspect-[4/7] drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-            <Image
-              src="/news/intro.png"
-              alt="Professional Lawyer"
-              fill
-              className="object-contain"
-              priority
-            />
-            {/* Rasm ostidagi oltin nuri (glow) */}
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#C59D5F]/10 blur-[100px] rounded-full" />
+          <div className="relative w-full max-w-[270px] sm:max-w-[320px] lg:max-w-[380px]">
+            {/* Haykal ortidagi oltin halqa (nimb) */}
+            <div className="absolute top-[6%] left-1/2 -translate-x-1/2 w-[92%] aspect-square rounded-full border border-[#C59D5F]/20 bg-[radial-gradient(circle,rgba(197,157,95,0.16),transparent_70%)] pointer-events-none" />
+            <div className="absolute top-[12%] left-1/2 -translate-x-1/2 w-[70%] aspect-square rounded-full bg-[#C59D5F]/10 blur-[70px] pointer-events-none" />
+
+            <div className="relative w-full aspect-[4/7]">
+              <Image
+                src="/news/femida.png"
+                alt={h.imageAlt || "Фемида — весы правосудия"}
+                fill
+                sizes="(max-width: 1024px) 75vw, 380px"
+                className="object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.85)]"
+                priority
+              />
+            </div>
+
+            {/* Haykal ostidagi soya - "yerga qo'nishi" uchun */}
+            <div className="absolute bottom-[1%] left-1/2 -translate-x-1/2 w-[55%] h-5 rounded-[100%] bg-black/80 blur-lg pointer-events-none" />
           </div>
         </motion.div>
       </Container>
