@@ -1,40 +1,24 @@
-name: Production Deploy (Trafic-Legal)
+name: CI/CD
 
 on:
   push:
     branches: [main]
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   deploy:
-    # GitHub Runner-dagi mavjud taglar bilan bir xil qildik
-    runs-on: [self-hosted, traffic-dedicated]
-
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
         with:
-          # Kodni 'trafic-legal-app' papkasiga yuklaymiz
-          path: trafic-legal-app
-
-      - name: Deploy Next to Runner
-        run: |
-          # 1. Runnerning ishchi papkasiga (workspace) kiramiz
-          # GitHub Actions odatda GITHUB_WORKSPACE o'zgaruvchisidan foydalanadi
-          cd ${{ github.workspace }}/trafic-legal-app
-
-          # 2. Docker-ni ko'taramiz
-          # 'deployer' foydalanuvchisi docker guruhida bo'lishi shart
-          docker compose up -d --build --force-recreate
-
-          # 3. Tozalash (foydalanilmagan eski obrazlarni o'chirish)
-          docker image prune -f
-
-      - name: Show Location and Status
-        run: |
-          cd ${{ github.workspace }}/trafic-legal-app
-          pwd
-          docker ps | grep trafic-legal-app
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /var/www/traffic.legal
+            git pull origin main
+            docker compose down
+            docker compose up -d --build
