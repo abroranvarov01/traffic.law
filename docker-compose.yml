@@ -9,8 +9,8 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-      - BOT_TOKEN=8728388768:AAHn46dWFA4D5EGtvNlWKa5fBR5Wwb7Q_JE
-      - CHAT_ID=-5195558575
+      - BOT_TOKEN=${BOT_TOKEN}
+      - CHAT_ID=${CHAT_ID}
     networks:
       - euphoria_network
 
