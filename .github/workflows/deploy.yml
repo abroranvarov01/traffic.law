@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /var/www/traffic.legal
+            cd /var/www/traffic.law
             git pull origin main
             docker compose down
             docker compose up -d --build
