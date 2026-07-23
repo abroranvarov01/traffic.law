@@ -5,10 +5,35 @@ on:
     branches: [main]
 
 jobs:
-  deploy:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      # Раскомментируйте, если есть тесты
+      # - name: Run tests
+      #   run: npm test
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
@@ -18,7 +43,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /var/www/traffic.law
+            cd /путь/к/проекту
             git pull origin main
             docker compose down
             docker compose up -d --build
