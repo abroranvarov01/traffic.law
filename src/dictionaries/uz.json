@@ -136,22 +136,25 @@
     "cta": "KONSULTATSIYA SO'RASH",
     "items": [
       {
-        "name": "ALEKSEY MOROZOV",
-        "role": "MIJOZ",
+        "name": "VIKTORIYA",
+        "role": "HR MUTAXASSIS",
         "text": "Murakkab masala bo'yicha yuridik maslahat so'rab murojaat qildim. Mutaxassislar barcha jihatlarni batafsil tushuntirib berishdi va to'g'ri yechim topishga yordam berishdi.",
-        "stars": 5
+        "stars": 5,
+        "image": "/news/review-hr.png"
       },
       {
-        "name": "MARINA KUZNETSOVA",
-        "role": "MIJOZ",
+        "name": "BUTTON AGENCY",
+        "role": "MARKETING AGENTLIGI",
         "text": "Juda professional yondashuv. Har doim aloqada bo'lishdi, savollarga tezkor javob berishdi va ishni natijagacha kuzatib borishdi. Tavsiya qilaman.",
-        "stars": 5
+        "stars": 5,
+        "image": "/news/review-agency.png"
       },
       {
-        "name": "DMITRIY SOKOLOV",
-        "role": "MIJOZ",
+        "name": "AZIZ",
+        "role": "DASTURCHI",
         "text": "Shaffoflik va halollik yoqdi. Darhol real istiqbollarni belgilab berishdi va imkonsiz narsani va'da qilishmadi. Yakunda ijobiy natijaga erishdim.",
-        "stars": 5
+        "stars": 5,
+        "image": "/news/review-dev.png"
       }
     ]
   },
@@ -205,25 +208,109 @@
         "date": "10-mart, 2026",
         "views": "1,240",
         "title": "Soliq kodeksidagi 2026-yilgi o'zgarishlar: biznes nimaga tayyorlanishi kerak?",
-        "desc": "2026-yil 1-yanvardan kuchga kiruvchi o'zgarishlar: importyorlar uchun QQS, IT-kompaniyalar foyda solig'i va majburiy elektron hujjat aylanishi."
+        "desc": "2026-yil 1-yanvardan kuchga kiruvchi o'zgarishlar: importyorlar uchun QQS, IT-kompaniyalar foyda solig'i va majburiy elektron hujjat aylanishi.",
+        "content": {
+          "lead": "2026-yil 1-yanvardan Soliq kodeksiga o'zgartirishlar to'plami kuchga kiradi. O'zgarishlar importchilarga, IT-sohaga va elektron hujjat aylanishiga taalluqli. Quyida biznes oldindan hisobga olishi lozim bo'lgan asosiy jihatlar keltirilgan.",
+          "sections": [
+            {
+              "heading": "1. Importchilar uchun QQS",
+              "text": "Tovarlarni olib kirishda QQS stavkalari va chegirmalarini qo'llash tartibi qayta ko'rib chiqilmoqda. Kompaniyalar tovar kodlarini solishtirib, hisob siyosatini yangilashi lozim."
+            },
+            {
+              "heading": "2. IT-kompaniyalar foydasi solig'i",
+              "text": "IT-park rezidentlari uchun imtiyozli stavkalarni qo'llash shartlari aniqlashtirilmoqda. Imtiyoz endi asosiy tushum ulushiga va to'g'ri alohida hisobga bevosita bog'liq."
+            },
+            {
+              "heading": "3. Elektron hujjat aylanishi",
+              "text": "Majburiy elektron hisob-fakturalarni talab qiladigan operatsiyalar ro'yxati kengaymoqda. Bunday hollarda qog'oz nusxalar yuridik kuchga ega bo'lmaydi."
+            },
+            {
+              "heading": "4. O'tish davri",
+              "text": "Ayrim talablar uchun o'tish davri belgilangan. O'zgartirishlar kuchga kirgunga qadar tuzilgan shartnomalarga qaysi normalar qo'llanishini aniqlab olish muhim."
+            },
+            {
+              "heading": "5. Hozir nima qilish kerak",
+              "text": "Shartnomalar va hisob siyosatini tekshiring, birlamchi hujjat shablonlarini yangilang va zarur bo'lsa, hisobot davridan oldin bahsli operatsiyalar bo'yicha tushuntirish oling."
+            }
+          ],
+          "conclusion": "O'z vaqtidagi tayyorgarlik qo'shimcha hisoblanmalar va jarimalar xavfini kamaytiradi. Biz auditni o'tkazish va hujjat aylanishini yangi talablarga moslashtirish uchun yordam beramiz."
+        }
       },
       {
         "date": "5-mart, 2026",
         "views": "892",
         "title": "Shaxsiy ma'lumotlarni himoya qilishning yangi qoidalari — biznes uchun qo'llanma",
-        "desc": "Ma'lumotlar xavfsizligi sohasidagi liberallashuv: ishlov berish uchun rozilik olish, mas'ul xodim tayinlash va 100 mln so'mgacha jarimalar."
+        "desc": "Ma'lumotlar xavfsizligi sohasidagi liberallashuv: ishlov berish uchun rozilik olish, mas'ul xodim tayinlash va 100 mln so'mgacha jarimalar.",
+        "content": {
+          "lead": "Shaxsiy ma'lumotlar to'g'risidagi qonunchilik yangilandi: rozilik, saqlash va javobgarlik talablari kuchaymoqda. Bu biznes uchun nimani anglatishini va qanday tayyorgarlik ko'rishni ko'rib chiqamiz.",
+          "sections": [
+            {
+              "heading": "1. Ishlov berishga majburiy rozilik",
+              "text": "Rozilik aniq, xabardor va tasdiqlanadigan bo'lishi kerak. \"Hammasiga roziman\" kabi umumiy iboralar endi to'g'ri asos hisoblanmaydi."
+            },
+            {
+              "heading": "2. Ma'lumotlarni himoya qilish uchun mas'ul",
+              "text": "Kompaniyalar shaxsiy ma'lumotlarga ishlov berish uchun mas'ul shaxsni tayinlashi va uning vakolatlarini ichki hujjat bilan mustahkamlashi shart."
+            },
+            {
+              "heading": "3. Lokalizatsiya va saqlash",
+              "text": "Fuqarolar ma'lumotlarini saqlash va chegaradan o'tkazish qoidalari aniqlashtirilmoqda. Bazalaringiz va serverlaringiz jismonan qayerda joylashganini tekshirish zarur."
+            },
+            {
+              "heading": "4. Sizib chiqishlar uchun jarimalar",
+              "text": "Qoidalarni buzish va ma'lumot sizishi uchun sezilarli miqdorgacha jarimalar nazarda tutilgan. Javobgarlik bevosita qasd bo'lmaganda ham yuzaga keladi."
+            },
+            {
+              "heading": "5. Kompaniyani qanday tayyorlash",
+              "text": "Maxfiylik siyosati, rozilik shakllari va pudratchilar bilan shartnomalarni yangilang, shuningdek barcha ma'lumotlarga ishlov berish jarayonlarini inventarizatsiya qiling."
+            }
+          ],
+          "conclusion": "Jarayonlarni yangi qoidalarga moslashtirish bir martalik vazifa emas, balki doimiy amaliyotdir. Yuristlarimiz to'g'ri ma'lumotlarga ishlov berish tizimini qurishga yordam beradi."
+        }
       },
       {
         "date": "28-fevral, 2026",
         "views": "1,560",
         "title": "2026-yilda homiladorlik va tug'ish nafaqalari miqdori oshdi",
-        "desc": "Bola tug'ilgandagi bir martalik to'lovlar va oylik nafaqalar miqdori oshirildi. Kadrlar hujjatlarini yangi qoidalar asosida yuritishni o'rganing."
+        "desc": "Bola tug'ilgandagi bir martalik to'lovlar va oylik nafaqalar miqdori oshirildi. Kadrlar hujjatlarini yangi qoidalar asosida yuritishni o'rganing.",
+        "content": {
+          "lead": "2026-yilda homiladorlik, tug'ish va bola parvarishi bo'yicha nafaqalar miqdori qayta ko'rib chiqildi. Ish beruvchilar hisob-kitobdagi xatolarning oldini olish uchun kadrlar hisobini to'g'ri qayta qurishi muhim.",
+          "sections": [
+            {
+              "heading": "1. Nafaqa miqdorlarida nima o'zgardi",
+              "text": "Bir martalik ham, oylik to'lovlar ham oshdi. Hisoblash tartibi voqea sodir bo'lgan sanadagi amaldagi bazaviy miqdorga bog'langan."
+            },
+            {
+              "heading": "2. Tug'ilganda bir martalik nafaqa",
+              "text": "Bola tug'ilganda to'lov miqdori yangilandi. Nafaqaga bo'lgan huquq va uning miqdori murojaat vaqtida belgilanadi."
+            },
+            {
+              "heading": "3. Oylik nafaqalar",
+              "text": "Bola parvarishi bo'yicha oylik nafaqalar qayta ko'rib chiqildi. Ish beruvchi qaydnomalarni shakllantirishda yangi koeffitsiyentlarni hisobga olishi lozim."
+            },
+            {
+              "heading": "4. Yangi qoidalar bo'yicha kadrlar hisobi",
+              "text": "Mahalliy hujjatlar, buyruqlar va hisob-kitob hujjatlarini yangilash talab etiladi. Rasmiylashtirishdagi xatolar to'lov summasiga bevosita ta'sir qiladi."
+            },
+            {
+              "heading": "5. Ish beruvchilarning tez-tez xatolari",
+              "text": "Eng ko'p uchraydigani — noto'g'ri hisob sanasi, to'liq bo'lmagan hujjatlar to'plami va xodimni to'lovlar haqida o'z vaqtida ogohlantirmaslik."
+            }
+          ],
+          "conclusion": "To'g'ri kadrlar hisobi ham xodimni, ham kompaniyani himoya qiladi. Biz to'lovlarni rasmiylashtirish va hujjatlarni yangi normalarga moslashtirish bo'yicha maslahat beramiz."
+        }
       }
     ],
     "disclaimer": {
       "title": "YURIDIK MA'LUMOT",
       "note": "Saytdagi barcha ma'lumotlar faqat axborot xarakteriga ega va yuridik maslahat hisoblanmaydi.",
       "warning": "Traffic Law huqushunos bilan maslahatlashmasdan turib, ushbu ma'lumotlar asosida qabul qilingan qarorlar uchun javobgarlikni zimmasiga olmaydi."
+    },
+    "labels": {
+      "back": "YANGILIKLARGA QAYTISH",
+      "more": "BOSHQA YANGILIKLAR",
+      "read": "O'QISH",
+      "disclaimerTitle": "YURIDIK DISCLAIMER"
     }
   },
   "contact": {

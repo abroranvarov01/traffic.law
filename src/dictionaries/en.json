@@ -65,7 +65,12 @@
     }
   },
   "partners": [
-    { "id": 1, "name": "TASS", "width": 100, "image": "/news/tass.png" },
+    {
+      "id": 1,
+      "name": "TASS",
+      "width": 100,
+      "image": "/news/tass.png"
+    },
     {
       "id": 2,
       "name": "DISCOVER",
@@ -131,22 +136,25 @@
     "cta": "REQUEST A CONSULTATION",
     "items": [
       {
-        "name": "ALEXEY MOROZOV",
-        "role": "CLIENT",
+        "name": "VICTORIA",
+        "role": "HR SPECIALIST",
         "text": "I applied for legal advice on a complex issue. Specialists explained all the nuances in detail and helped to find the right solution.",
-        "stars": 5
+        "stars": 5,
+        "image": "/news/review-hr.png"
       },
       {
-        "name": "MARINA KUZNETSOVA",
-        "role": "CLIENT",
+        "name": "BUTTON AGENCY",
+        "role": "MARKETING AGENCY",
         "text": "Very professional approach. Always in touch, quickly answered questions and accompanied the case to the result. Highly recommend.",
-        "stars": 5
+        "stars": 5,
+        "image": "/news/review-agency.png"
       },
       {
-        "name": "DMITRIY SOKOLOV",
-        "role": "CLIENT",
+        "name": "AZIZ",
+        "role": "PROGRAMMER",
         "text": "I liked the transparency and honesty. They immediately identified realistic prospects and did not promise the impossible. Got a positive result.",
-        "stars": 5
+        "stars": 5,
+        "image": "/news/review-dev.png"
       }
     ]
   },
@@ -168,10 +176,22 @@
     "title": "PROFESSIONALS YOU CAN TRUST",
     "view_all": "VIEW ALL SPECIALISTS",
     "members": [
-      { "name": "BATIR ILSHATOVICH", "role": "SENIOR LEGAL CONSULTANT" },
-      { "name": "AVAZKHONV AKBARKHON", "role": "HEAD OF IT DEPARTMENT" },
-      { "name": "IRINA VOLKOVA", "role": "CORPORATE LAWYER" },
-      { "name": "SAIDOV ALISHER", "role": "LEGAL CONSULTANT" }
+      {
+        "name": "BATIR ILSHATOVICH",
+        "role": "SENIOR LEGAL CONSULTANT"
+      },
+      {
+        "name": "AVAZKHONV AKBARKHON",
+        "role": "HEAD OF IT DEPARTMENT"
+      },
+      {
+        "name": "IRINA VOLKOVA",
+        "role": "CORPORATE LAWYER"
+      },
+      {
+        "name": "SAIDOV ALISHER",
+        "role": "LEGAL CONSULTANT"
+      }
     ]
   },
   "app": {
@@ -188,25 +208,109 @@
         "date": "March 10, 2026",
         "views": "1,240",
         "title": "Tax Code Changes 2026: What Should Businesses Prepare For?",
-        "desc": "Starting Jan 1, 2026, new changes affect VAT for importers, income tax for IT companies, and mandatory electronic document flow."
+        "desc": "Starting Jan 1, 2026, new changes affect VAT for importers, income tax for IT companies, and mandatory electronic document flow.",
+        "content": {
+          "lead": "From 1 January 2026, a package of amendments to the Tax Code takes effect. The changes affect importers, the IT sector and the electronic document workflow. Below are the key points businesses should account for in advance.",
+          "sections": [
+            {
+              "heading": "1. VAT for importers",
+              "text": "The rules for applying VAT rates and deductions on imported goods are being revised. Companies should reconcile commodity codes and update their accounting policy to avoid additional assessments."
+            },
+            {
+              "heading": "2. Corporate income tax for IT companies",
+              "text": "The conditions for preferential rates for IT Park residents are being clarified. Eligibility is now directly tied to the share of core revenue and proper separate accounting."
+            },
+            {
+              "heading": "3. Electronic document workflow",
+              "text": "The list of operations requiring mandatory electronic invoices is expanding. Paper equivalents will no longer be legally valid in these cases."
+            },
+            {
+              "heading": "4. Transition period",
+              "text": "A transition period applies to some requirements. It is important to record which rules apply to contracts concluded before the amendments took effect."
+            },
+            {
+              "heading": "5. What to do now",
+              "text": "Audit your contracts and accounting policy, update primary document templates and, if needed, obtain clarification on disputed operations before the reporting period begins."
+            }
+          ],
+          "conclusion": "Timely preparation reduces the risk of additional assessments and penalties. We help run the audit and adapt your document workflow to the new requirements."
+        }
       },
       {
         "date": "March 5, 2026",
         "views": "892",
         "title": "New Personal Data Protection Rules — A Business Guide",
-        "desc": "Data protection liberalization: mandatory consent for processing, appointment of data officers, and fines up to 100 million UZS for leaks."
+        "desc": "Data protection liberalization: mandatory consent for processing, appointment of data officers, and fines up to 100 million UZS for leaks.",
+        "content": {
+          "lead": "Personal data legislation has been updated: requirements for consent, storage and liability are becoming stricter. Here is what it means for business and how to prepare.",
+          "sections": [
+            {
+              "heading": "1. Mandatory consent to processing",
+              "text": "Consent must be specific, informed and verifiable. Generic wording such as \"I agree to everything\" no longer counts as a proper legal basis."
+            },
+            {
+              "heading": "2. Data protection officer",
+              "text": "Companies must appoint a person responsible for processing personal data and define their authority in an internal document."
+            },
+            {
+              "heading": "3. Localisation and storage",
+              "text": "Rules on storing citizens' data and cross-border transfers are clarified. You must verify where your databases and servers are physically located."
+            },
+            {
+              "heading": "4. Penalties for breaches",
+              "text": "Violations and leaks carry penalties up to significant amounts. Liability applies even in the absence of direct intent."
+            },
+            {
+              "heading": "5. How to prepare the company",
+              "text": "Update your privacy policy, consent forms and contractor agreements, and take an inventory of all data processing activities."
+            }
+          ],
+          "conclusion": "Aligning processes with the new rules is an ongoing practice, not a one-off task. Our lawyers will help you build a compliant data processing system."
+        }
       },
       {
         "date": "Feb 28, 2026",
         "views": "1,560",
         "title": "Maternity and Birth Benefits Increased in 2026",
-        "desc": "Government allowances for pregnancy and birth have increased. Learn how to correctly manage HR documentation under the new labor rules."
+        "desc": "Government allowances for pregnancy and birth have increased. Learn how to correctly manage HR documentation under the new labor rules.",
+        "content": {
+          "lead": "In 2026, the amounts of maternity and childcare benefits have been revised. Employers should correctly rebuild their HR records to avoid errors in calculations.",
+          "sections": [
+            {
+              "heading": "1. What changed in benefit amounts",
+              "text": "Both lump-sum and monthly payments have increased. The calculation is tied to the current base amount at the date of the event."
+            },
+            {
+              "heading": "2. Lump-sum birth benefit",
+              "text": "The amount of the childbirth payment has been updated. Eligibility and the amount are fixed at the moment of application."
+            },
+            {
+              "heading": "3. Monthly benefits",
+              "text": "Monthly childcare benefits have been revised. Employers should apply the new coefficients when preparing payroll."
+            },
+            {
+              "heading": "4. HR records under the new rules",
+              "text": "Local acts, orders and payroll documents must be updated. Errors in paperwork directly affect the payable amounts."
+            },
+            {
+              "heading": "5. Common employer mistakes",
+              "text": "The most frequent are an incorrect calculation date, an incomplete document package and failure to notify the employee of due payments on time."
+            }
+          ],
+          "conclusion": "Accurate HR records protect both the employee and the company. We advise on structuring payments and bringing documents in line with the new rules."
+        }
       }
     ],
     "disclaimer": {
       "title": "LEGAL DISCLAIMER",
       "note": "All information on the website is for informational purposes only and does not constitute legal advice.",
       "warning": "Traffic Law is not responsible for decisions made based on website information without prior consultation with a lawyer."
+    },
+    "labels": {
+      "back": "BACK TO NEWS",
+      "more": "MORE NEWS",
+      "read": "READ",
+      "disclaimerTitle": "LEGAL DISCLAIMER"
     }
   },
   "contact": {
@@ -235,19 +339,43 @@
       {
         "title": "SECTIONS",
         "links": [
-          { "name": "ABOUT US", "href": "#about" },
-          { "name": "OUR WORKS", "href": "#works" },
-          { "name": "WHY CHOOSE US", "href": "#why" },
-          { "name": "CLIENT REVIEWS", "href": "#testimonials" },
-          { "name": "OUR SERVICES", "href": "#services" }
+          {
+            "name": "ABOUT US",
+            "href": "#about"
+          },
+          {
+            "name": "OUR WORKS",
+            "href": "#works"
+          },
+          {
+            "name": "WHY CHOOSE US",
+            "href": "#why"
+          },
+          {
+            "name": "CLIENT REVIEWS",
+            "href": "#testimonials"
+          },
+          {
+            "name": "OUR SERVICES",
+            "href": "#services"
+          }
         ]
       },
       {
         "title": "",
         "links": [
-          { "name": "OUR TEAM", "href": "#team" },
-          { "name": "LATEST NEWS", "href": "#news" },
-          { "name": "BOOK AN APPOINTMENT", "href": "#contact" }
+          {
+            "name": "OUR TEAM",
+            "href": "#team"
+          },
+          {
+            "name": "LATEST NEWS",
+            "href": "#news"
+          },
+          {
+            "name": "BOOK AN APPOINTMENT",
+            "href": "#contact"
+          }
         ]
       }
     ],

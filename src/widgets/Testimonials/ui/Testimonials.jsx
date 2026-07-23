@@ -70,13 +70,26 @@ export const Testimonials = ({ dict }) => {
 							</div>
 
 							{/* Author Information */}
-							<div className="border-t border-white/5 pt-4">
-								<h4 className="text-white font-serif text-[15px] md:text-[16px] tracking-wide uppercase mb-1">
-									{item.name}
-								</h4>
-								<span className="text-[#C59D5F] text-[9px] font-bold tracking-[0.2em] uppercase">
-									{item.role}
-								</span>
+							<div className="border-t border-white/5 pt-4 flex items-center gap-3">
+								{item.image && (
+									<div className="relative w-11 h-11 md:w-12 md:h-12 rounded-full overflow-hidden ring-1 ring-[#C59D5F]/40 shrink-0">
+										<Image
+											src={item.image}
+											alt={item.name}
+											fill
+											sizes="48px"
+											className="object-cover"
+										/>
+									</div>
+								)}
+								<div className="min-w-0">
+									<h4 className="text-white font-serif text-[15px] md:text-[16px] tracking-wide uppercase mb-1 truncate">
+										{item.name}
+									</h4>
+									<span className="text-[#C59D5F] text-[9px] font-bold tracking-[0.2em] uppercase">
+										{item.role}
+									</span>
+								</div>
 							</div>
 						</motion.div>
 					))}

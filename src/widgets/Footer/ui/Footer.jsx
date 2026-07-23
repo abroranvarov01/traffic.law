@@ -23,15 +23,18 @@ export const Footer = ({ dict, lang = "uz" }) => {
 
   return (
     <footer className="relative bg-[#070707] pt-20 pb-10 overflow-hidden text-white border-t border-white/5">
-      {/* 1. Background Texture */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
+      {/* 1. Background Photo */}
+      <div className="absolute inset-0 opacity-60 pointer-events-none">
         <Image
-          src="/news/koja.png"
+          src="/news/footer-bg.png"
           alt="texture"
           fill
-          className="object-cover grayscale"
+          className="object-cover"
         />
       </div>
+      {/* Scrim: keeps text readable over the photo */}
+      {/* <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#070707] via-[#070707]/70 to-[#070707]/90" />
+      <div className="absolute inset-0 pointer-events-none bg-black/30" /> */}
 
       <Container className="relative z-10">
         <div className="flex flex-col lg:flex-row justify-between gap-12 ">
@@ -93,14 +96,13 @@ export const Footer = ({ dict, lang = "uz" }) => {
         </div>
 
         {/* 2. Giant Main Logo Section (Fon bilan birikib ketadigan qism) */}
-        <div className="relative w-full  flex justify-center border-t border-white/5">
+        {/* <div className="relative w-full  flex justify-center border-t border-white/5">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
             className="relative w-full h-[120px] sm:h-[180px] md:h-[280px] lg:h-[380px]"
             style={{
-              /* Rasmning chekkalarini o'chirib, fon bilan uyg'unlashtiradi */
               WebkitMaskImage:
                 "linear-gradient(to right, transparent, black 15%, black 85%, transparent), linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)",
               WebkitMaskComposite: "destination-in",
@@ -117,7 +119,7 @@ export const Footer = ({ dict, lang = "uz" }) => {
               priority
             />
           </motion.div>
-        </div>
+        </div> */}
 
         {/* 3. Copyright */}
         <div className="mt-8 pt-8 mb-12 border-t border-white/5 flex flex-col items-center gap-3">
