@@ -1,21 +1,18 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/shared/ui/Container/Container";
-import { GoldButton } from "@/shared/ui/GoldButton/GoldButton";
-
-const cases = [
-  { title: "Personal Injury", img: "/Margin.png" },
-  { title: "Investment", img: "/Margin.png" },
-  { title: "Legal Separation", img: "/Margin.png" },
-  { title: "Domestic Violence", img: "/Margin.png" },
-  { title: "Illegal", img: "/Margin.png" },
-  { title: "Digital Crime", img: "/Margin.png" },
-];
 
 export const CaseStudies = ({ dict }) => {
   const s = dict?.case_studies || {};
+  const items = s.items || [];
+  const labels = s.labels || {};
+
+  const blocks = [
+    { key: "situation", label: labels.situation || "Situation" },
+    { key: "solution", label: labels.solution || "Solution" },
+    { key: "result", label: labels.result || "Result" },
+  ];
 
   return (
     <section className="py-24 bg-[#0a0a0a] border-t border-white/5">
@@ -37,57 +34,71 @@ export const CaseStudies = ({ dict }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-serif italic text-white max-w-2xl leading-tight"
+            className="text-4xl md:text-5xl font-serif italic text-white max-w-3xl leading-tight"
           >
-            {s.title || "Many projects Done that make us Stand out"}
+            {s.title}
           </motion.h2>
         </div>
 
-        {/* Grid Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-24">
-          {cases.map((item, index) => (
-            <motion.div
+        {/* Cases */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {items.map((item, index) => (
+            <motion.article
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: (index % 2) * 0.1 }}
               viewport={{ once: true }}
-              className="flex flex-col group relative"
+              className="group relative flex flex-col rounded-sm border border-white/5 bg-white/[0.03] p-7 md:p-9 transition-colors duration-700 hover:border-[#C59D5F]/40 hover:bg-white/[0.05]"
             >
-              {/* Image Box */}
-              <div className="relative w-full h-[400px] overflow-hidden rounded-sm">
-                <Image
-                  src={item.img}
-                  alt={item.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-80" />
-              </div>
-
-              {/* Info Box */}
-              <div className="relative z-10 w-[85%] ml-auto -mt-20 bg-[#111111]/90 border border-white/5 p-6 shadow-2xl backdrop-blur-md">
-                <div className="text-right mb-6">
-                  <h3 className="text-lg font-serif italic text-white uppercase tracking-wider mb-2 group-hover:text-[#C59D5F] transition-colors">
+              {/* Number + title */}
+              <div className="mb-6 flex items-start gap-4 border-b border-white/10 pb-5">
+                <span className="font-serif text-3xl italic leading-none text-[#C59D5F]/50 transition-colors duration-500 group-hover:text-[#C59D5F]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="font-serif text-lg md:text-xl uppercase tracking-[0.1em] text-white transition-colors group-hover:text-[#C59D5F]">
                     {item.title}
                   </h3>
-                  <div className="w-12 h-[1px] bg-[#C59D5F] ml-auto mb-3" />
-                  <p className="text-gray-500 text-[10px] uppercase tracking-widest italic">
-                    {s.subtitle || "Legal Protection Strategy"}
+                  <p className="mt-1 text-[10px] uppercase tracking-widest italic text-gray-500">
+                    {s.subtitle}
                   </p>
                 </div>
-
-                {/* Yangi GoldButton integratsiyasi */}
-                <div className="w-full">
-                  <GoldButton className="w-full !px-0 !py-3">
-                    {s.read_more || "Read More"}
-                  </GoldButton>
-                </div>
               </div>
-            </motion.div>
+
+              {/* Situation / Solution / Result */}
+              <div className="space-y-5">
+                {blocks.map(({ key, label }) =>
+                  item[key] ? (
+                    <div key={key} className="relative pl-5">
+                      <span className="absolute left-0 top-[7px] h-1.5 w-1.5 rounded-full bg-[#C59D5F] opacity-70" />
+                      <h4 className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#C59D5F]">
+                        {label}
+                      </h4>
+                      <p className="text-[13px] md:text-[14px] font-light leading-relaxed text-gray-300">
+                        {item[key]}
+                      </p>
+                    </div>
+                  ) : null
+                )}
+              </div>
+
+              {/* Hover Line */}
+              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#C59D5F] transition-all duration-500 group-hover:w-full" />
+            </motion.article>
           ))}
         </div>
+
+        {s.disclaimer && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-14 text-center text-[12px] font-light italic text-gray-500"
+          >
+            {s.disclaimer}
+          </motion.p>
+        )}
       </Container>
     </section>
   );

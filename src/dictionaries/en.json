@@ -328,9 +328,9 @@
     "info": {
       "phone_title": "PHONE",
       "work_title": "WORKING HOURS",
-      "work_time": "Mon-Sat: 10:00 AM - 07:00 PM",
+      "work_time": "Mon-Sat: 09:00 AM - 06:00 PM",
       "office_title": "OFFICE",
-      "address": "Tashkent, Uzbekistan"
+      "address": "Tashkent, Mirzo-Ulugbek district, C-1 massif BUYUK IPAK YULI, house 22"
     }
   },
   "footer": {
@@ -426,8 +426,58 @@
   },
   "case_studies": {
     "badge": "Case Studies",
-    "title": "Many projects done that make us stand out",
+    "title": "Real matters and the results we achieved for our clients",
     "read_more": "Read More",
-    "subtitle": "Legal Protection Strategy"
+    "subtitle": "Legal Protection Strategy",
+    "labels": {
+      "situation": "Situation",
+      "solution": "Solution",
+      "result": "Result"
+    },
+    "disclaimer": "All case studies are presented in anonymised form in accordance with client confidentiality.",
+    "items": [
+      {
+        "title": "Civil Law",
+        "situation": "An individual client faced an unscrupulous counterparty who, after receiving an advance payment under an equipment supply contract, avoided performing its obligations for several months and stopped responding.",
+        "solution": "Our lawyers carried out a pre-trial review of the contract, prepared and served a formal claim including a calculation of the penalty and, once the response deadline expired, filed a statement of claim seeking return of the advance payment, recovery of the penalty and reimbursement of legal costs.",
+        "result": "The dispute was resolved in the client's favour: the court granted the claim in full, the funds and penalty were recovered, and legal costs were reimbursed by the defendant."
+      },
+      {
+        "title": "Corporate and Business Law",
+        "situation": "A group of founders decided to reorganise an operating LLC by spinning off a new legal entity in order to separate business lines, while preserving continuity of operations and minimising tax risks.",
+        "solution": "The team prepared the full reorganisation package: the founders' resolution, the transfer deed, notifications to the tax authorities and creditors, and supported the state registration of the new legal entity.",
+        "result": "The reorganisation was completed without interrupting the operations of either company, within the statutory deadlines and without any objections from regulators or creditors."
+      },
+      {
+        "title": "Legal Consulting",
+        "situation": "A growing services company requested a comprehensive legal audit ahead of bringing in an investor, in order to identify and remedy legal risks before negotiations began.",
+        "solution": "We conducted legal due diligence covering the constitutional documents, contract base, employment relations and permits. The review resulted in a report listing the risks together with recommendations for addressing them.",
+        "result": "The company remedied the identified issues before negotiations started, which accelerated the deal and strengthened the client's bargaining position."
+      },
+      {
+        "title": "HR and Employment Services",
+        "situation": "A manufacturing company faced repeated breaches of workplace discipline by an employee and was unsure how to carry out a lawful dismissal without risking litigation.",
+        "solution": "Our lawyers set up a procedure for documenting the breaches in line with the Labour Code, prepared the records, explanatory notes and orders, and ensured full compliance with the dismissal procedure for repeated breach of employment duties.",
+        "result": "The dismissal was carried out with no legal consequences for the company, and the employee's attempt to challenge it in court was unsuccessful."
+      },
+      {
+        "title": "Tax Disputes",
+        "situation": "Following a desk audit, the tax authority assessed a substantial amount of additional tax and penalties against the company, treating part of its expenses as unjustified.",
+        "solution": "We prepared a reasoned appeal against the tax authority's decision, supported by documentary evidence and legal argument referencing the Tax Code, and represented the client at every stage of the appeal process.",
+        "result": "The tax authority's decision was partially overturned, the additional assessment was reduced and the penalties were lifted."
+      },
+      {
+        "title": "Court Representation",
+        "situation": "A company acting as defendant was drawn into a protracted commercial dispute with a counterparty over a substantial amount, heard before the economic court of first instance.",
+        "solution": "Our lawyers took over the case in full: preparing procedural documents, assembling the evidence base, attending every hearing and preparing appellate objections.",
+        "result": "The court dismissed the claim, and the client's interests were protected across all instances without additional financial losses."
+      },
+      {
+        "title": "Family Law",
+        "situation": "A client sought a divorce combined with the division of jointly acquired property, including real estate and the spouse's share in a business.",
+        "solution": "We conducted settlement negotiations and drafted a property division agreement that reflected the client's interests and minimised the risk of further disputes.",
+        "result": "The property division was settled out of court — the parties signed the agreement, avoiding lengthy litigation."
+      }
+    ]
   }
 }

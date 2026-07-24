@@ -328,9 +328,9 @@
     "info": {
       "phone_title": "TELEFON",
       "work_title": "ISH GRAFIGI",
-      "work_time": "Du-Sha: 10:00 - 19:00",
+      "work_time": "Du-Sha: 09:00 - 18:00",
       "office_title": "OFIS",
-      "address": "Toshkent, O'zbekiston"
+      "address": "Toshkent sh., Mirzo Ulug'bek tumani, C-1 massivi BUYUK IPAK YO'LI, 22-uy"
     }
   },
   "footer": {
@@ -425,10 +425,60 @@
     ]
   },
   "case_studies": {
-    "badge": "Muvaffaqiyatli ishlar",
-    "title": "Bizni ajratib turadigan ko'plab yakunlangan loyihalar",
+    "badge": "Amaliyotdan keyslar",
+    "title": "Mijozlarimiz uchun erishgan real ishlarimiz va natijalarimiz",
     "read_more": "Batafsil o'qish",
-    "subtitle": "Huquqiy himoya strategiyasi"
+    "subtitle": "Huquqiy himoya strategiyasi",
+    "labels": {
+      "situation": "Vaziyat",
+      "solution": "Yechim",
+      "result": "Natija"
+    },
+    "disclaimer": "Barcha keyslar mijozlar maxfiyligini saqlagan holda, shaxsiy ma'lumotlarsiz keltirilgan.",
+    "items": [
+      {
+        "title": "Fuqarolik huquqi",
+        "situation": "Mijoz — jismoniy shaxs — insofsiz kontragentga duch keldi: u uskuna yetkazib berish shartnomasi bo'yicha oldindan to'lovni olgach, bir necha oy davomida majburiyatlarini bajarishdan bosh tortdi va aloqaga chiqmadi.",
+        "solution": "Kompaniya yuristlari shartnomani sudgacha tahlil qilib, penya hisob-kitobi bilan da'vo xatini tayyorlab yubordi, javob muddati o'tgach esa oldindan to'lovni qaytarish, penya undirish va sud xarajatlarini qoplash talabi bilan sudga da'vo arizasi kiritdi.",
+        "result": "Nizo mijoz foydasiga hal qilindi: sud talablarni to'liq qanoatlantirdi, pul mablag'lari va penya undirildi, sud xarajatlari javobgar hisobidan qoplandi."
+      },
+      {
+        "title": "Korporativ va biznes huquqi",
+        "situation": "Ta'sischilar guruhi biznes yo'nalishlarini ajratish maqsadida amaldagi MChJni yangi yuridik shaxsni ajratib chiqarish yo'li bilan qayta tashkil etishga qaror qildi; shu bilan birga faoliyat uzluksizligini saqlash va soliq risklarini kamaytirish talab etilardi.",
+        "solution": "Jamoa qayta tashkil etish uchun to'liq hujjatlar to'plamini tayyorladi: ta'sischilar qarori, topshirish dalolatnomasi, soliq organlari va kreditorlarga xabarnomalar, shuningdek yangi yuridik shaxsni davlat ro'yxatidan o'tkazish jarayonini to'liq qo'llab-quvvatladi.",
+        "result": "Qayta tashkil etish har ikkala kompaniyaning operatsion faoliyatini to'xtatmasdan, qonunda belgilangan muddatlarda, nazorat organlari va kreditorlar tomonidan hech qanday e'tirozsiz amalga oshirildi."
+      },
+      {
+        "title": "Yuridik maslahatlar",
+        "situation": "Xizmat ko'rsatish sohasidagi o'sib borayotgan kompaniya investor jalb qilishdan oldin huquqiy risklarni aniqlash va bartaraf etish uchun kompleks huquqiy auditga murojaat qildi.",
+        "solution": "Huquqiy due diligence o'tkazildi: ta'sis hujjatlari, shartnomalar bazasi, mehnat munosabatlari va ruxsat beruvchi hujjatlar tekshirildi. Natijada risklar ro'yxati va ularni bartaraf etish bo'yicha tavsiyalar bilan hisobot tayyorlandi.",
+        "result": "Kompaniya investor bilan muzokaralar boshlanishidan oldin aniqlangan nomuvofiqliklarni bartaraf etdi, bu bitimni tezlashtirdi va mijozning muzokara pozitsiyasini mustahkamladi."
+      },
+      {
+        "title": "Kadrlar xizmatlari",
+        "situation": "Ishlab chiqarish kompaniyasi xodimning mehnat intizomini muntazam buzishiga duch keldi va sud nizosiga yo'l qo'ymasdan ishdan bo'shatishni qonuniy rasmiylashtirishni bilmasdi.",
+        "solution": "Yuristlar Mehnat kodeksi talablariga muvofiq qoidabuzarliklarni qayd etish tartibini yo'lga qo'ydi, dalolatnomalar, tushuntirish xatlari va buyruqlarni tayyorlab, mehnat majburiyatlarini muntazam buzganlik moddasi bo'yicha ishdan bo'shatish tartibiga to'liq rioya qilinishini ta'minladi.",
+        "result": "Ishdan bo'shatish kompaniya uchun hech qanday huquqiy oqibatlarsiz amalga oshirildi, xodimning qarorni sudda bekor qilish urinishi natija bermadi."
+      },
+      {
+        "title": "Soliq nizolari",
+        "situation": "Kameral tekshiruv natijalariga ko'ra soliq organi xarajatlarning bir qismini asossiz deb hisoblab, kompaniyaga katta miqdorda soliq va jarima hisoblab qo'ydi.",
+        "solution": "Soliq organi qaroriga tasdiqlovchi hujjatlar ilova qilingan va Soliq kodeksi normalariga havolalar bilan huquqiy asoslangan shikoyat tayyorlandi, shikoyat qilishning barcha bosqichlarida mijoz manfaatlari vakillik qilindi.",
+        "result": "Soliq organi qarori qisman bekor qilindi, qo'shimcha hisoblangan summa kamaytirildi, jarima sanksiyalari olib tashlandi."
+      },
+      {
+        "title": "Sudda vakillik",
+        "situation": "Javobgar kompaniya kontragent bilan yirik summadagi cho'zilgan xo'jalik nizosiga tortildi, ish birinchi instansiya iqtisodiy sudida ko'rib chiqilardi.",
+        "solution": "Yuristlar ishni to'liq olib borishni o'z zimmasiga oldi: protsessual hujjatlarni tayyorlash, dalillar bazasini to'plash, barcha sud majlislarida ishtirok etish va apellyatsiya e'tirozlarini tayyorlash.",
+        "result": "Sud da'vogarning talablarini rad etdi, mijoz manfaatlari barcha instansiyalarda qo'shimcha moliyaviy yo'qotishlarsiz himoya qilindi."
+      },
+      {
+        "title": "Oila huquqi",
+        "situation": "Mijoz nikohni bekor qilish va bir vaqtning o'zida birgalikda orttirilgan mol-mulkni, jumladan ko'chmas mulk va turmush o'rtog'ining biznesdagi ulushini bo'lish masalasi bilan murojaat qildi.",
+        "solution": "Kelishuv bitimini tuzish bo'yicha muzokaralar o'tkazildi, mijoz manfaatlarini hisobga oluvchi va keyingi nizolar xavfini kamaytiruvchi mol-mulkni bo'lish to'g'risidagi bitim loyihasi tayyorlandi.",
+        "result": "Mol-mulkni bo'lish qismida masala sudgacha hal qilindi — tomonlar bitimni imzoladi, bu uzoq davom etadigan sud jarayonidan qochish imkonini berdi."
+      }
+    ]
   },
   "case_header": {
     "badge": "BIZNING ISHLARIMIZ",

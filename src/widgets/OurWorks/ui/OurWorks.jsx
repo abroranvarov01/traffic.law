@@ -1,21 +1,62 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight, FiChevronDown } from "react-icons/fi";
 import { Container } from "@/shared/ui/Container/Container";
 import Link from "next/link";
 
-export const OurWorks = ({ dict }) => {
-	const t = dict?.works || {};
-	const labels = t.labels || {};
-	const MotionLink = motion(Link);
+const MotionLink = motion(Link);
 
-	const projects = [
-		{ id: "01", data: t.item1, image: "/news/work-image.png" },
-		{ id: "02", data: t.item2, image: "/news/work-image.png" },
-		{ id: "03", data: t.item3, image: "/news/work-image.png" },
-	];
+export const OurWorks = ({ dict, lang }) => {
+	const t = dict?.works || {};
+	// Keyslar bitta manbadan olinadi — /case sahifasi bilan bir xil
+	const cs = dict?.case_studies || {};
+	const labels = cs.labels || {};
+
+	const projects = (cs.items || []).slice(0, 3).map((data, i) => ({
+		id: String(i + 1).padStart(2, "0"),
+		data,
+		image: "/news/work-image.png",
+	}));
+
+	const [active, setActive] = useState(0);
+	// Hover yo'q qurilmalarda (telefon/planshet) kartalar bosish orqali ochiladi
+	const [isTouch, setIsTouch] = useState(false);
+
+	useEffect(() => {
+		const mq = window.matchMedia("(hover: none), (max-width: 767px)");
+		const update = () => setIsTouch(mq.matches);
+		update();
+		mq.addEventListener("change", update);
+		return () => mq.removeEventListener("change", update);
+	}, []);
+
+	// Desktopda hover ochadi, mobilda bosish ochadi va yopadi
+	const handleHover = (index) => {
+		if (!isTouch) setActive(index);
+	};
+	const handleToggle = (index) => {
+		setActive((cur) => (isTouch && cur === index ? -1 : index));
+	};
+
+	const caseHref = lang ? `/${lang}/case` : "/case";
+	const readMore = cs.read_more;
+
+	// Bitta umumiy egri chiziq: tez boshlanadi, yumshoq to'xtaydi
+	const EASE = [0.22, 1, 0.36, 1];
+	const DURATION = 0.75;
+
+	// Ochilganda kontent balandlik ortidan ergashadi, yopilganda darhol so'nadi
+	const reveal = (isOpen) => ({
+		duration: DURATION,
+		ease: EASE,
+		opacity: {
+			duration: isOpen ? 0.4 : 0.18,
+			delay: isOpen ? 0.24 : 0,
+			ease: "linear",
+		},
+	});
 
 	return (
 		<section className="bg-[#070707] py-16 md:py-28 text-white overflow-hidden">
@@ -38,86 +79,200 @@ export const OurWorks = ({ dict }) => {
 					</motion.h2>
 				</div>
 
-				{/* Projects List */}
-				<div className="flex flex-col border-t border-white/10">
-					{projects.map((project, index) => (
-						<motion.div
-							key={project.id}
-							initial={{ opacity: 0, y: 30 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, margin: "-100px" }}
-							transition={{ duration: 0.6, delay: index * 0.1 }}
-							style={{ willChange: "opacity, transform" }}
-							className="group relative border-b border-white/10 py-12 md:py-16 hover:bg-white/[0.02] transition-colors duration-500"
-						>
-							<div className="flex flex-col lg:flex-row gap-8 lg:gap-16 px-4">
-								{/* Image & ID */}
-								<div className="flex flex-row lg:flex-col gap-6 lg:w-1/4 shrink-0">
-									<span className="text-4xl md:text-6xl font-serif italic text-white/10 group-hover:text-[#C59D5F] transition-colors duration-500">
+				{/* Projects Accordion */}
+				<div className="flex flex-col">
+					{projects.map((project, index) => {
+						const isOpen = active === index;
+
+						return (
+							<motion.div
+								key={project.id}
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true, margin: "-100px" }}
+								transition={{ duration: 0.6, delay: index * 0.1 }}
+								style={{ willChange: "opacity, transform" }}
+								onMouseEnter={() => handleHover(index)}
+								onFocus={() => handleHover(index)}
+								onClick={() => handleToggle(index)}
+								role={isTouch ? "button" : undefined}
+								tabIndex={isTouch ? 0 : undefined}
+								aria-expanded={isTouch ? isOpen : undefined}
+								onKeyDown={(e) => {
+									if (isTouch && (e.key === "Enter" || e.key === " ")) {
+										e.preventDefault();
+										handleToggle(index);
+									}
+								}}
+								className={`group relative cursor-pointer overflow-hidden rounded-xl border-b border-white/10 transition-colors duration-500 md:cursor-default md:border-b-0
+								`}
+							>
+								{/* Faol karta uchun iliq yorug'lik */}
+								{/* <div
+									className={`pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_0%_0%,rgba(197,157,95,0.14),transparent_55%)] transition-opacity duration-700 ${
+										isOpen ? "opacity-100" : "opacity-0"
+									}`}
+								/> */}
+
+								<div
+									className={`relative flex gap-4 px-4 py-5 md:items-center md:gap-8 md:px-6 md:py-6 ${
+										isOpen ? "items-start" : "items-center"
+									}`}
+								>
+									{/* Rasm — faqat ochiq holatda */}
+									<motion.div
+										initial={{ width: 0, opacity: 0 }}
+										animate={{
+											width: isOpen ? 132 : 0,
+											opacity: isOpen ? 1 : 0,
+										}}
+										transition={reveal(isOpen)}
+										className="hidden md:block shrink-0 overflow-hidden"
+									>
+										<motion.div
+											initial={{ x: -24 }}
+											animate={{ x: isOpen ? 0 : -24 }}
+											transition={{ duration: DURATION, ease: EASE }}
+											className="relative h-[72px] w-[132px] overflow-hidden rounded-md border border-white/10 shadow-2xl"
+										>
+											<Image
+												src={project.image}
+												alt={project.data?.title || ""}
+												fill
+												sizes="132px"
+												className="object-cover"
+											/>
+											<div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+										</motion.div>
+									</motion.div>
+
+									{/* Raqam */}
+									<span
+										className={`shrink-0 text-3xl font-serif italic leading-none transition-colors duration-700 ease-out md:text-5xl ${
+											isOpen ? "text-[#C59D5F]" : "text-white/15"
+										}`}
+									>
 										{project.id}
 									</span>
-									<div className="relative w-32 h-32 md:w-full md:h-48 overflow-hidden rounded-sm border border-white/5 shadow-2xl transform-gpu [backface-visibility:hidden] [-webkit-backface-visibility:hidden]">
-										<Image
-											src={project.image}
-											alt={project.data?.title}
-											fill
-											className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
-										/>
-									</div>
-								</div>
 
-								{/* Content Grid */}
-								<div className="flex-grow">
-									<h3 className="text-lg md:text-2xl font-serif uppercase tracking-wide text-[#C59D5F] mb-8 group-hover:text-white transition-colors">
-										{project.data?.title}
-									</h3>
+									{/* Matn */}
+									<div className="min-w-0 flex-grow">
+										<h3
+											className={`text-sm md:text-base font-semibold leading-snug transition-colors duration-700 ease-out ${
+												isOpen ? "text-white" : "text-white/80"
+											}`}
+										>
+											{project.data?.title}
+										</h3>
 
-									<div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-										{/* Task */}
-										<div className="space-y-2">
-											<h4 className="text-[10px] uppercase tracking-widest text-white/40 font-bold">
-												{labels.task}
-											</h4>
-											<p className="text-gray-400 text-xs md:text-sm leading-relaxed">
-												{project.data?.task}
-											</p>
-										</div>
-										{/* Actions */}
-										<div className="space-y-2">
-											<h4 className="text-[10px] uppercase tracking-widest text-white/40 font-bold">
-												{labels.actions}
-											</h4>
-											<p className="text-gray-400 text-xs md:text-sm leading-relaxed">
-												{project.data?.actions}
-											</p>
-										</div>
-										{/* Result */}
-										<div className="space-y-2">
-											<h4 className="text-[10px] uppercase tracking-widest text-[#C59D5F] font-bold">
-												{labels.result}
-											</h4>
-											<p className="text-white text-xs md:text-sm leading-relaxed italic">
-												{project.data?.result}
-											</p>
-										</div>
-									</div>
-								</div>
+										<motion.div
+											initial={{ height: 0, opacity: 0 }}
+											animate={{
+												height: isOpen ? "auto" : 0,
+												opacity: isOpen ? 1 : 0,
+											}}
+											transition={reveal(isOpen)}
+											className="overflow-hidden"
+											aria-hidden={!isOpen}
+										>
+											{/* Mobil uchun rasm — panel ichida, to'liq kenglikda */}
+											<div className="relative mt-4 h-40 w-full overflow-hidden rounded-lg border border-white/10 md:hidden">
+												<Image
+													src={project.image}
+													alt={project.data?.title || ""}
+													fill
+													sizes="100vw"
+													className="object-cover"
+												/>
+												<div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+											</div>
 
-								{/* Arrow Button */}
-								<div className="hidden lg:flex items-center">
-									<div className="w-14 h-14 bg-white/5 group-hover:bg-[#C59D5F] flex items-center justify-center rounded-full transition-all duration-500 border border-white/10">
-										<FiArrowUpRight className="text-2xl text-white/40 group-hover:text-[#070707] group-hover:rotate-45 transition-all" />
+											<div className="mt-4 max-w-3xl space-y-1.5">
+												<h4 className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/40">
+													{labels.situation}
+												</h4>
+												<p className="text-[12px] md:text-[13px] font-light leading-relaxed text-gray-400">
+													{project.data?.situation}
+												</p>
+											</div>
+
+											<div className="mt-4 grid max-w-3xl grid-cols-1 gap-4 border-t border-white/10 pt-4 sm:grid-cols-2">
+												<div className="space-y-1.5">
+													<h4 className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/40">
+														{labels.solution}
+													</h4>
+													<p className="text-[12px] font-light leading-relaxed text-gray-400">
+														{project.data?.solution}
+													</p>
+												</div>
+												<div className="space-y-1.5">
+													<h4 className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#C59D5F]">
+														{labels.result}
+													</h4>
+													<p className="text-[12px] font-light italic leading-relaxed text-white">
+														{project.data?.result}
+													</p>
+												</div>
+											</div>
+
+											{/* Mobilda strelka ochish tugmasi bo'lgani uchun
+												havola panel ichida turadi */}
+											<Link
+												href={caseHref}
+												onClick={(e) => e.stopPropagation()}
+												tabIndex={isOpen ? undefined : -1}
+												className={`mt-5 items-center gap-2 text-[11px] font-bold uppercase tracking-[0.25em] text-[#C59D5F] ${
+												isTouch ? "inline-flex" : "hidden"
+											}`}
+											>
+												{readMore}
+												<FiArrowUpRight className="text-base" />
+											</Link>
+										</motion.div>
 									</div>
+
+									{/* O'ng tomondagi tugma: mobilda ochish-yopish, desktopda havola */}
+									{isTouch ? (
+										<div
+											aria-hidden="true"
+											className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border transition-colors duration-700 ease-out ${
+												isOpen
+													? "border-transparent bg-gradient-to-b from-[#F3D393] to-[#B68541] text-[#2D1F16]"
+													: "border-white/10 bg-white/5 text-white/60"
+											}`}
+										>
+											<motion.span
+												initial={false}
+												animate={{ rotate: isOpen ? 180 : 0 }}
+												transition={{ duration: DURATION, ease: EASE }}
+												className="flex"
+											>
+												<FiChevronDown className="text-lg" />
+											</motion.span>
+										</div>
+									) : (
+										<Link
+											href={caseHref}
+											aria-label={project.data?.title}
+											className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border transition-colors duration-700 ease-out md:h-12 md:w-12 ${
+												isOpen
+													? "border-transparent bg-gradient-to-b from-[#F3D393] to-[#B68541] text-[#2D1F16]"
+													: "border-white/10 bg-white/5 text-white/60 hover:text-white"
+											}`}
+										>
+											<FiArrowUpRight className="text-lg md:text-xl" />
+										</Link>
+									)}
 								</div>
-							</div>
-						</motion.div>
-					))}
+							</motion.div>
+						);
+					})}
 				</div>
 
 				{/* Premium Button */}
 				<div className="flex justify-center mt-16 md:mt-24">
 					<MotionLink
-						href="/case"
+						href={caseHref}
 						whileHover={{ scale: 1.05 }}
 						whileTap={{ scale: 0.95 }}
 						className="relative group overflow-hidden px-12 py-5 rounded-lg transition-all duration-300"
