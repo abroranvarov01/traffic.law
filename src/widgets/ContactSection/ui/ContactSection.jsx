@@ -55,7 +55,7 @@ export const ContactSection = ({ dict }) => {
                 {
                   icon: <FiPhone />,
                   title: t.info?.phone_title,
-                  value: "+998 99 989 88 99",
+                  value: "+998 90 008 07 65",
                 },
                 {
                   icon: <FiClock />,

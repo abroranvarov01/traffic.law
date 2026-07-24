@@ -187,22 +187,17 @@ export const OurWorks = ({ dict, lang }) => {
 												<div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 											</div>
 
-											<div className="mt-4 max-w-3xl space-y-1.5">
-												<h4 className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/40">
-													{labels.situation}
-												</h4>
-												<p className="text-[12px] md:text-[13px] font-light leading-relaxed text-gray-400">
-													{project.data?.situation}
-												</p>
-											</div>
+											<p className="mt-3 max-w-3xl text-[12px] md:text-[13px] font-light leading-relaxed text-gray-400">
+												{project.data?.task}
+											</p>
 
 											<div className="mt-4 grid max-w-3xl grid-cols-1 gap-4 border-t border-white/10 pt-4 sm:grid-cols-2">
 												<div className="space-y-1.5">
 													<h4 className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/40">
-														{labels.solution}
+														{labels.actions}
 													</h4>
 													<p className="text-[12px] font-light leading-relaxed text-gray-400">
-														{project.data?.solution}
+														{project.data?.actions}
 													</p>
 												</div>
 												<div className="space-y-1.5">
@@ -257,7 +252,7 @@ export const OurWorks = ({ dict, lang }) => {
 											className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border transition-colors duration-700 ease-out md:h-12 md:w-12 ${
 												isOpen
 													? "border-transparent bg-gradient-to-b from-[#F3D393] to-[#B68541] text-[#2D1F16]"
-													: "border-white/10 bg-white/5 text-white/60 hover:text-white"
+													: "border-none bg-white/5 text-white/60 hover:text-white"
 											}`}
 										>
 											<FiArrowUpRight className="text-lg md:text-xl" />
