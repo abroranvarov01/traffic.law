@@ -67,7 +67,7 @@ export const Team = ({ dict }) => {
         </div>
 
         {/* --- View All Button (Premium Gold Style) --- */}
-        <div className="flex justify-center mt-20">
+        {/* <div className="flex justify-center mt-20">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -78,10 +78,9 @@ export const Team = ({ dict }) => {
               boxShadow: "0px 4px 0px #8B6229, 0px 10px 25px rgba(0,0,0,0.5)",
             }}
           >
-            {/* Glossy Overlay */}
             <div className="absolute inset-0 opacity-30 bg-gradient-to-b from-white via-transparent to-transparent pointer-events-none" />
 
-            {/* Inner Border */}
+          
             <div className="absolute inset-[1px] rounded-[7px] border border-white/20 pointer-events-none" />
 
             <div className="relative z-10 flex items-center justify-center gap-4">
@@ -92,10 +91,10 @@ export const Team = ({ dict }) => {
               <div className="w-1.5 h-1.5 bg-[#2D1F16] rotate-45 group-hover:scale-125 transition-transform duration-300" />
             </div>
 
-            {/* Shine Animation */}
+          
             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
           </motion.button>
-        </div>
+        </div> */}
       </Container>
     </section>
   );
