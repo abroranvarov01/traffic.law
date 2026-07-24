@@ -1,9 +1,8 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/shared/ui/Container/Container";
-import { FaPlay } from "react-icons/fa";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
@@ -13,6 +12,33 @@ export const About = ({ dict, lang }) => {
     threshold: 0.1,
     triggerOnce: true,
   });
+
+  // Video "bumerang" qilib yig'ilgan: to'g'ri yurish + teskari yurish. Shu bois
+  // oxirgi kadr birinchisiga tutashadi va tsikl chokini umuman sezib bo'lmaydi.
+  const videoRef = useRef(null);
+  const { ref: videoWrapRef, inView: videoInView } = useInView({
+    threshold: 0.2,
+  });
+
+  // Video faqat ekranda ko'ringanda o'ynaydi (resurs tejash uchun)
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const sync = () => {
+      if (videoInView && !document.hidden) {
+        const promise = video.play();
+        if (promise?.catch) promise.catch(() => {});
+      } else {
+        video.pause();
+      }
+    };
+
+    sync();
+    // Tab yashirilganda brauzer videoni to'xtatadi — qaytganda qayta yoqamiz
+    document.addEventListener("visibilitychange", sync);
+    return () => document.removeEventListener("visibilitychange", sync);
+  }, [videoInView]);
 
   const stats = [
     { number: 192, suffix: "+", label: t.stats_completed },
@@ -73,22 +99,29 @@ export const About = ({ dict, lang }) => {
 
         {/* --- Video Section --- */}
         <motion.div
+          ref={videoWrapRef}
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          className="relative w-full aspect-video max-w-5xl mx-auto mb-16 rounded-sm overflow-hidden group border border-white/5 shadow-2xl"
+          className="relative w-full aspect-video max-w-5xl mx-auto mb-16 rounded-sm overflow-hidden border border-white/5 shadow-2xl"
         >
-          <Image
-            src="/news/video.png"
-            alt="About Video"
-            fill
-            className="object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+          <video
+            ref={videoRef}
+            src="/video/about.mp4"
+            poster="/news/video.png"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            disablePictureInPicture
+            controlsList="nodownload noplaybackrate"
+            aria-label="About Video"
+            className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <button className="w-16 h-16 md:w-24 md:h-24 bg-[#C59D5F] rounded-full flex items-center justify-center text-[#14110e] transition-all hover:scale-110 shadow-[0_0_30px_rgba(197,157,95,0.4)]">
-              <FaPlay className="ml-1 text-xl md:text-3xl" />
-            </button>
-          </div>
+          {/* Kino effekti uchun yengil qorong'ulashtirish va oltin nur */}
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/50 via-black/10 to-black/20" />
+          <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(0,0,0,0.55))]" />
+          <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-[#C59D5F]/20" />
         </motion.div>
 
         {/* --- Quote Section --- */}
