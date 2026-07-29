@@ -13,7 +13,13 @@ import "swiper/css/autoplay";
 
 export const Partners = ({ dict }) => {
   // JSON ma'lumotlari
-  const partnersList = dict?.partners || [];
+  const basePartners = dict?.partners || [];
+
+  // Loop rejimi ishlashi uchun slaydlar soni slidesPerView'dan (desktopda 5 ta)
+  // sezilarli ko'p bo'lishi shart. Aks holda Swiper loop'ni o'chirib qo'yadi.
+  const partnersList = basePartners.length
+    ? Array.from({ length: Math.ceil(15 / basePartners.length) }, () => basePartners).flat()
+    : [];
 
   return (
     <section className="bg-[#070707] py-10 border-y border-white/5 overflow-hidden">
@@ -22,6 +28,7 @@ export const Partners = ({ dict }) => {
           modules={[Autoplay]}
           // Uzluksiz oqim effekti uchun sozlamalar:
           loop={true}
+          loopAdditionalSlides={2}
           speed={4000} // Harakatlanish tezligi (millisekundda)
           autoplay={{
             delay: 0,
@@ -51,15 +58,11 @@ export const Partners = ({ dict }) => {
           }}
           // CSS class - silliq harakat uchun (linear)
           className="partners-swiper"
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
         >
           {partnersList.map((partner, index) => (
             <SwiperSlide
-              key={index}
-              className="flex items-center justify-center"
+              key={`${partner.id ?? partner.name}-${index}`}
+              className="!flex items-center justify-center"
             >
               <div className="relative flex justify-center items-center group cursor-pointer w-full">
                 <div
