@@ -1,6 +1,8 @@
 "use client";
 import React, { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { Container } from "@/shared/ui/Container/Container";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
@@ -26,6 +28,7 @@ const practiceList = [
 
 export const PracticeAreaSlider = () => {
   const swiperRef = useRef(null);
+  const { lang } = useParams();
 
   return (
     <section className="py-16 md:py-24 bg-white">
@@ -99,12 +102,15 @@ export const PracticeAreaSlider = () => {
                     transition={{ delay: idx * 0.1 }}
                     className="group border-b border-white/5 last:border-none"
                   >
-                    <button className="flex items-center gap-4 md:gap-5 py-4 md:py-5 w-full text-left transition-all duration-300">
+                    <Link
+                      href={`/${lang}/service`}
+                      className="flex items-center gap-4 md:gap-5 py-4 md:py-5 w-full text-left transition-all duration-300"
+                    >
                       <div className="w-3 h-3 md:w-4 md:h-4 rounded-full border border-[#C59D5F] group-hover:bg-[#C59D5F] transition-all" />
                       <span className="text-[10px] md:text-[11px] text-gray-300 uppercase tracking-[0.2em] md:tracking-[0.25em] font-bold group-hover:text-[#C59D5F]">
                         {item.name}
                       </span>
-                    </button>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>

@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "@/shared/ui/Container/Container";
 import { FaFilePdf, FaChevronDown } from "react-icons/fa";
@@ -42,6 +44,7 @@ const recentPosts = [
 
 export const ServiceDetail = () => {
   const [activeFaq, setActiveFaq] = useState(null);
+  const { lang } = useParams();
 
   return (
     <section className="py-20 bg-white">
@@ -152,12 +155,12 @@ export const ServiceDetail = () => {
                     <p className="text-[10px] text-gray-400 uppercase tracking-widest mb-4">
                       oneprozury4 | {post.date}
                     </p>
-                    <a
-                      href="#"
+                    <Link
+                      href={`/${lang}/news/1`}
                       className="text-[#C59D5F] text-[10px] font-bold italic uppercase tracking-widest"
                     >
                       Read More »
-                    </a>
+                    </Link>
                   </div>
                 ))}
               </div>
