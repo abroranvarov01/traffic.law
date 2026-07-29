@@ -1,9 +1,9 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import { Container } from "@/shared/ui/Container/Container";
-import { motion } from "framer-motion";
+import * as motion from "framer-motion/client";
 import { Team } from "@/widgets/Team";
+import { getDictionary, i18n } from "@/dictionaries/getDictionary";
 // import { seoData } from "../seoData";
 
 // export async function generateMetadata({ params }) {
@@ -20,7 +20,11 @@ import { Team } from "@/widgets/Team";
 //   };
 // }
 
-const CasePage = () => {
+const CasePage = async ({ params }) => {
+  const currentParams = await params;
+  const lang = currentParams.lang || i18n.defaultLocale;
+  const dict = await getDictionary(lang);
+
   return (
     <main className="bg-[#0a0a0a]">
       {/* 1. Header Section */}
@@ -55,7 +59,7 @@ const CasePage = () => {
           </motion.div>
         </Container>
       </section>
-      <Team/>
+      <Team dict={dict} lang={lang} />
     </main>
   );
 };
