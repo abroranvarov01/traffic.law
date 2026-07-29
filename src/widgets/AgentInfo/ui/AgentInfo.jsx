@@ -12,7 +12,80 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 
+const emptyForm = {
+  name: "",
+  phone: "",
+  email: "",
+  date: "",
+  message: "",
+};
+
 export const AgentInfo = () => {
+  const [form, setForm] = React.useState(emptyForm);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState("");
+  const [success, setSuccess] = React.useState(false);
+
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+
+    if (name === "phone") {
+      value = value.replace(/[^\d+]/g, "");
+    }
+
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setError("");
+    setSuccess(false);
+
+    if (!/^\+?\d{9,15}$/.test(form.phone.replace(/\s/g, ""))) {
+      setError("Введите корректный номер телефона");
+      return;
+    }
+
+    if (!form.name || !form.message) {
+      setError("Заполните имя и сообщение");
+      return;
+    }
+
+    // /api/contact faqat name/phone/message qabul qiladi - qolgani xabarga qo'shiladi
+    const extra = [
+      form.email && `Email: ${form.email}`,
+      form.date && `Желаемая дата: ${form.date}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    try {
+      setLoading(true);
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          message: extra ? `${form.message}\n\n${extra}` : form.message,
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error("request failed");
+      }
+
+      setSuccess(true);
+      setForm(emptyForm);
+    } catch (err) {
+      setError("Не удалось отправить заявку. Попробуйте позже");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
@@ -72,15 +145,21 @@ export const AgentInfo = () => {
               <h4 className="text-black font-serif text-xl mb-6 uppercase tracking-widest italic">
                 Make An Appointment
               </h4>
-              <form className="space-y-3">
+              <form className="space-y-3" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-2 gap-3">
                   <input
                     type="text"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
                     placeholder="Your Name"
                     className="w-full bg-black/5 border-b border-black/10 p-3 text-xs outline-none placeholder-black/60 focus:border-black transition-all"
                   />
                   <input
                     type="text"
+                    name="phone"
+                    value={form.phone}
+                    onChange={handleChange}
                     placeholder="Your Phone"
                     className="w-full bg-black/5 border-b border-black/10 p-3 text-xs outline-none placeholder-black/60 focus:border-black transition-all"
                   />
@@ -88,22 +167,41 @@ export const AgentInfo = () => {
                 <div className="grid grid-cols-2 gap-3">
                   <input
                     type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
                     placeholder="Your Email"
                     className="w-full bg-black/5 border-b border-black/10 p-3 text-xs outline-none placeholder-black/60 focus:border-black transition-all"
                   />
                   <input
                     type="text"
+                    name="date"
+                    value={form.date}
+                    onChange={handleChange}
                     placeholder="Appointment Date"
                     className="w-full bg-black/5 border-b border-black/10 p-3 text-xs outline-none placeholder-black/60 focus:border-black transition-all"
                   />
                 </div>
                 <textarea
                   rows={4}
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
                   placeholder="Message"
                   className="w-full bg-black/5 border-b border-black/10 p-3 text-xs outline-none placeholder-black/60 focus:border-black transition-all resize-none"
                 ></textarea>
-                <button className="w-full bg-[#1a120b] text-[#C59D5F] py-4 text-[11px] font-black uppercase tracking-[0.3em] hover:bg-black transition-all mt-4">
-                  Send
+
+                {error && <p className="text-red-900 text-xs">{error}</p>}
+                {success && (
+                  <p className="text-black text-xs">Заявка отправлена</p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-[#1a120b] text-[#C59D5F] py-4 text-[11px] font-black uppercase tracking-[0.3em] hover:bg-black transition-all mt-4 disabled:opacity-60"
+                >
+                  {loading ? "..." : "Send"}
                 </button>
               </form>
             </motion.div>
