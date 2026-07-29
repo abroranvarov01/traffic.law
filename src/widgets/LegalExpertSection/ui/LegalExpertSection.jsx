@@ -1,23 +1,22 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Container } from "@/shared/ui/Container/Container";
 import { GoldButton } from "@/shared/ui/GoldButton/GoldButton";
+import { useContactCta } from "@/shared/lib/useContactCta";
 
-export const LegalExpertSection = ({ dict }) => {
+export const LegalExpertSection = ({ dict, lang }) => {
   const data = dict?.legal_expert_section || {};
   const items = data.list_items || [];
+  const goToContact = useContactCta(lang);
 
   return (
     <section className="relative bg-[#070707] py-16 md:py-32 overflow-hidden border-y border-white/5">
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-        <Image
-          src="/news/koja.png"
-          alt=""
-          fill
-          className="object-cover grayscale invert"
-        />
+      {/* Fon: yumshoq oltin nur + vinyetka */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#C59D5F]/[0.06] blur-[160px] rounded-full" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,#000_100%)] opacity-70" />
       </div>
 
       <Container className="relative z-10">
@@ -43,21 +42,28 @@ export const LegalExpertSection = ({ dict }) => {
         </div>
 
         <div className="relative">
-          {/* Markaziy rasm - layoutga ta'sir qilmasligi uchun absolute */}
-          <div className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[700px] z-0 pointer-events-none">
+          {/* Markaziy kompozitsiya: globus - layoutga ta'sir qilmasligi uchun absolute */}
+          <div className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[720px] z-0 pointer-events-none">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.94 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2 }}
-              className="relative w-full h-full"
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              className="relative w-full h-full flex items-center justify-center"
             >
-              <Image
-                src="/news/man.png"
-                alt="Expert"
-                fill
-                className="object-contain drop-shadow-[0_0_50px_rgba(0,0,0,0.9)]"
-              />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[50%] bg-[#C59D5F]/10 blur-[130px] rounded-full" />
+              {/* Oltin nur */}
+              <div className="absolute w-[340px] h-[340px] bg-[#C59D5F]/[0.12] blur-[110px] rounded-full" />
+
+              {/* Globus */}
+              <div className="relative w-[300px] h-[405px]">
+                <Image
+                  src="/news/globe.png"
+                  alt="Global huquqiy amaliyot"
+                  fill
+                  sizes="300px"
+                  className="object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)]"
+                />
+              </div>
             </motion.div>
           </div>
 
@@ -79,7 +85,7 @@ export const LegalExpertSection = ({ dict }) => {
         </div>
 
         <div className="mt-16 md:mt-24 text-center relative z-30">
-          <GoldButton>{data.view_button}</GoldButton>
+          <GoldButton onClick={goToContact}>{data.view_button}</GoldButton>
         </div>
       </Container>
     </section>
