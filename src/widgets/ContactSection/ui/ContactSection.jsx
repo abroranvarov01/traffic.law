@@ -5,8 +5,33 @@ import { Container } from "@/shared/ui/Container/Container";
 import { FiPhone, FiClock, FiMapPin } from "react-icons/fi";
 import { ContactForm } from "@/components/ContactForm/ContactForm";
 
+const PHONE = "+998 90 008 07 65";
+
 export const ContactSection = ({ dict }) => {
   const t = dict?.contact || {};
+  const address = t.info?.address || "";
+
+  const contacts = [
+    {
+      icon: <FiPhone />,
+      title: t.info?.phone_title,
+      value: PHONE,
+      href: `tel:${PHONE.replace(/[^\d+]/g, "")}`,
+    },
+    {
+      icon: <FiClock />,
+      title: t.info?.work_title,
+      value: t.info?.work_time,
+    },
+    {
+      icon: <FiMapPin />,
+      title: t.info?.office_title,
+      value: address,
+      // ContactMap kabi - koordinatalar emas, manzil bo'yicha qidiruv
+      href: `https://yandex.com/maps/?text=${encodeURIComponent(address)}`,
+      external: true,
+    },
+  ];
 
   return (
     <section
@@ -51,43 +76,41 @@ export const ContactSection = ({ dict }) => {
 
             {/* Kontakt detallari */}
             <div className="space-y-6 md:space-y-8">
-              {[
-                {
-                  icon: <FiPhone />,
-                  title: t.info?.phone_title,
-                  value: "+998 90 008 07 65",
-                },
-                {
-                  icon: <FiClock />,
-                  title: t.info?.work_title,
-                  value: t.info?.work_time,
-                },
-                {
-                  icon: <FiMapPin />,
-                  title: t.info?.office_title,
-                  value: t.info?.address,
-                },
-              ].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 + idx * 0.1 }}
-                  className="flex items-center gap-5 md:gap-6 group"
-                >
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-lg md:text-xl text-[#C59D5F] group-hover:bg-[#C59D5F] group-hover:text-black transition-all duration-300">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <p className="text-[9px] md:text-[10px] text-gray-500 font-bold tracking-[0.2em] mb-1">
-                      {item.title}
-                    </p>
-                    <p className="text-base md:text-lg font-serif tracking-wide italic">
-                      {item.value}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+              {contacts.map((item, idx) => {
+                const Row = item.href ? motion.a : motion.div;
+
+                return (
+                  <Row
+                    key={idx}
+                    {...(item.href
+                      ? {
+                          href: item.href,
+                          ...(item.external
+                            ? { target: "_blank", rel: "noopener noreferrer" }
+                            : {}),
+                        }
+                      : {})}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 + idx * 0.1 }}
+                    className="flex items-center gap-5 md:gap-6 group"
+                  >
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-lg md:text-xl text-[#C59D5F] group-hover:bg-[#C59D5F] group-hover:text-black transition-all duration-300">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <p className="text-[9px] md:text-[10px] text-gray-500 font-bold tracking-[0.2em] mb-1">
+                        {item.title}
+                      </p>
+                      <p
+                        className={`text-base md:text-lg font-serif tracking-wide italic transition-colors duration-300 ${item.href ? "group-hover:text-[#C59D5F]" : ""}`}
+                      >
+                        {item.value}
+                      </p>
+                    </div>
+                  </Row>
+                );
+              })}
             </div>
           </div>
 
