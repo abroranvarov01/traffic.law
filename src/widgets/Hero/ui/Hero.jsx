@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 import { Container } from "@/shared/ui/Container/Container";
 import Image from "next/image";
 import { GoldButton } from "@/shared/ui/GoldButton/GoldButton";
+import { useContactCta } from "@/shared/lib/useContactCta";
 
-const Hero = ({ dict }) => {
+const Hero = ({ dict, lang }) => {
   const h = dict?.hero || {};
+  const goToContact = useContactCta(lang);
 
   return (
     <section className="relative w-full min-h-[640px] lg:min-h-[88vh] flex items-center justify-center overflow-hidden bg-[#070707]">
@@ -74,13 +76,7 @@ const Hero = ({ dict }) => {
 
           {/* Yangi GoldButton integratsiyasi */}
           <div className="pt-4">
-            <GoldButton
-              onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
+            <GoldButton onClick={goToContact}>
               {h.ctaButton || "ЗАПРОСИТЬ КОНСУЛЬТАЦИЮ"}
             </GoldButton>
           </div>
