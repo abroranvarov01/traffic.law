@@ -4,11 +4,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/shared/ui/Container/Container";
 import { GoldButton } from "@/shared/ui/GoldButton/GoldButton";
+import { useContactCta } from "@/shared/lib/useContactCta";
 import { FaStar } from "react-icons/fa";
 
-export const Testimonials = ({ dict }) => {
+export const Testimonials = ({ dict, lang }) => {
 	const t = dict?.testimonials || {};
 	const items = t.items || [];
+	const goToContact = useContactCta(lang);
 
 	return (
 		<section className="relative bg-[#070707] py-4 md:py-20 overflow-hidden text-white">
@@ -98,11 +100,7 @@ export const Testimonials = ({ dict }) => {
 				{/* CTA Button */}
 				<div className="flex justify-center relative z-30">
 					<GoldButton
-						onClick={() =>
-							document
-								.getElementById("contact")
-								?.scrollIntoView({ behavior: "smooth" })
-						}
+						onClick={goToContact}
 						className="scale-90 md:scale-100">{t.cta}</GoldButton>
 				</div>
 			</Container>

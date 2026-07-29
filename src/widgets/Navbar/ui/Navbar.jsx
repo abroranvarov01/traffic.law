@@ -213,15 +213,13 @@ export const Navbar = ({ dict, lang }) => {
             </div>
 
             <div className="mt-auto p-10 border-t border-white/5">
-              <Link
+              <GoldButton
                 href={`/${lang}/contact`}
                 onClick={() => setIsOpen(false)}
-                className="block w-full"
+                className="w-full !py-6 "
               >
-                <GoldButton className="w-full !py-6 ">
-                  {t.cta || "поговорить с юристом"}
-                </GoldButton>
-              </Link>
+                {t.cta || "поговорить с юристом"}
+              </GoldButton>
             </div>
           </motion.div>
         )}

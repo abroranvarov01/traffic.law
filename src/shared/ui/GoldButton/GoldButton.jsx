@@ -1,16 +1,36 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
-export const GoldButton = ({ children, className = "", onClick }) => {
+const MotionLink = motion(Link);
+
+export const GoldButton = ({
+  children,
+  className = "",
+  onClick,
+  href,
+  type = "button",
+  disabled = false,
+  ...rest
+}) => {
+  // href berilsa - haqiqiy havola (yangi oynada ochish, SEO), aks holda tugma
+  const Root = href ? MotionLink : motion.button;
+  const rootProps = href
+    ? { href, "aria-disabled": disabled || undefined }
+    : { type, disabled };
+
   return (
-    <motion.button
+    <Root
+      {...rootProps}
+      {...rest}
       onClick={onClick}
       // Hover va Active animatsiyalari
-      whileHover="hover"
-      whileTap="active"
+      whileHover={disabled ? undefined : "hover"}
+      whileTap={disabled ? undefined : "active"}
       initial="initial"
-      className={`relative group overflow-hidden px-10 py-4 rounded-lg transition-all duration-150 active:translate-y-[2px] ${className}`}
+      // inline-flex - havola sifatida ham tugma kabi o'lchamlarni oladi
+      className={`relative group inline-flex items-center justify-center overflow-hidden px-10 py-4 rounded-lg transition-all duration-150 active:translate-y-[2px] ${disabled ? "opacity-60 pointer-events-none" : ""} ${className}`}
       style={{
         background:
           "linear-gradient(180deg, #F3D393 0%, #D4A762 50%, #B68541 100%)",
@@ -70,6 +90,6 @@ export const GoldButton = ({ children, className = "", onClick }) => {
 
       {/* 5. Bosilganda (Active) paydo bo'ladigan xira qatlam */}
       <div className="absolute inset-0 bg-black/5 opacity-0 active:opacity-100 transition-opacity" />
-    </motion.button>
+    </Root>
   );
 };
