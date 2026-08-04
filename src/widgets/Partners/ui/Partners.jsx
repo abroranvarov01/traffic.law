@@ -1,22 +1,70 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Container } from "@/shared/ui/Container/Container";
-
-// Swiper importlari
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
-// Swiper CSS lari (Bularsiz swiper ishlamaydi yoki buzilib ketadi)
 import "swiper/css";
 import "swiper/css/autoplay";
 
-export const Partners = ({ dict }) => {
-  // JSON ma'lumotlari
-  const basePartners = dict?.partners || [];
+// Общий бокс, в который вписывается каждый логотип
+const BOX_W = 150;
+const BOX_H = 48;
+// 0 — все логотипы одной высоты, 0.5 — все одной площади. Промежуточное значение
+// не даёт квадратным логотипам казаться крупнее, а вытянутым — теряться.
+const BALANCE = 0.42;
+const FALLBACK_RATIO = 3;
 
-  // Loop rejimi ishlashi uchun slaydlar soni slidesPerView'dan (desktopda 5 ta)
-  // sezilarli ko'p bo'lishi shart. Aks holda Swiper loop'ni o'chirib qo'yadi.
+// Размер в процентах от бокса, чтобы логотипы сжимались вместе с ним на мобильных
+const getLogoSize = (ratio) => {
+  const r = ratio || FALLBACK_RATIO;
+  let height = BOX_H / Math.pow(r, BALANCE);
+  let width = height * r;
+
+  if (width > BOX_W) {
+    width = BOX_W;
+    height = width / r;
+  }
+  if (height > BOX_H) {
+    height = BOX_H;
+    width = height * r;
+  }
+
+  return {
+    width: `${(width / BOX_W) * 100}%`,
+    height: `${(height / BOX_H) * 100}%`,
+  };
+};
+
+export const Partners = ({ dict }) => {
+  const [ratios, setRatios] = useState({});
+  const basePartners = dict?.partners || [];
+  const sources = basePartners.map((partner) => partner.image).join(",");
+
+  // Пропорции берём из самих файлов, чтобы размеры не пришлось держать в словарях
+  useEffect(() => {
+    let cancelled = false;
+
+    sources
+      .split(",")
+      .filter(Boolean)
+      .forEach((src) => {
+        const probe = new window.Image();
+        probe.onload = () => {
+          if (cancelled || !probe.naturalHeight) return;
+          setRatios((prev) =>
+            prev[src] ? prev : { ...prev, [src]: probe.naturalWidth / probe.naturalHeight }
+          );
+        };
+        probe.src = src;
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [sources]);
+
   const partnersList = basePartners.length
     ? Array.from({ length: Math.ceil(15 / basePartners.length) }, () => basePartners).flat()
     : [];
@@ -26,37 +74,22 @@ export const Partners = ({ dict }) => {
       <Container>
         <Swiper
           modules={[Autoplay]}
-          // Uzluksiz oqim effekti uchun sozlamalar:
           loop={true}
           loopAdditionalSlides={2}
-          speed={4000} // Harakatlanish tezligi (millisekundda)
+          speed={4000}
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true, // Sichqoncha borganda to'xtash
+            pauseOnMouseEnter: true,
           }}
-          // O'tish effekti silliq bo'lishi uchun
           allowTouchMove={true}
           slidesPerView={2}
           spaceBetween={30}
           breakpoints={{
-            // Mobil (320px dan yuqori)
-            320: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            // Planshet (768px dan yuqori)
-            768: {
-              slidesPerView: 3,
-              spaceBetween: 40,
-            },
-            // Desktop (1024px dan yuqori)
-            1024: {
-              slidesPerView: 5,
-              spaceBetween: 60,
-            },
+            320: { slidesPerView: 2, spaceBetween: 20 },
+            768: { slidesPerView: 3, spaceBetween: 40 },
+            1024: { slidesPerView: 5, spaceBetween: 60 },
           }}
-          // CSS class - silliq harakat uchun (linear)
           className="partners-swiper"
         >
           {partnersList.map((partner, index) => (
@@ -64,20 +97,24 @@ export const Partners = ({ dict }) => {
               key={`${partner.id ?? partner.name}-${index}`}
               className="!flex items-center justify-center"
             >
-              <div className="relative flex justify-center items-center group cursor-pointer w-full">
-                <div
-                  className="relative transition-all duration-500 opacity-40 grayscale group-hover:opacity-100 group-hover:grayscale-0"
-                  style={{
-                    width: partner.width ? `${partner.width}px` : "130px",
-                    height: "50px",
-                  }}
-                >
-                  <Image
-                    src={partner.image}
-                    alt={partner.name || "Partner"}
-                    fill
-                    className="object-contain transition-transform duration-500 group-hover:scale-110"
-                  />
+              {/* Единый бокс под все слайды */}
+              <div className="group flex w-full items-center justify-center cursor-pointer px-2">
+                <div className="relative flex w-full max-w-[150px] aspect-[150/48] items-center justify-center">
+
+                  {/* Размер логотипа считается от его пропорций, а не от размера файла */}
+                  <div
+                    className="relative transition-all duration-500 opacity-40 grayscale group-hover:opacity-100 group-hover:grayscale-0"
+                    style={getLogoSize(ratios[partner.image])}
+                  >
+                    <Image
+                      src={partner.image}
+                      alt={partner.name || "Partner"}
+                      fill
+                      sizes="150px"
+                      className="object-contain transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+
                 </div>
               </div>
             </SwiperSlide>
@@ -85,7 +122,6 @@ export const Partners = ({ dict }) => {
         </Swiper>
       </Container>
 
-      {/* Silliq (linear) harakat uchun CSS */}
       <style jsx global>{`
         .partners-swiper .swiper-wrapper {
           transition-timing-function: linear !important;
