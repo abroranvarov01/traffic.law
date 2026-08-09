@@ -3,8 +3,22 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Container } from "@/shared/ui/Container/Container";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { GoldButton } from "@/shared/ui/GoldButton/GoldButton";
 import { useContactCta } from "@/shared/lib/useContactCta";
+
+// 3D sahna faqat brauzerda yuklanadi (three.js SSR'da kerak emas)
+const Femida3D = dynamic(() => import("./Femida3D"), {
+  ssr: false,
+  loading: () => (
+    <img
+      src="/news/femida.png"
+      alt=""
+      aria-hidden
+      className="absolute inset-0 h-full w-full object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.85)]"
+    />
+  ),
+});
 
 const Hero = ({ dict, lang }) => {
   const h = dict?.hero || {};
@@ -95,13 +109,10 @@ const Hero = ({ dict, lang }) => {
             <div className="absolute top-[12%] left-1/2 -translate-x-1/2 w-[70%] aspect-square rounded-full bg-[#C59D5F]/10 blur-[70px] pointer-events-none" />
 
             <div className="relative w-full aspect-[4/7]">
-              <Image
-                src="/news/femida.png"
-                alt={h.imageAlt || "Фемида — весы правосудия"}
-                fill
-                sizes="(max-width: 1024px) 75vw, 380px"
-                className="object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.85)]"
-                priority
+              <Femida3D
+                posterSrc="/news/femida.png"
+                posterAlt={h.imageAlt || "Фемида — весы правосудия"}
+                hint={h.dragHint || ""}
               />
             </div>
 

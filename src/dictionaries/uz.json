@@ -21,7 +21,8 @@
     "title2": "EKSPERTIZA.",
     "title3": "BU BIZNING SIYOSATIMIZ",
     "description": "Jismoniy va yuridik shaxslar uchun professional yuridik yechimlar",
-    "ctaButton": "KONSULTATSIYA SO'RASH"
+    "ctaButton": "KONSULTATSIYA SO'RASH",
+    "dragHint": "Aylantirish uchun torting"
   },
   "about": {
     "subtitle": "BIZ HAQIMIZDA",

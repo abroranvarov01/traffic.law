@@ -21,7 +21,8 @@
     "title2": "EXPERTISE.",
     "title3": "THIS IS OUR POLICY",
     "description": "Professional legal solutions for individuals and legal entities",
-    "ctaButton": "REQUEST CONSULTATION"
+    "ctaButton": "REQUEST CONSULTATION",
+    "dragHint": "Drag to rotate"
   },
   "about": {
     "subtitle": "ABOUT US",
