@@ -60,8 +60,8 @@ const Statue = ({ drag, idleMotion, baseRotationY }) => {
         if (!m) return;
         // Bronza uchun: aks etishni kuchaytiramiz, sirtni biroz silliqlaymiz.
         // Metall qiymatini oshirib yubormaymiz — aks holda xrom kabi ko'rinadi.
-        m.envMapIntensity = 1.35;
-        m.roughness = Math.max(0.3, (m.roughness ?? 1) * 0.78);
+        m.envMapIntensity = 0.85;
+        m.roughness = Math.max(0.38, (m.roughness ?? 1) * 0.85);
         m.metalness = Math.min(0.85, (m.metalness ?? 0) * 0.9 + 0.14);
         m.side = THREE.FrontSide;
         m.needsUpdate = true;
@@ -207,7 +207,7 @@ const Scene = ({ drag, idleMotion, baseRotationY, hovered }) => {
     if (key.current) {
       key.current.intensity = damp(
         key.current.intensity,
-        hovered.current ? 2.6 : 2.2,
+        hovered.current ? 1.5 : 1.25,
         3,
         dt
       );
@@ -216,13 +216,13 @@ const Scene = ({ drag, idleMotion, baseRotationY, hovered }) => {
 
   return (
     <>
-      <ambientLight intensity={0.22} />
+      <ambientLight intensity={0.1} />
 
       {/* Asosiy iliq yorug'lik — yuz va tarozini yoritadi */}
       <directionalLight
         ref={key}
         position={[3.2, 5.5, 5]}
-        intensity={2.2}
+        intensity={1.25}
         color="#ffe3b0"
         castShadow
         shadow-mapSize={[1024, 1024]}
@@ -245,7 +245,7 @@ const Scene = ({ drag, idleMotion, baseRotationY, hovered }) => {
         position={[0.5, 7, 1.5]}
         angle={0.45}
         penumbra={0.9}
-        intensity={22}
+        intensity={11}
         color="#fff0d0"
         distance={20}
       />
@@ -390,7 +390,7 @@ const Femida3D = ({
         }}
         onCreated={({ gl }) => {
           gl.toneMapping = THREE.ACESFilmicToneMapping;
-          gl.toneMappingExposure = 1;
+          gl.toneMappingExposure = 0.85;
         }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
