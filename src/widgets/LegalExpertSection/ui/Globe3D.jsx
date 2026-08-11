@@ -12,21 +12,23 @@ import {
 	Center,
 	Environment,
 	Lightformer,
+	ContactShadows,
 	AdaptiveDpr,
 	useProgress,
 } from "@react-three/drei";
 import * as THREE from "three";
 
-const MODEL_URL = "/models/femida.glb";
+const MODEL_URL = "/models/globe.glb";
 const DRACO_PATH = "/draco/";
 
-/** Femida to'g'ridan-to'g'ri qarab turadigan burchak.
- *  Modelni almashtirsangiz, bu qiymatni qaytadan tanlash kerak bo'lishi mumkin. */
-const BASE_ROTATION_Y = 0.05;
+/** Globus qaysi tomoni bilan qarab turishi (radian). */
+const BASE_ROTATION_Y = 0.0;
 
-/** Yon tomonga sekin tebranish amplitudasi (radian) — juda kichik bo'lishi kerak,
- *  aks holda haykal yuzini burib ketadi. */
-const IDLE_SWAY = 0.1;
+/** Avtomatik aylanish tezligi (radian/soniya). Sekin bo'lsin — bezak, karusel emas. */
+const AUTO_SPIN = 0.15;
+
+/** Sichqoncha ustida turganda aylanish shuncha marta sekinlashadi. */
+const HOVER_SLOWDOWN = 0.3;
 
 const GOLD = "#C59D5F";
 
@@ -35,21 +37,24 @@ useGLTF.preload(MODEL_URL, DRACO_PATH);
 const damp = (current, target, lambda, dt) =>
 	THREE.MathUtils.damp(current, target, lambda, dt);
 
+const easeOutCubic = (x) => 1 - Math.pow(1 - x, 3);
+
 /* ------------------------------------------------------------------ */
-/*  Haykal                                                             */
+/*  Globus                                                             */
 /* ------------------------------------------------------------------ */
 
-const Statue = ({ drag, idleMotion, baseRotationY }) => {
+const Globe = ({ drag, idleMotion, hovered }) => {
 	const { scene } = useGLTF(MODEL_URL, DRACO_PATH);
 	const group = useRef(null);
 	const inner = useRef(null);
 	const enter = useRef(0);
+	const spin = useRef(0);
 
 	const model = useMemo(() => {
 		const root = scene.clone(true);
 		const box = new THREE.Box3().setFromObject(root);
 		const size = box.getSize(new THREE.Vector3());
-		root.scale.setScalar(size.y > 0 ? 3.9 / size.y : 1);
+		root.scale.setScalar(size.y > 0 ? 3.6 / size.y : 1);
 
 		root.traverse((obj) => {
 			if (!obj.isMesh) return;
@@ -58,12 +63,14 @@ const Statue = ({ drag, idleMotion, baseRotationY }) => {
 			const mats = Array.isArray(obj.material) ? obj.material : [obj.material];
 			mats.forEach((m) => {
 				if (!m) return;
-				// Bronza uchun: aks etishni kuchaytiramiz, sirtni biroz silliqlaymiz.
-				// Metall qiymatini oshirib yubormaymiz — aks holda xrom kabi ko'rinadi.
-				m.envMapIntensity = 0.85;
-				m.roughness = Math.max(0.38, (m.roughness ?? 1) * 0.85);
-				m.metalness = Math.min(0.85, (m.metalness ?? 0) * 0.9 + 0.14);
-				m.side = THREE.FrontSide;
+				// Skan qilingan globus: qog'oz xarita mat, latun oyoq yaltiroq bo'lishi kerak.
+				// Shuning uchun metalness'ni ko'tarmaymiz — u modelning o'z teksturasidan keladi.
+				m.envMapIntensity = 1.3;
+				m.roughness = THREE.MathUtils.clamp((m.roughness ?? 1) * 0.75, 0.25, 1);
+				// Iliq grading: xarita ranglari saytning qora-oltin palitrasiga moslashadi
+				m.color.set("#E8DFD0");
+				// Yon tomondan qaralganda tekstura yoyilib ketmasligi uchun
+				if (m.map) m.map.anisotropy = 8;
 				m.needsUpdate = true;
 			});
 		});
@@ -77,30 +84,40 @@ const Statue = ({ drag, idleMotion, baseRotationY }) => {
 		if (!g || !i) return;
 		const dt = Math.min(delta, 0.1);
 		const t = state.clock.elapsedTime;
+		const d = drag.current;
 
-		// Kirish animatsiyasi: pastdan ko'tarilib, biroz burilib joyiga keladi
-		enter.current = Math.min(1, enter.current + dt / 1.1);
-		const e = 1 - Math.pow(1 - enter.current, 3);
+		// Kirish: pastdan ko'tarilib, sekin tezlashib aylana boshlaydi
+		enter.current = Math.min(1, enter.current + dt / 1.4);
+		const e = easeOutCubic(enter.current);
 
-		// Drag inersiyasi
-		if (!drag.current.active) {
-			drag.current.velY *= Math.pow(0.94, dt * 60);
-			drag.current.offsetY += drag.current.velY * dt;
-			// Sekin "hero" burchagiga qaytish
-			drag.current.offsetY = damp(drag.current.offsetY, 0, 0.6, dt);
-			drag.current.offsetX = damp(drag.current.offsetX, 0, 2.2, dt);
+		if (d.active) {
+			// Barmoq/sichqoncha bilan burash — to'g'ridan-to'g'ri
+			spin.current += d.deltaY;
+			d.deltaY = 0;
+		} else {
+			// Qo'yib yuborilgandan keyingi inersiya
+			spin.current += d.vel * dt;
+			d.vel *= Math.pow(0.94, dt * 60);
+			if (Math.abs(d.vel) < 0.001) d.vel = 0;
+
+			// Doimiy sekin aylanish (hover'da sekinlashadi)
+			const auto = idleMotion
+				? AUTO_SPIN * (hovered.current ? HOVER_SLOWDOWN : 1)
+				: 0;
+			spin.current += auto * e * dt;
+
+			d.tilt = damp(d.tilt, 0, 1.4, dt);
 		}
 
-		const idle = idleMotion ? Math.sin(t * 0.35) * IDLE_SWAY : 0;
-		const float = idleMotion ? Math.sin(t * 0.7) * 0.035 : 0;
+		// Nafas olayotgandek juda kichik tebranish
+		const breathe = idleMotion ? Math.sin(t * 0.5) * 0.02 : 0;
+		const float = idleMotion ? Math.sin(t * 0.65) * 0.03 : 0;
 
-		g.rotation.y = baseRotationY + idle + drag.current.offsetY + (1 - e) * 0.2;
-		g.rotation.x = THREE.MathUtils.clamp(drag.current.offsetX, -0.25, 0.25);
+		g.rotation.y = BASE_ROTATION_Y + spin.current + (1 - e) * 0.45;
+		g.rotation.x = THREE.MathUtils.clamp(d.tilt + breathe, -0.32, 0.32);
 
-		i.position.y = float + (1 - e) * -0.6;
-		i.scale.setScalar(0.94 + 0.06 * e);
-
-		// Ko'rinish (fade-in) — materiallar orqali emas, guruh masshtabi orqali
+		i.position.y = float + (1 - e) * -0.5;
+		i.scale.setScalar(0.9 + 0.1 * e);
 		g.visible = e > 0.001;
 	});
 
@@ -119,17 +136,17 @@ const Statue = ({ drag, idleMotion, baseRotationY }) => {
 /*  Oltin chang zarralari                                              */
 /* ------------------------------------------------------------------ */
 
-const Dust = ({ count = 90 }) => {
+const Dust = ({ count = 70 }) => {
 	const points = useRef(null);
 
 	const { positions, speeds } = useMemo(() => {
 		const positions = new Float32Array(count * 3);
 		const speeds = new Float32Array(count);
 		for (let i = 0; i < count; i++) {
-			positions[i * 3] = (Math.random() - 0.5) * 5.2;
+			positions[i * 3] = (Math.random() - 0.5) * 5;
 			positions[i * 3 + 1] = (Math.random() - 0.5) * 5;
-			positions[i * 3 + 2] = (Math.random() - 0.5) * 3.4;
-			speeds[i] = 0.05 + Math.random() * 0.12;
+			positions[i * 3 + 2] = (Math.random() - 0.5) * 3.2;
+			speeds[i] = 0.04 + Math.random() * 0.1;
 		}
 		return { positions, speeds };
 	}, [count]);
@@ -141,8 +158,8 @@ const Dust = ({ count = 90 }) => {
 		const arr = p.geometry.attributes.position.array;
 		for (let i = 0; i < count; i++) {
 			arr[i * 3 + 1] += speeds[i] * dt;
-			arr[i * 3] += Math.sin(state.clock.elapsedTime * 0.4 + i) * 0.0012;
-			if (arr[i * 3 + 1] > 2.6) arr[i * 3 + 1] = -2.6;
+			arr[i * 3] += Math.sin(state.clock.elapsedTime * 0.4 + i) * 0.001;
+			if (arr[i * 3 + 1] > 2.5) arr[i * 3 + 1] = -2.5;
 		}
 		p.geometry.attributes.position.needsUpdate = true;
 	});
@@ -158,10 +175,10 @@ const Dust = ({ count = 90 }) => {
 				/>
 			</bufferGeometry>
 			<pointsMaterial
-				size={0.03}
+				size={0.028}
 				color={GOLD}
 				transparent
-				opacity={0.28}
+				opacity={0.25}
 				sizeAttenuation
 				depthWrite={false}
 			/>
@@ -178,10 +195,10 @@ const Rig = ({ enabled }) => {
 	useFrame((state, delta) => {
 		if (!enabled) return;
 		const dt = Math.min(delta, 0.1);
-		camera.position.x = damp(camera.position.x, state.pointer.x * 0.45, 2, dt);
+		camera.position.x = damp(camera.position.x, state.pointer.x * 0.4, 2, dt);
 		camera.position.y = damp(
 			camera.position.y,
-			0.15 + state.pointer.y * 0.28,
+			0.2 + state.pointer.y * 0.25,
 			2,
 			dt
 		);
@@ -190,16 +207,17 @@ const Rig = ({ enabled }) => {
 	return null;
 };
 
-const Scene = ({ drag, idleMotion, baseRotationY, hovered }) => {
-	const rim = useRef(null);
+const Scene = ({ drag, idleMotion, hovered }) => {
 	const key = useRef(null);
+	const rim = useRef(null);
 
 	useFrame((state, delta) => {
 		const dt = Math.min(delta, 0.1);
+		// Sichqoncha yaqinlashganda yorug'lik biroz "jonlanadi"
 		if (rim.current) {
 			rim.current.intensity = damp(
 				rim.current.intensity,
-				hovered.current ? 42 : 30,
+				hovered.current ? 34 : 22,
 				3,
 				dt
 			);
@@ -207,7 +225,7 @@ const Scene = ({ drag, idleMotion, baseRotationY, hovered }) => {
 		if (key.current) {
 			key.current.intensity = damp(
 				key.current.intensity,
-				hovered.current ? 1.5 : 1.25,
+				hovered.current ? 2.1 : 1.7,
 				3,
 				dt
 			);
@@ -216,74 +234,71 @@ const Scene = ({ drag, idleMotion, baseRotationY, hovered }) => {
 
 	return (
 		<>
-			<ambientLight intensity={0.1} />
+			<ambientLight intensity={0.14} />
 
-			{/* Asosiy iliq yorug'lik — yuz va tarozini yoritadi */}
+			{/* Asosiy iliq yorug'lik */}
 			<directionalLight
 				ref={key}
-				position={[3.2, 5.5, 5]}
-				intensity={1.25}
-				color="#ffe3b0"
+				position={[3.4, 5, 4.6]}
+				intensity={1.7}
+				color="#ffe6bd"
 				castShadow
 				shadow-mapSize={[1024, 1024]}
-				shadow-bias={-0.0005}
+				shadow-bias={-0.0006}
 			/>
 
-			{/* Oltin rim-light: siluetni ajratib turadi */}
+			{/* Oltin rim-light — siluetni qorong'i fondan ajratadi */}
 			<spotLight
 				ref={rim}
-				position={[-4.8, 3.4, -3.2]}
-				angle={0.85}
+				position={[-4.6, 2.6, -3.4]}
+				angle={0.9}
 				penumbra={1}
-				intensity={30}
+				intensity={22}
 				color={GOLD}
-				distance={22}
-			/>
-
-			{/* Yuqoridan tushuvchi "ibodatxona" nuri */}
-			<spotLight
-				position={[0.5, 7, 1.5]}
-				angle={0.45}
-				penumbra={0.9}
-				intensity={11}
-				color="#fff0d0"
 				distance={20}
 			/>
 
-			{/* Sovuq to'ldiruvchi — soyalarni ko'kimtir qiladi */}
-			<pointLight position={[-3, -1.2, 3.2]} intensity={9} color="#6f83a3" />
+			{/* Sovuq to'ldiruvchi — okeanlarni ko'kimtir qiladi */}
+			<pointLight position={[-3.2, -0.8, 3.4]} intensity={7} color="#6f8bb0" />
 
-			<Statue
-				drag={drag}
-				idleMotion={idleMotion}
-				baseRotationY={BASE_ROTATION_Y}
-			/>
+			<Globe drag={drag} idleMotion={idleMotion} hovered={hovered} />
 			<Dust />
+
+			{/* Yerga tushadigan yumshoq soya — obyektni "havoda osilgan"dan qutqaradi */}
+			<ContactShadows
+				position={[0, -1.95, 0]}
+				opacity={0.5}
+				scale={7}
+				blur={2.8}
+				far={3}
+				resolution={512}
+				color="#000000"
+			/>
 
 			{/* HDRI fayli o'rniga — lightformer'lardan yig'ilgan studiya muhiti */}
 			<Environment resolution={256}>
 				<Lightformer
-					intensity={3}
-					color="#fff2da"
-					position={[0, 4.5, -6]}
+					intensity={2.6}
+					color="#fff3e0"
+					position={[0, 4, -6]}
 					scale={[10, 6, 1]}
 				/>
 				<Lightformer
-					intensity={2.2}
+					intensity={2.4}
 					color={GOLD}
 					position={[-5, 1, 2]}
 					rotation={[0, Math.PI / 2, 0]}
 					scale={[9, 5, 1]}
 				/>
 				<Lightformer
-					intensity={1.1}
-					color="#2f3a4d"
+					intensity={1}
+					color="#33415a"
 					position={[5, 0.5, 2.5]}
 					rotation={[0, -Math.PI / 2, 0]}
 					scale={[9, 5, 1]}
 				/>
 				<Lightformer
-					intensity={0.85}
+					intensity={0.7}
 					color="#e8d3b0"
 					position={[0, -3, 2]}
 					rotation={[Math.PI / 2, 0, 0]}
@@ -300,9 +315,9 @@ const Scene = ({ drag, idleMotion, baseRotationY, hovered }) => {
 /*  Wrapper                                                            */
 /* ------------------------------------------------------------------ */
 
-const Femida3D = ({
-	posterSrc = "/news/femida.png",
-	posterAlt = "Фемида",
+const Globe3D = ({
+	posterSrc = "/news/globe.png",
+	posterAlt = "Globe",
 	hint = "",
 }) => {
 	const { progress } = useProgress();
@@ -316,9 +331,9 @@ const Femida3D = ({
 		active: false,
 		lastX: 0,
 		lastY: 0,
-		offsetX: 0,
-		offsetY: 0,
-		velY: 0,
+		deltaY: 0,
+		tilt: 0,
+		vel: 0,
 	});
 	const hovered = useRef(false);
 
@@ -331,28 +346,27 @@ const Femida3D = ({
 	}, []);
 
 	const onPointerDown = useCallback((e) => {
-		drag.current.active = true;
-		drag.current.lastX = e.clientX;
-		drag.current.lastY = e.clientY;
-		drag.current.velY = 0;
+		const d = drag.current;
+		d.active = true;
+		d.lastX = e.clientX;
+		d.lastY = e.clientY;
+		d.vel = 0;
+		d.deltaY = 0;
 		setGrabbing(true);
 		setInteracted(true);
 		e.currentTarget.setPointerCapture?.(e.pointerId);
 	}, []);
 
 	const onPointerMove = useCallback((e) => {
-		if (!drag.current.active) return;
-		const dx = e.clientX - drag.current.lastX;
-		const dy = e.clientY - drag.current.lastY;
-		drag.current.lastX = e.clientX;
-		drag.current.lastY = e.clientY;
-		drag.current.offsetY += dx * 0.009;
-		drag.current.offsetX = THREE.MathUtils.clamp(
-			drag.current.offsetX + dy * 0.004,
-			-0.25,
-			0.25
-		);
-		drag.current.velY = dx * 0.35;
+		const d = drag.current;
+		if (!d.active) return;
+		const dx = e.clientX - d.lastX;
+		const dy = e.clientY - d.lastY;
+		d.lastX = e.clientX;
+		d.lastY = e.clientY;
+		d.deltaY += dx * 0.008;
+		d.tilt = THREE.MathUtils.clamp(d.tilt + dy * 0.0035, -0.32, 0.32);
+		d.vel = dx * 0.32;
 	}, []);
 
 	const endDrag = useCallback(() => {
@@ -369,19 +383,20 @@ const Femida3D = ({
 				endDrag();
 			}}
 		>
-			{/* Yuklanguncha — eski rasm */}
+			{/* Yuklanguncha — statik rasm */}
 			<img
 				src={posterSrc}
 				alt={posterAlt}
 				aria-hidden={loaded}
-				className={`pointer-events-none absolute inset-0 h-full w-full object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.85)] transition-opacity duration-700 ${loaded ? "opacity-0" : "opacity-100"
-					}`}
+				className={`pointer-events-none absolute inset-0 h-full w-full object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.85)] transition-opacity duration-700 ${
+					loaded ? "opacity-0" : "opacity-100"
+				}`}
 			/>
 
 			<Canvas
 				shadows
 				dpr={[1, 2]}
-				camera={{ position: [0, 0.15, 8.5], fov: 30, near: 0.1, far: 100 }}
+				camera={{ position: [0, 0.2, 8.2], fov: 30, near: 0.1, far: 100 }}
 				gl={{
 					antialias: true,
 					alpha: true,
@@ -389,22 +404,22 @@ const Femida3D = ({
 				}}
 				onCreated={({ gl }) => {
 					gl.toneMapping = THREE.ACESFilmicToneMapping;
-					gl.toneMappingExposure = 0.85;
+					gl.toneMappingExposure = 0.9;
 				}}
 				onPointerDown={onPointerDown}
 				onPointerMove={onPointerMove}
 				onPointerUp={endDrag}
 				onPointerCancel={endDrag}
 				style={{ touchAction: "pan-y" }}
-				className={`!absolute inset-0 transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"
-					} ${grabbing ? "cursor-grabbing" : "cursor-grab"}`}
+				className={`!absolute inset-0 transition-opacity duration-700 ${
+					loaded ? "opacity-100" : "opacity-0"
+				} ${grabbing ? "cursor-grabbing" : "cursor-grab"}`}
 			>
 				<React.Suspense fallback={null}>
 					<Rig enabled={!reducedMotion} />
 					<Scene
 						drag={drag}
 						idleMotion={!reducedMotion}
-						baseRotationY={BASE_ROTATION_Y}
 						hovered={hovered}
 					/>
 				</React.Suspense>
@@ -413,8 +428,9 @@ const Femida3D = ({
 			{/* "Aylantirish" maslahati — birinchi tegishdan keyin yo'qoladi */}
 			{hint && (
 				<div
-					className={`pointer-events-none absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-[0.2em] text-white/35 transition-opacity duration-500 ${loaded && !interacted ? "opacity-100" : "opacity-0"
-						}`}
+					className={`pointer-events-none absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-[0.2em] text-white/35 transition-opacity duration-500 ${
+						loaded && !interacted ? "opacity-100" : "opacity-0"
+					}`}
 				>
 					<span className="inline-flex items-center gap-2">
 						<span className="h-[1px] w-5 bg-[#C59D5F]/50" />
@@ -427,4 +443,4 @@ const Femida3D = ({
 	);
 };
 
-export default Femida3D;
+export default Globe3D;
